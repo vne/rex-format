@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Всё хранится внутри корневого тега root. Атрибут rev определяет версию формата -->
+<root rev="1">
+	<!--
+	     Элементы order, вложенные в orders, описывают одну сделку с объектом недвижимости.
+	     Атрибуты: id - номер сделки, ctm - timestamp создания сделки, mtm - timestamp модификации
+	     -->
+	<orders>
+		<order id="12345" ctm="1234567890" mtm="1234567890">
+			<!-- название в произвольной форме -->
+			<title><![CDATA[Продажа квартиры или загадочное убийство на Манежной]]></title>
+			<!-- тип сделки - из словаря order_Type -->
+			<type dic="order_type" id="1">продажа</type>
+			<!-- стоимость: full - продажа или аренда, per_meter - за кв.м., rent_period - за какой период указана стоимость аренды -->
+			<price>
+				<full max="3250000">2500000</full>
+				<per_meter>12500</per_meter>
+			</price>
+			<!-- аренда: срок сдачи (в единицах rent_period), величина залога в процентах от суммы, если он требуется -->
+			<rent>
+				<short>true</short>
+				<term>12</term>
+				<pledge>100</pledge>
+			</rent>
+			<!-- агент, работающий с объектом -->
+			<owner>
+				<agent dic="employee" id="1260">
+					<name><![CDATA[Петрова Любовь Валентиновна]]></name>
+					<phone><![CDATA[8-921-123-45-67]]></phone>
+					<email><![CDATA[petrova@agentstvo.ru]]></email>
+				</agent>
+				<group dic="group" id="15">Группа вторичной недвижимости</group>
+				<company dic="company" id="28">Экотон</company>
+			</owner>
+			<!-- текстовый комментарий, касающийся сделки -->
+			<comment>
+				<text><![CDATA[Тут может быть очень много текста]]></text>
+				<html><![CDATA[<strong>Важно!</strong> Тут могут быть любые теги <a href="w3.org">HTML</a>]]></html>
+				<short><![CDATA[Краткое описание всего]]></short>
+			</comment>
+			<!-- возможны какие-то субсидии, льготные программы и т.д. -->
+			<subsidy>true</subsidy>
+			<!-- параметры, описывающие ипотеку -->
+			<mortgage>
+				<!-- банк, дающий ипотеку -->
+				<bank dic="company" id="177">Агропромбанк</bank>
+				<!-- есть одобрение банка на ипотеку -->
+				<bank_approval>true</bank_approval>
+				<!-- сумма ипотеки -->
+				<summ>15000000</summ>
+				<!-- дата ипотеки -->
+				<date>26.06.2014</date>
+				<!-- ФИО заёмщика -->
+				<borrower>Обломов Илья Ильич</borrower>
+				<!-- номер ипотечного договора -->
+				<contract>Г-153/15/26/06/2014</contract>
+			</mortgage>
+			<!-- банковская ячейка: банк и дата закладки -->
+			<safebox>
+				<bank dic="company" id="198">Сбербанк</bank>
+				<date>19.07.2014</date>
+			</safebox>
+			<!-- объект недвижимости -->
+			<estate id="98321" ctm="9819023123" mtm="1238193112">
+				<!-- почтовый адрес объекта, GPS координаты -->
+				<location>
+					<string><![CDATA[Зеленогорск, Пухтолова гора]]></string>
+					<zip>190123</zip>
+					<country dic="country" id="1">Россия</country>
+					<region dic="fias" id="7800000000000">Санкт-Петербург</region>
+					<area dic="fias" id="7800000000000">Санкт-Петербург</area>
+					<city dic="fias" id="7800000000000">Санкт-Петербург</city>
+					<district dic="district" id="20">Кировский</district>
+					<street dic="fias" id="78000001231000">пр. Говорова</street>
+					<house dic="fias" id="780000012310002349">15к2</house>
+					<flat>38</flat>
+					<gps>
+						<lat>30.1234321</lat>
+						<lng>60.123235</lng>
+					</gps>
+				</location>
+				<!-- тип объекта -->
+				<type dic="estate_type" id="1">квартира</type>
+				<!-- текстовое описание объекта -->
+				<desc>
+					<text><![CDATA[Тут может быть очень много текста]]></text>
+					<html><![CDATA[<strong>Важно!</strong> Тут могут быть любые теги <a href="w3.org">HTML</a>]]></html>
+					<short><![CDATA[Краткое описание всего]]></short>
+				</desc>
+				<!-- параметры дома или строения -->
+				<house>
+					<type dic="house_type" id="28">кирпичный</type>
+					<series dic="house_series" id="48">137 серия</series>
+					<size>10x12</size>
+					<build_date>16.09.2015</build_date>
+					<build_year>2015</build_year>
+					<build_quarter>3</build_quarter>
+					<ready_status dic="ready_status" id="3">госкомиссия</ready_status>
+					<repair_year>1968</repair_year>
+					<!-- параметры элитного дома -->
+					<elite>
+						<name><![CDATA[Бодрый Лось]]></name>
+						<penthouse>true</penthouse>
+						<townhouse>true</townhouse>
+						<class><![CDATA[бизнес]]></class>
+						<settlement><![CDATA[Лосиная поляна]]></settlement>
+					</elite>
+				</house>
+				<flat>
+					<!-- площади -->
+					<space>
+						<total max="300">200</total>
+						<living max="180">150</living>
+						<kitchen>25</kitchen>
+						<hall>30</hall>
+						<desc><![CDATA[25+30+(11+12)+14]]></desc>
+					</space>
+					<!-- высота потолков -->
+					<height>3.5</height>
+					<!-- количество уровней (например, в двухуровневой квартире) -->
+					<levels>2</levels>
+					<!-- количество комнат: продающееся и общее (при продаже квартиры целиком имеет смысл только общее) -->
+					<rooms>
+						<actual>3</actual>
+						<total>6</total>
+					</rooms>
+					<!-- тип квартиры: смежная, распашонка и т.д. -->
+					<style dic="flat_style" id="3">распашонка</style>
+					<!-- этаж, на котором находится квартира, общее количество этажей, тип этажа, если этаж какой-то хитрый -->
+					<storey>
+						<actual>2</actual>
+						<total>10</total>
+						<type dic="storey_type" id="5">бельэтаж</type>
+					</storey>
+					<!-- параметры элитной квартиры: количество спален, количество ванных -->
+					<elite>
+						<bedrooms>3</bedrooms>
+						<bathrooms>2</bathrooms>
+					</elite>
+				</flat>
+				<!-- параметры относящиеся к земельному участку -->
+				<plot>
+					<!-- целевое назначение земельного участка -->
+					<purpose dic="plot_purpose_type" id="3">ИЖС</purpose>
+					<!-- площадь в кв.м. -->
+					<space max="1500">1000</space>
+					<!-- строения, помимо жилого дома -->
+					<buildings>
+						<sauna>true</sauna>
+						<shed>true</shed>
+						<garage>true</garage>
+					</buildings>
+				</plot>
+				<!-- параметры, относящиеся к коммерческой недвижимости -->
+				<commerce>
+					<!-- целевое назначение коммерческого объекта -->
+					<purpose dic="purpose_type" id="3">производственные помещения</purpose>
+					<!-- площади -->
+					<space>
+						<total max="1500">800</total>
+						<business max="300">125</business>
+					</space>
+					<!-- субаренда -->
+					<subrent>true</subrent>
+					<!-- этаж или этажи, на которых расположен обект -->
+					<storey>
+						<actual max="4">2</actual>
+						<total>10</total>
+					</storey>
+					<max_energy>10000</max_energy>
+					<!-- количество телефонных линий, add=true, если есть возможность подключения новых -->
+					<phonelines add="true">10</phonelines>
+				</commerce>
+				<!-- как добраться -->
+				<transport>
+					<!-- автомобиль: шоссе (может быть несколько), время в минутах, расстояние в километрах -->
+					<car>
+						<distance>15</distance>
+						<time>30</time>
+						<highway><![CDATA[Приозерское]]></highway>
+						<highway><![CDATA[Выборгское]]></highway>
+					</car>
+					<!-- железная дорога: станция из словаря, время в минутах, расстояние в километрах -->
+					<railway>
+						<station dic="railway_station" id="130">Зеленогорск</station>
+						<distance>40</distance>
+						<time>60</time>
+						<type dic="after_transport" id="1">транспортом</type>
+					</railway>
+					<!-- метро: станция из словаря, время от метро в минутах, расстояние в километрах, как добираться до метро -->
+					<metro>
+						<station dic="metro_station" id="31">Академическая</station>
+						<time>10</time>
+						<distance>0.8</distance>
+						<type dic="after_transport" id="2">пешком</type>
+					</metro>
+				</transport>
+				<!-- удобства, фишки и инфраструктура -->
+				<facilities>
+					<!-- газоснабжение -->
+					<gas>true</gas>
+					<!-- тип ванной -->
+					<bath dic="bath_type" id="2">джакузи</bath>
+					<!-- тип санузла -->
+					<sewer dic="sewer_type" id="2">на улице</sewer>
+					<!-- тип водоснабжения -->
+					<water>true</water>
+					<!-- тип отопления -->
+					<heating dic="heating_type" id="2">джакузи</heating>
+					<!-- тип отделки -->
+					<decoration dic="decoration_type" id="3">евроремонт</decoration>
+					<!-- тип балкона -->
+					<balcony dic="balcony_type" id="11">лоджия</balcony>
+					<!-- тип окон -->
+					<windows dic="windows_type" id="15">ПВХ</windows>
+					<!-- вид из окон -->
+					<view dic="view_type" id="10">на озеро</view>
+					<!-- тип напольного покрытия -->
+					<floor dic="floor_type" id="11">ламинат</floor>
+					<!-- наличие электричества -->
+					<electricity>true</electricity>
+					<!-- наличие консьержа -->
+					<concierge>true</concierge>
+					<!-- наличие холодильника -->
+					<fridge>true</fridge>
+					<!-- наличие стиральной машины -->
+					<washmachine>true</washmachine>
+					<!-- наличие телевизора -->
+					<tv>true</tv>
+					<!-- наличие кондиционера -->
+					<aircon>true</aircon>
+					<!-- наличие мусоропровода -->
+					<garbage_chute>true</garbage_chute>
+					<!-- наличие интернета или возможности его подключить -->
+					<internet>true</internet>
+					<!-- наличие парковки -->
+					<parking>true</parking>
+					<!-- наличие лифта -->
+					<elevator>true</elevator>
+				</facilities>
+			</estate>
+			<!-- метаданные об объекте и сделке -->
+			<meta>
+				<!-- только для импорта: источник информации: из словаря источников -->
+				<source dic="infosource" id="55">Авито</source>
+				<!-- только для импорта: дата и время, когда объект был импортирован -->
+				<imported>24.04.2014 11:12:13</imported>
+				<!-- только для импорта: URL, откуда был взят исходный файл -->
+				<url><![CDATA[http://www.source.ru/source.xml]]></url>
+				<!-- только для импорта: прямая ссылка на объект на сайте-источнике -->
+				<link><![CDATA[http://www.source.ru/object/b-1238924/11]]></link>
+				<!-- только для импорта: номер объекта в источнике -->
+				<extid>b-1238924/11</extid>
+				<!-- метаданные о связанных с объектом файлов: картинках, планировках -->
+				<attachments>
+					<attachment>
+						<type><![CDATA[image]]></type>
+						<url><![CDATA[http://google.com/image1.jpg]]></url>
+						<title><![CDATA[Красивая картинка]]></title>
+						<mime>image/jpeg</mime>
+						<size>1293456</size>
+						<width>600</width>
+						<height>450</height>
+					</attachment>
+					<attachment>
+						<type><![CDATA[image]]></type>
+						<url><![CDATA[http://google.com/image2.jpg]]></url>
+						<title><![CDATA[Фото 1]]></title>
+						<mime>image/jpeg</mime>
+						<size>11902345</size>
+						<width>550</width>
+						<height>400</height>
+					</attachment>
+					<attachment>
+						<type><![CDATA[planning]]></type>
+						<url><![CDATA[http://google.com/planning]]></url>
+						<title><![CDATA[Планировка]]></title>
+						<mime>image/jpeg</mime>
+						<size>623454</size>
+						<width>600</width>
+						<height>450</height>
+					</attachment>
+					<attachment>
+						<type><![CDATA[video]]></type>
+						<url><![CDATA[http://google.com/video.avi]]></url>
+						<title><![CDATA[Видеообзор]]></title>
+						<mime>video/avi</mime>
+						<size>123456789</size>
+						<width>400</width>
+						<height>250</height>
+						<length>558</length>
+					</attachment>
+				</attachments>
+			</meta>
+		</order>
+	</orders>
+</root>

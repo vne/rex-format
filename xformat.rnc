@@ -1,0 +1,236 @@
+grammar {
+	start = element root {
+		attribute rev { text } &
+		element orders {
+			order
+		}
+	}
+	order = element order {
+		attribute id { idEl }? &
+		attribute ctm { timeEl }? &
+		attribute mtm { timeEl }? &
+		element title { stringEl }? &
+		element type { dicEl } &
+		element price {
+			element full { rangeEl }? &
+			element per_meter { rangeEl }?
+		}? &
+		element rent {
+			element short { booleanEl }? &
+			element term { integerEl }? &
+			element pledge { integerEl }?
+		}? &
+		element owner {
+			element agent {
+				attribute dic { text }? &
+				attribute id { text }? &
+				element name { stringEl }? &
+				element phone { stringEl }? &
+				element email { stringEl }?
+			} &
+			element group { dicEl }? &
+			element company { dicEl }?
+		}? &
+		element comment { commentEl }? &
+		element mortgage {
+			element bank { dicEl }? &
+			element bank_approval { booleanEl }? &
+			element summ { integerEl }? &
+			element date { timeEl }? &
+			element borrower { stringEl }? &
+			element contract { stringEl }?
+		}? &
+		element safebox {
+			element bank { dicEl }? &
+			element date { timeEl }?
+		}? &
+		element subsidy { booleanEl }? &
+		element estate {
+			attribute id { idEl }? &
+			attribute ctm { timeEl }? &
+			attribute mtm { timeEl }? &
+			element location {
+				element string { stringEl }? &
+				element zip { stringEl }? &
+				element country { dicEl }? &
+				element region { dicEl }? &
+				element area { dicEl }? &
+				element city { dicEl }? &
+				element district { dicEl }? &
+				element street { dicEl }? &
+				element house { dicEl }? &
+				element flat { stringEl }? &
+				element gps {
+					element lat { floatEl } &
+					element lng { floatEl }
+				}?
+			}? &
+			element type { dicEl } &
+			element desc { commentEl }? &
+			element house {
+				element type { dicEl }? &
+				element series { dicEl }? &
+				element size { stringEl }? &
+				element build_date { stringEl }? &
+				element build_year { integerEl }? &
+				element build_quarter { integerEl }? &
+				element ready_status { dicEl }? &
+				element repair_year { integerEl }? &
+				element elite {
+					element name { stringEl }? &
+					element penthouse { booleanEl }? &
+					element townhouse { booleanEl }? &
+					element class { stringEl }? &
+					element settlement { stringEl }?
+				}?
+			}? &
+			element flat {
+				element space {
+					element total { rangeEl }? &
+					element living { rangeEl }? &
+					element kitchen { rangeEl }? &
+					element hall { rangeEl }? &
+					element desc { stringEl }?
+				}? &
+				element height { floatEl }? &
+				element levels { integerEl }? &
+				element rooms {
+					element actual { integerEl }? &
+					element total { integerEl }?
+				}? &
+				element style { dicEl }? &
+				element storey {
+					element actual { integerEl }? &
+					element total { integerEl }? &
+					element type { dicEl }?
+				}? &
+				element elite {
+					element bedrooms { integerEl }? &
+					element bathrooms { integerEl }?
+				}?
+			}? &
+			element plot {
+				element purpose { dicEl }? &
+				element space { rangeEl }? &
+				element buildings {
+					element sauna { booleanEl }? &
+					element shed { booleanEl }? &
+					element garage { booleanEl }?
+				}?
+			}? &
+			element commerce {
+				element purpose { dicEl } &
+				element space {
+					element total { rangeEl }? &
+					element business { rangeEl }?
+				}? &
+				element subrent { booleanEl }? &
+				element storey {
+					element actual { rangeEl }? &
+					element total { integerEl }?
+				}? &
+				element max_energy { integerEl }? &
+				element phonelines {
+					attribute add { text } &
+					text
+				}?
+			}? &
+			element transport {
+				element car {
+					element distance { integerEl }? &
+					element time { integerEl }? &
+					element highway { stringEl }*
+				}? &
+				element railway {
+					element station { dicEl }? &
+					element distance { integerEl }? &
+					element time { integerEl }? &
+					element type { dicEl }?
+				}? &
+				element metro {
+					element station { dicEl }? &
+					element distance { integerEl }? &
+					element time { integerEl }? &
+					element type { dicEl }?
+				}?
+			}? &
+			element facilities {
+				element gas { booleanEl }? &
+				element bath { dicEl }? &
+				element sewer { dicEl }? &
+				element water { booleanEl }? &
+				element heating { dicEl }? &
+				element decoration { dicEl }? &
+				element balcony { dicEl }? &
+				element windows { dicEl }? &
+				element view { dicEl }? &
+				element floor { dicEl }? &
+				element electricity { booleanEl }? &
+				element concierge { booleanEl }? &
+				element fridge { booleanEl }? &
+				element washmachine { booleanEl }? &
+				element tv { booleanEl }? &
+				element aircon { booleanEl }? &
+				element garbage_chute { booleanEl }? &
+				element internet { booleanEl }? &
+				element parking { booleanEl }? &
+				element elevator { booleanEl }?
+			}?
+		}? &
+		element meta {
+			element source { dicEl }? &
+			element imported { stringEl }? &
+			element url { stringEl }? &
+			element link { stringEl }? &
+			element extid { idEl }? &
+			element attachments {
+				element attachment {
+					element type { stringEl }? &
+					element url { stringEl }? &
+					element title { stringEl }? &
+					element mime { stringEl }? &
+					element size { integerEl }? &
+					element width { integerEl }? &
+					element height { integerEl }? &
+					element length { integerEl }?
+				}+
+			}?
+		}?
+	}+
+
+
+	dicEl =
+		attribute dic { text }? &
+		attribute id { text } &
+		text
+
+	rangeEl =
+		attribute max { text }? &
+		text
+
+	integerEl =
+		attribute max { text }? &
+		text
+
+	floatEl =
+		attribute max { text }? &
+		text
+
+	booleanEl =
+		text
+
+	stringEl =
+		text
+
+	timeEl =
+		text
+
+	idEl =
+		text
+
+	commentEl =
+		element text { stringEl } &
+		element html { stringEl }? &
+		element short { stringEl }?
+
+}

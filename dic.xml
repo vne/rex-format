@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<dic name="order_type" comment="Тип операции с недвижимостью">
+		<entry id="1">покупка</entry>
+		<entry id="2">продажа</entry>
+		<entry id="3">съём</entry>
+		<entry id="4">сдача в аренду</entry>
+		<entry id="5">консультация</entry>
+		<entry id="6">сопровождение</entry>
+		<entry id="7">стоимость услуг</entry>
+		<entry id="8">приватизация</entry>
+		<entry id="9">одобрение ипотеки</entry>
+	</dic>
+	<dic name="estate_type" comment="Тип объекта недвижимости">
+		<entry id="1">квартира</entry>
+		<entry id="2">комната</entry>
+		<entry id="3">дом</entry>
+		<entry id="4">дача</entry>
+		<entry id="5">таунхаус</entry>
+		<entry id="6">коттедж</entry>
+		<entry id="7">земельный участок</entry>
+		<entry id="8">нежилое помещение</entry>
+		<entry id="9">нежилое здание</entry>
+	</dic>
+	<dic name="ready_status" comment="Этап строительства дома">
+		<entry id="1">строится</entry>
+		<entry id="2">госкомиссия</entry>
+		<entry id="3">сдан</entry>
+	</dic>
+	<dic name="after_transport" comment="Способ добраться до дома">
+		<entry id="1">пешком</entry>
+		<entry id="2">транспортом</entry>
+	</dic>
+	<dic name="balcony_type" comment="Тип балкона">
+		<entry id="1">нет</entry>
+		<entry id="2">лоджия</entry>
+		<entry id="3">балкон</entry>
+	</dic>
+	<dic name="storey_type" comment="Тип этажа">
+		<entry id="1">нормальный этаж</entry>
+		<entry id="2">мансарда</entry>
+		<entry id="3">бельэтаж</entry>
+		<entry id="4">подвал</entry>
+	</dic>
+	<dic name="bath_type" comment="Тип санузла">
+		<entry id="1">раздельный</entry>
+		<entry id="2">совмещённый</entry>
+		<entry id="3">душ</entry>
+		<entry id="4">ванна на кухне</entry>
+		<entry id="5">нет ванны</entry>
+	</dic>
+	<dic name="decoration_type" comment="Отделка помещения">
+		<entry id="1">обычная</entry>
+		<entry id="2">хорошая</entry>
+		<entry id="3">отличная</entry>
+		<entry id="4">отсутствует</entry>
+	</dic>
+	<dic name="flat_style" comment="Тип планировки">
+		<entry id="1">изолированная</entry>
+		<entry id="2">смежная</entry>
+		<entry id="3">смежно-изолированная</entry>
+		<entry id="4">студия</entry>
+		<entry id="5">индивидуальная</entry>
+	</dic>
+	<dic name="floor_type" comment="Тип пола">
+		<entry id="1">напольное покрытие</entry>
+		<entry id="2">паркет</entry>
+		<entry id="3">доски</entry>
+		<entry id="4">стяжка</entry>
+	</dic>
+	<dic name="heating_type" comment="Тип отопления">
+		<entry id="1">центральное</entry>
+		<entry id="2">печное</entry>
+		<entry id="3">электрическое</entry>
+		<entry id="4">газовое</entry>
+	</dic>
+	<dic name="sewer_type" comment="Тип канализации">
+		<entry id="1">центральная</entry>
+		<entry id="2">локальная</entry>
+		<entry id="3">коллектор</entry>
+		<entry id="4">септик</entry>
+	</dic>
+	<dic name="view_type" comment="Вид из окон">
+		<entry id="1">улица</entry>
+		<entry id="2">двор</entry>
+		<entry id="3">панорама</entry>
+		<entry id="4">эксклюзивный</entry>
+	</dic>
+	<dic name="windows_type" comment="Тип окон">
+		<entry id="1">обычные</entry>
+		<entry id="2">витринные</entry>
+		<entry id="3">стеклопакеты</entry>
+	</dic>
+	<dic name="plot_purpose_type" comment="Целевое назначение земельного участка">
+		<entry id="1">ИЖС</entry>
+		<entry id="2">ДНП</entry>
+		<entry id="3">ЛПХ</entry>
+		<entry id="4">садоводство</entry>
+	</dic>
+	<dic name="purpose_type" comment="Целевое назначение коммерческого помещения">
+		<entry id="1">кафе</entry>
+		<entry id="2">магазин</entry>
+		<entry id="3">склад</entry>
+		<entry id="4">производство</entry>
+		<entry id="5">предприятие сферы услуг</entry>
+		<entry id="6">офис</entry>
+		<entry id="7">не определено</entry>
+	</dic>
+	<dic name="house_type" comment="Тип материала стен дома">
+		<entry id="1">кирпичный</entry>
+		<entry id="2">кирпично-монолитный</entry>
+		<entry id="3">блочный</entry>
+		<entry id="4">монолитный</entry>
+		<entry id="5">панельный</entry>
+		<entry id="6">деревянный</entry>
+	</div>
+	<dic name="house_series" comment="Серия дома">
+		<entry id="1">504</entry>
+		<entry id="2">600.11</entry>
+		<entry id="3">121 гатчинская</entry>
+		<entry id="4">137</entry>
+		<entry id="5">101 корабль</entry>
+		<entry id="6">точка</entry>
+		<entry id="7">хрущевка</entry>
+		<entry id="8">брежневка</entry>
+		<entry id="9">немецкий коттедж</entry>
+		<entry id="10">сталинский</entry>
+		<entry id="11">старый фонд</entry>
+		<entry id="12">старый фонд + капремонт</entry>
+		<entry id="13">современная панель</entry>
+		<entry id="14">индивидуальный проект</entry>
+		<entry id="15">реконструкция</entry>
+	</dic>
+	<dic name="district" comment="Район города">
+		<entry fias="7800000000000" id="1">Адмиралтейский</entry>
+		<entry fias="7800000000000" id="2">Василеостровский</entry>
+		<entry fias="7800000000000" id="3">Выборгский</entry>
+		<entry fias="7800000000000" id="4">Калининский</entry>
+		<entry fias="7800000000000" id="5">Кировский</entry>
+		<entry fias="7800000000000" id="6">Колпинский</entry>
+		<entry fias="7800000000000" id="7">Красногвардейский</entry>
+		<entry fias="7800000000000" id="8">Красносельский</entry>
+		<entry fias="7800000000000" id="9">Кронштадтский</entry>
+		<entry fias="7800000000000" id="10">Курортный</entry>
+		<entry fias="7800000000000" id="11">Московский</entry>
+		<entry fias="7800000000000" id="12">Невский</entry>
+		<entry fias="7800000000000" id="13">Петроградский</entry>
+		<entry fias="7800000000000" id="14">Петродворцовый</entry>
+		<entry fias="7800000000000" id="15">Приморский</entry>
+		<entry fias="7800000000000" id="16">Пушкинский</entry>
+		<entry fias="7800000000000" id="17">Фрунзенский</entry>
+		<entry fias="7800000000000" id="18">Центральный</entry>
+	</dic>
+	<dic name="metro_station" comment="Станция метро">
+		<entry line="1" id="1">Девяткино</entry>
+		<entry line="1" id="2">Гражданский проспект</entry>
+		<entry line="1" id="3">Академическая</entry>
+		<entry line="1" id="4">Политехническая</entry>
+		<entry line="1" id="5">Площадь Мужества</entry>
+		<entry line="1" id="6">Лесная</entry>
+		<entry line="1" id="7">Выборгская</entry>
+		<entry line="1" id="8">Площадь Ленина</entry>
+		<entry line="1" id="9">Чернышевская</entry>
+		<entry line="1" id="10">Площадь Восстания</entry>
+		<entry line="1" id="11">Владимирская</entry>
+		<entry line="1" id="12">Пушкинская</entry>
+		<entry line="1" id="13">Технологический институт</entry>
+		<entry line="1" id="14">Балтийская</entry>
+		<entry line="1" id="15">Нарвская</entry>
+		<entry line="1" id="16">Кировский завод</entry>
+		<entry line="1" id="17">Автово</entry>
+		<entry line="1" id="18">Ленинский проспект</entry>
+		<entry line="1" id="19">Проспект Ветеранов</entry>
+		<entry line="2" id="20">Парнас</entry>
+		<entry line="2" id="21">Проспект Просвещения</entry>
+		<entry line="2" id="22">Озерки</entry>
+		<entry line="2" id="23">Удельная</entry>
+		<entry line="2" id="24">Пионерская</entry>
+		<entry line="2" id="25">Чёрная речка</entry>
+		<entry line="2" id="26">Петроградская</entry>
+		<entry line="2" id="27">Горьковская</entry>
+		<entry line="2" id="28">Невский проспект</entry>
+		<entry line="2" id="29">Сенная площадь</entry>
+		<entry line="2" id="30">Технологический институт</entry>
+		<entry line="2" id="31">Фрунзенская</entry>
+		<entry line="2" id="32">Московские ворота</entry>
+		<entry line="2" id="33">Электросила</entry>
+		<entry line="2" id="34">Парк Победы</entry>
+		<entry line="2" id="35">Московская</entry>
+		<entry line="2" id="36">Звёздная</entry>
+		<entry line="2" id="37">Купчино</entry>
+		<entry line="3" id="38">Приморская</entry>
+		<entry line="3" id="39">Василеостровская</entry>
+		<entry line="3" id="40">Гостиный двор</entry>
+		<entry line="3" id="41">Маяковская</entry>
+		<entry line="3" id="42">Площадь Александра Невского</entry>
+		<entry line="3" id="43">Елизаровская</entry>
+		<entry line="3" id="44">Ломоносовская</entry>
+		<entry line="3" id="45">Пролетарская</entry>
+		<entry line="3" id="46">Обухово</entry>
+		<entry line="3" id="47">Рыбацкое</entry>
+		<entry line="4" id="48">Театральная</entry>
+		<entry line="4" id="49">Спасская</entry>
+		<entry line="4" id="50">Достоевская</entry>
+		<entry line="4" id="51">Лиговский проспект</entry>
+		<entry line="4" id="52">Площадь Александра Невского</entry>
+		<entry line="4" id="53">Новочеркасская</entry>
+		<entry line="4" id="54">Ладожская</entry>
+		<entry line="4" id="55">Проспект Большевиков</entry>
+		<entry line="4" id="56">Улица Дыбенко</entry>
+		<entry line="5" id="57">Комендантский проспект</entry>
+		<entry line="5" id="58">Старая Деревня</entry>
+		<entry line="5" id="59">Крестовский остров</entry>
+		<entry line="5" id="60">Чкаловская</entry>
+		<entry line="5" id="61">Спортивная</entry>
+		<entry line="5" id="62">Адмиралтейская</entry>
+		<entry line="5" id="63">Садовая</entry>
+		<entry line="5" id="64">Звенигородская</entry>
+		<entry line="5" id="65">Обводный канал</entry>
+		<entry line="5" id="66">Волковская</entry>
+		<entry line="5" id="67">Бухарестская</entry>
+		<entry line="5" id="68">Международная</entry>
+		<entry line="5" id="69">Проспект Славы</entry>
+		<entry line="5" id="70">Дунайская</entry>
+		<entry line="5" id="71">Шушары</entry>
+	</dic>
+</root>
+
+
