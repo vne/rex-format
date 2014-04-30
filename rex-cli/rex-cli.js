@@ -1,5 +1,6 @@
 #!/usr/local/bin/node
 
+// process command line arguments
 var argv = require('minimist')(process.argv.slice(2)),
 	fs = require('fs');
 
@@ -13,6 +14,7 @@ var exec = process.argv[1],
 	force = argv.force,
 	dir, indata, converter;
 
+// display help if needed
 if (argv.h || (!informat && !outformat)) {
 	console.log('Usage: %s [-f <input-format-name>|-t <output-format-name>]', exec);
 	console.log();
@@ -30,8 +32,7 @@ if (argv.h || (!informat && !outformat)) {
 	return;
 }
 
-if (!informat && !outformat) {
-}
+
 if (informat) {
 	dir = -1; // import
 	format = informat;
@@ -42,6 +43,7 @@ if (informat) {
 	console.log('Conversion from REX format to format %s', format);
 }
 
+// read data from file
 indata = fs.readFileSync(infile, { encoding: 'utf-8' });
 
 if (!indata) {
@@ -49,6 +51,7 @@ if (!indata) {
 }
 console.log('Input data length = %d read from %s', indata.length, infile);
 
+// try to load the converter
 try {
 	converter = require('./convert/' + format);
 } catch(e) {
@@ -57,9 +60,10 @@ try {
 console.log('Converter library found. Calling it now');
 console.log();
 
+// try to convert data
 var cresult, vresult;
 if (dir > 0) {
-	// export
+	// case of export
 	// no need to validate the input since it is in REX format and we
 	// assume that it is always valid for now :)
 	try {
@@ -71,7 +75,8 @@ if (dir > 0) {
 		return console.log('Converter has thrown an exception during export:', e);
 	}
 } else {
-	// import
+	// case of import
+	// first try to validate the data
 	try {
 		vresult = converter.validate({
 			data: indata,
@@ -80,13 +85,15 @@ if (dir > 0) {
 	} catch(e) {
 		return console.log('Converter has thrown an exception during validation:', e);
 	}
+	// if there were errors during validation, print them out
 	if (vresult) {
 		console.log('---------------------------------------');
 		console.log('Validation failed');
 		printErrors('validation', vresult);
 	}
 	if (!vresult || force) {
-		// validation is successfull or force is used
+		// validation was successfull or force is used
+		// do the conversion
 		try {
 			cresult = converter.import({
 				data: indata,
@@ -100,18 +107,21 @@ if (dir > 0) {
 if (cresult) {
 	// something was converted
 	console.log('---------------------------------------');
+	// errors first
 	if (!cresult.errors) {
 		console.log('Conversion OK');
 	} else {
 		console.log('There were errors during conversion');
 		printErrors('error', cresult.errors);
 	}
+	// print out metadata if there are some
 	if (cresult.meta) {
 		console.log('Conversion produced metadata for %d objects', cresult.meta.length);
 		if (verbose) {
 			printErrors('metadata', cresult.meta);
 		}
 	}
+	// write converted data to file or stdout
 	if (cresult.data) {
 		if (outfile) {
 			fs.writeFileSync(outfile, cresult.data, { encoding: 'utf-8' });
