@@ -266,6 +266,9 @@
                 <element name="type">
                   <ref name="TDic"/>
                 </element>
+                <element name="object">
+                  <ref name="TDic"/>
+                </element>
                 <optional>
                   <element name="desc">
                     <ref name="TComment"/>

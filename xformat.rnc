@@ -66,6 +66,7 @@ grammar {
 				}?
 			}? &
 			element type { TDic } &
+			element object { TDic } &
 			element desc { TComment }? &
 			element house {
 				element type { TDic }? &

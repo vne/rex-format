@@ -79,8 +79,10 @@
 						<lng>60.123235</lng>
 					</gps>
 				</location>
+				<!-- тип недвижимости -->
+				<type dic="estate_type" id="1">жилая</type>
 				<!-- тип объекта -->
-				<type dic="estate_type" id="1">квартира</type>
+				<object dic="object_type" id="1">квартира</object>
 				<!-- текстовое описание объекта -->
 				<desc>
 					<text><![CDATA[Тут может быть очень много текста]]></text>

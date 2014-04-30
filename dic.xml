@@ -12,7 +12,12 @@
 		<entry id="8">приватизация</entry>
 		<entry id="9">одобрение ипотеки</entry>
 	</dic>
-	<dic name="estate_type" comment="Тип объекта недвижимости">
+	<dic name="estate_type" comment="Тип недвижимости">
+		<entry id="1">жилая</entry>
+		<entry id="2">загородная</entry>
+		<entry id="3">коммерческая</entry>
+	</dic>
+	<dic name="object_type" comment="Тип объекта недвижимости">
 		<entry id="1">квартира</entry>
 		<entry id="2">комната</entry>
 		<entry id="3">дом</entry>
