@@ -18,15 +18,16 @@
 		<entry id="3">коммерческая</entry>
 	</dic>
 	<dic name="object_type" comment="Тип объекта недвижимости">
-		<entry id="1">квартира</entry>
-		<entry id="2">комната</entry>
-		<entry id="3">дом</entry>
-		<entry id="4">дача</entry>
-		<entry id="5">таунхаус</entry>
-		<entry id="6">коттедж</entry>
-		<entry id="7">земельный участок</entry>
-		<entry id="8">нежилое помещение</entry>
-		<entry id="9">нежилое здание</entry>
+		<!-- атрибут estate указывает на значение из словаря estate_type, для которого релевантна запись -->
+		<entry estate="1" id="1">квартира</entry>
+		<entry estate="1" id="2">комната</entry>
+		<entry estate="1,2" id="3">дом</entry>
+		<entry estate="2" id="4">дача</entry>
+		<entry estate="2" id="5">таунхаус</entry>
+		<entry estate="2" id="6">коттедж</entry>
+		<entry estate="2,3" id="7">земельный участок</entry>
+		<entry estate="3" id="8">нежилое помещение</entry>
+		<entry estate="3" id="9">нежилое здание</entry>
 	</dic>
 	<dic name="ready_status" comment="Этап строительства дома">
 		<entry id="1">строится</entry>
@@ -138,6 +139,7 @@
 		<entry id="15">реконструкция</entry>
 	</dic>
 	<dic name="district" comment="Район города">
+		<!-- атрибут fias указывает код в БД ФИАС и определяет принадлежность района к какому-то городу -->
 		<entry fias="7800000000000" id="1">Адмиралтейский</entry>
 		<entry fias="7800000000000" id="2">Василеостровский</entry>
 		<entry fias="7800000000000" id="3">Выборгский</entry>
@@ -158,6 +160,10 @@
 		<entry fias="7800000000000" id="18">Центральный</entry>
 	</dic>
 	<dic name="metro_station" comment="Станция метро">
+		<!--
+			атрибут line указывает на группы станций, к которым относится линия
+			атрибут exchange указывает на id станций на пересадках
+		-->
 		<entry line="1" id="1">Девяткино</entry>
 		<entry line="1" id="2">Гражданский проспект</entry>
 		<entry line="1" id="3">Академическая</entry>
@@ -167,10 +173,10 @@
 		<entry line="1" id="7">Выборгская</entry>
 		<entry line="1" id="8">Площадь Ленина</entry>
 		<entry line="1" id="9">Чернышевская</entry>
-		<entry line="1" id="10">Площадь Восстания</entry>
-		<entry line="1" id="11">Владимирская</entry>
-		<entry line="1" id="12">Пушкинская</entry>
-		<entry line="1" id="13">Технологический институт</entry>
+		<entry line="1" id="10" exchange="41">Площадь Восстания</entry>
+		<entry line="1" id="11" exchange="50">Владимирская</entry>
+		<entry line="1" id="12" exchange="64">Пушкинская</entry>
+		<entry line="1" id="13" exchange="30">Технологический институт</entry>
 		<entry line="1" id="14">Балтийская</entry>
 		<entry line="1" id="15">Нарвская</entry>
 		<entry line="1" id="16">Кировский завод</entry>
@@ -185,9 +191,9 @@
 		<entry line="2" id="25">Чёрная речка</entry>
 		<entry line="2" id="26">Петроградская</entry>
 		<entry line="2" id="27">Горьковская</entry>
-		<entry line="2" id="28">Невский проспект</entry>
-		<entry line="2" id="29">Сенная площадь</entry>
-		<entry line="2" id="30">Технологический институт</entry>
+		<entry line="2" id="28" exchange="40">Невский проспект</entry>
+		<entry line="2" id="29" exchange="49,63">Сенная площадь</entry>
+		<entry line="2" id="30" exchange="13">Технологический институт</entry>
 		<entry line="2" id="31">Фрунзенская</entry>
 		<entry line="2" id="32">Московские ворота</entry>
 		<entry line="2" id="33">Электросила</entry>
@@ -197,19 +203,19 @@
 		<entry line="2" id="37">Купчино</entry>
 		<entry line="3" id="38">Приморская</entry>
 		<entry line="3" id="39">Василеостровская</entry>
-		<entry line="3" id="40">Гостиный двор</entry>
-		<entry line="3" id="41">Маяковская</entry>
-		<entry line="3" id="42">Площадь Александра Невского</entry>
+		<entry line="3" id="40" exchange="28">Гостиный двор</entry>
+		<entry line="3" id="41" exchange="10">Маяковская</entry>
+		<entry line="3" id="42" exchange="52">Площадь Александра Невского</entry>
 		<entry line="3" id="43">Елизаровская</entry>
 		<entry line="3" id="44">Ломоносовская</entry>
 		<entry line="3" id="45">Пролетарская</entry>
 		<entry line="3" id="46">Обухово</entry>
 		<entry line="3" id="47">Рыбацкое</entry>
 		<entry line="4" id="48">Театральная</entry>
-		<entry line="4" id="49">Спасская</entry>
-		<entry line="4" id="50">Достоевская</entry>
+		<entry line="4" id="49" exchange="29,63">Спасская</entry>
+		<entry line="4" id="50" exchange="11">Достоевская</entry>
 		<entry line="4" id="51">Лиговский проспект</entry>
-		<entry line="4" id="52">Площадь Александра Невского</entry>
+		<entry line="4" id="52" exchange="42">Площадь Александра Невского</entry>
 		<entry line="4" id="53">Новочеркасская</entry>
 		<entry line="4" id="54">Ладожская</entry>
 		<entry line="4" id="55">Проспект Большевиков</entry>
@@ -220,8 +226,8 @@
 		<entry line="5" id="60">Чкаловская</entry>
 		<entry line="5" id="61">Спортивная</entry>
 		<entry line="5" id="62">Адмиралтейская</entry>
-		<entry line="5" id="63">Садовая</entry>
-		<entry line="5" id="64">Звенигородская</entry>
+		<entry line="5" id="63" exchange="29,49">Садовая</entry>
+		<entry line="5" id="64" exchange="12">Звенигородская</entry>
 		<entry line="5" id="65">Обводный канал</entry>
 		<entry line="5" id="66">Волковская</entry>
 		<entry line="5" id="67">Бухарестская</entry>
