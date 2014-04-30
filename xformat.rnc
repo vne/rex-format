@@ -6,130 +6,130 @@ grammar {
 		}
 	}
 	order = element order {
-		attribute id { idEl }? &
-		attribute ctm { timeEl }? &
-		attribute mtm { timeEl }? &
-		element title { stringEl }? &
-		element type { dicEl } &
+		attribute id { TID }? &
+		attribute ctm { TTimestamp }? &
+		attribute mtm { TTimestamp }? &
+		element title { TString }? &
+		element type { TDic } &
 		element price {
-			element full { rangeEl }? &
-			element per_meter { rangeEl }?
+			element full { TIntegerPos }? &
+			element per_meter { TIntegerPos }?
 		}? &
 		element rent {
-			element short { booleanEl }? &
-			element term { integerEl }? &
-			element pledge { integerEl }?
+			element short { TBoolean }? &
+			element term { TIntegerPos }? &
+			element pledge { TIntegerPos }?
 		}? &
 		element owner {
 			element agent {
 				attribute dic { text }? &
 				attribute id { text }? &
-				element name { stringEl }? &
-				element phone { stringEl }? &
-				element email { stringEl }?
+				element name { TString }? &
+				element phone { TString }? &
+				element email { TEmail }?
 			} &
-			element group { dicEl }? &
-			element company { dicEl }?
+			element group { TDic }? &
+			element company { TDic }?
 		}? &
-		element comment { commentEl }? &
+		element comment { TComment }? &
 		element mortgage {
-			element bank { dicEl }? &
-			element bank_approval { booleanEl }? &
-			element summ { integerEl }? &
-			element date { timeEl }? &
-			element borrower { stringEl }? &
-			element contract { stringEl }?
+			element bank { TDic }? &
+			element bank_approval { TBoolean }? &
+			element summ { TIntegerPos }? &
+			element date { TDate }? &
+			element borrower { TString }? &
+			element contract { TString }?
 		}? &
 		element safebox {
-			element bank { dicEl }? &
-			element date { timeEl }?
+			element bank { TDic }? &
+			element date { TDate }?
 		}? &
-		element subsidy { booleanEl }? &
+		element subsidy { TBoolean }? &
 		element estate {
-			attribute id { idEl }? &
-			attribute ctm { timeEl }? &
-			attribute mtm { timeEl }? &
+			attribute id { TID }? &
+			attribute ctm { TTimestamp }? &
+			attribute mtm { TTimestamp }? &
 			element location {
-				element string { stringEl }? &
-				element zip { stringEl }? &
-				element country { dicEl }? &
-				element region { dicEl }? &
-				element area { dicEl }? &
-				element city { dicEl }? &
-				element district { dicEl }? &
-				element street { dicEl }? &
-				element house { dicEl }? &
-				element flat { stringEl }? &
+				element string { TString }? &
+				element zip { TString }? &
+				element country { TDic }? &
+				element region { TDic }? &
+				element area { TDic }? &
+				element city { TDic }? &
+				element district { TDic }? &
+				element street { TDic }? &
+				element house { TDic }? &
+				element flat { TString }? &
 				element gps {
-					element lat { floatEl } &
-					element lng { floatEl }
+					element lat { TFloat } &
+					element lng { TFloat }
 				}?
 			}? &
-			element type { dicEl } &
-			element desc { commentEl }? &
+			element type { TDic } &
+			element desc { TComment }? &
 			element house {
-				element type { dicEl }? &
-				element series { dicEl }? &
-				element size { stringEl }? &
-				element build_date { stringEl }? &
-				element build_year { integerEl }? &
-				element build_quarter { integerEl }? &
-				element ready_status { dicEl }? &
-				element repair_year { integerEl }? &
+				element type { TDic }? &
+				element series { TDic }? &
+				element size { TString }? &
+				element build_date { TString }? &
+				element build_year { TIntegerPos }? &
+				element build_quarter { TIntegerPos }? &
+				element ready_status { TDic }? &
+				element repair_year { TIntegerPos }? &
 				element elite {
-					element name { stringEl }? &
-					element penthouse { booleanEl }? &
-					element townhouse { booleanEl }? &
-					element class { stringEl }? &
-					element settlement { stringEl }?
+					element name { TString }? &
+					element penthouse { TBoolean }? &
+					element townhouse { TBoolean }? &
+					element class { TString }? &
+					element settlement { TString }?
 				}?
 			}? &
 			element flat {
 				element space {
-					element total { rangeEl }? &
-					element living { rangeEl }? &
-					element kitchen { rangeEl }? &
-					element hall { rangeEl }? &
-					element desc { stringEl }?
+					element total { TFloat }? &
+					element living { TFloat }? &
+					element kitchen { TFloat }? &
+					element hall { TFloat }? &
+					element desc { TString }?
 				}? &
-				element height { floatEl }? &
-				element levels { integerEl }? &
+				element height { TFloat }? &
+				element levels { TIntegerPos }? &
 				element rooms {
-					element actual { integerEl }? &
-					element total { integerEl }?
+					element actual { TIntegerPos }? &
+					element total { TIntegerPos }?
 				}? &
-				element style { dicEl }? &
+				element style { TDic }? &
 				element storey {
-					element actual { integerEl }? &
-					element total { integerEl }? &
-					element type { dicEl }?
+					element actual { TIntegerPos }? &
+					element total { TIntegerPos }? &
+					element type { TDic }?
 				}? &
 				element elite {
-					element bedrooms { integerEl }? &
-					element bathrooms { integerEl }?
+					element bedrooms { TIntegerPos }? &
+					element bathrooms { TIntegerPos }?
 				}?
 			}? &
 			element plot {
-				element purpose { dicEl }? &
-				element space { rangeEl }? &
+				element purpose { TDic }? &
+				element space { TFloat }? &
 				element buildings {
-					element sauna { booleanEl }? &
-					element shed { booleanEl }? &
-					element garage { booleanEl }?
+					element sauna { TBoolean }? &
+					element shed { TBoolean }? &
+					element garage { TBoolean }?
 				}?
 			}? &
 			element commerce {
-				element purpose { dicEl } &
+				element purpose { TDic } &
 				element space {
-					element total { rangeEl }? &
-					element business { rangeEl }?
+					element total { TFloat }? &
+					element business { TFloat }?
 				}? &
-				element subrent { booleanEl }? &
+				element subrent { TBoolean }? &
 				element storey {
-					element actual { rangeEl }? &
-					element total { integerEl }?
+					element actual { TIntegerPos }? &
+					element total { TIntegerPos }?
 				}? &
-				element max_energy { integerEl }? &
+				element max_energy { TIntegerPos }? &
 				element phonelines {
 					attribute add { text } &
 					text
@@ -137,100 +137,112 @@ grammar {
 			}? &
 			element transport {
 				element car {
-					element distance { integerEl }? &
-					element time { integerEl }? &
-					element highway { stringEl }*
+					element distance { TFloat }? &
+					element time { TFloat }? &
+					element highway { TString }*
 				}? &
 				element railway {
-					element station { dicEl }? &
-					element distance { integerEl }? &
-					element time { integerEl }? &
-					element type { dicEl }?
+					element station { TDic }? &
+					element distance { TFloat }? &
+					element time { TFloat }? &
+					element type { TDic }?
 				}? &
 				element metro {
-					element station { dicEl }? &
-					element distance { integerEl }? &
-					element time { integerEl }? &
-					element type { dicEl }?
+					element station { TDic }? &
+					element distance { TFloat }? &
+					element time { TFloat }? &
+					element type { TDic }?
 				}?
 			}? &
 			element facilities {
-				element gas { booleanEl }? &
-				element bath { dicEl }? &
-				element sewer { dicEl }? &
-				element water { booleanEl }? &
-				element heating { dicEl }? &
-				element decoration { dicEl }? &
-				element balcony { dicEl }? &
-				element windows { dicEl }? &
-				element view { dicEl }? &
-				element floor { dicEl }? &
-				element electricity { booleanEl }? &
-				element concierge { booleanEl }? &
-				element fridge { booleanEl }? &
-				element washmachine { booleanEl }? &
-				element tv { booleanEl }? &
-				element aircon { booleanEl }? &
-				element garbage_chute { booleanEl }? &
-				element internet { booleanEl }? &
-				element parking { booleanEl }? &
-				element elevator { booleanEl }?
+				element gas { TBoolean }? &
+				element bath { TDic }? &
+				element sewer { TDic }? &
+				element water { TBoolean }? &
+				element heating { TDic }? &
+				element decoration { TDic }? &
+				element balcony { TDic }? &
+				element windows { TDic }? &
+				element view { TDic }? &
+				element floor { TDic }? &
+				element electricity { TBoolean }? &
+				element concierge { TBoolean }? &
+				element fridge { TBoolean }? &
+				element washmachine { TBoolean }? &
+				element tv { TBoolean }? &
+				element aircon { TBoolean }? &
+				element garbage_chute { TBoolean }? &
+				element internet { TBoolean }? &
+				element parking { TBoolean }? &
+				element elevator { TBoolean }?
 			}?
 		}? &
 		element meta {
-			element source { dicEl }? &
-			element imported { stringEl }? &
-			element url { stringEl }? &
-			element link { stringEl }? &
-			element extid { idEl }? &
+			element source { TDic }? &
+			element imported { TString }? &
+			element url { TURL }? &
+			element link { TURL }? &
+			element extid { TID }? &
 			element attachments {
 				element attachment {
-					element type { stringEl }? &
-					element url { stringEl }? &
-					element title { stringEl }? &
-					element mime { stringEl }? &
-					element size { integerEl }? &
-					element width { integerEl }? &
-					element height { integerEl }? &
-					element length { integerEl }?
+					element type { TString }? &
+					element url { TURL }? &
+					element title { TString }? &
+					element mime { TString }? &
+					element size { TIntegerPos }? &
+					element width { TIntegerPos }? &
+					element height { TIntegerPos }? &
+					element length { TIntegerPos }?
 				}+
 			}?
 		}?
 	}+
 
 
-	dicEl =
-		attribute dic { text }? &
-		attribute id { text } &
-		text
+	TDic =
+		xsd:string,
+		attribute dic { xsd:string }?,
+		attribute id { xsd:integer }?
 
-	rangeEl =
-		attribute max { text }? &
-		text
+	TInteger =
+		xsd:integer,
+		attribute max { xsd:integer }?
 
-	integerEl =
-		attribute max { text }? &
-		text
+	TIntegerPos =
+		xsd:positiveInteger,
+		attribute max { xsd:positiveInteger }?
 
-	floatEl =
-		attribute max { text }? &
-		text
+	TFloat =
+		xsd:decimal,
+		attribute max { xsd:decimal }?
 
-	booleanEl =
-		text
+	TBoolean =
+		"true" | "false"
 
-	stringEl =
-		text
+	TString =
+		xsd:string
 
-	timeEl =
-		text
+	TDate =
+		xsd:string { pattern = "[0-9]{1,2}.[0-9]{1,2}.[0-9]{2,4}" }
 
-	idEl =
-		text
+	TTime =
+		xsd:string { pattern = "[0-9]{1,2}:[0-9]{1,2}:?[0-9]{0,2}" }
 
-	commentEl =
-		element text { stringEl } &
-		element html { stringEl }? &
-		element short { stringEl }?
+	TTimestamp =
+		xsd:integer
+
+	TID =
+		xsd:string
+
+	TComment =
+		element text { text } &
+		element html { text }? &
+		element short { text }?
+
+	TEmail =
+		xsd:string
+
+	TURL =
+		xsd:string
 
 }

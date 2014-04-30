@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <start>
     <element name="root">
       <interleave>
@@ -16,38 +16,38 @@
         <interleave>
           <optional>
             <attribute name="id">
-              <ref name="idEl"/>
+              <ref name="TID"/>
             </attribute>
           </optional>
           <optional>
             <attribute name="ctm">
-              <ref name="timeEl"/>
+              <ref name="TTimestamp"/>
             </attribute>
           </optional>
           <optional>
             <attribute name="mtm">
-              <ref name="timeEl"/>
+              <ref name="TTimestamp"/>
             </attribute>
           </optional>
           <optional>
             <element name="title">
-              <ref name="stringEl"/>
+              <ref name="TString"/>
             </element>
           </optional>
           <element name="type">
-            <ref name="dicEl"/>
+            <ref name="TDic"/>
           </element>
           <optional>
             <element name="price">
               <interleave>
                 <optional>
                   <element name="full">
-                    <ref name="rangeEl"/>
+                    <ref name="TIntegerPos"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="per_meter">
-                    <ref name="rangeEl"/>
+                    <ref name="TIntegerPos"/>
                   </element>
                 </optional>
               </interleave>
@@ -58,17 +58,17 @@
               <interleave>
                 <optional>
                   <element name="short">
-                    <ref name="booleanEl"/>
+                    <ref name="TBoolean"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="term">
-                    <ref name="integerEl"/>
+                    <ref name="TIntegerPos"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="pledge">
-                    <ref name="integerEl"/>
+                    <ref name="TIntegerPos"/>
                   </element>
                 </optional>
               </interleave>
@@ -87,29 +87,29 @@
                     </optional>
                     <optional>
                       <element name="name">
-                        <ref name="stringEl"/>
+                        <ref name="TString"/>
                       </element>
                     </optional>
                     <optional>
                       <element name="phone">
-                        <ref name="stringEl"/>
+                        <ref name="TString"/>
                       </element>
                     </optional>
                     <optional>
                       <element name="email">
-                        <ref name="stringEl"/>
+                        <ref name="TEmail"/>
                       </element>
                     </optional>
                   </interleave>
                 </element>
                 <optional>
                   <element name="group">
-                    <ref name="dicEl"/>
+                    <ref name="TDic"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="company">
-                    <ref name="dicEl"/>
+                    <ref name="TDic"/>
                   </element>
                 </optional>
               </interleave>
@@ -117,7 +117,7 @@
           </optional>
           <optional>
             <element name="comment">
-              <ref name="commentEl"/>
+              <ref name="TComment"/>
             </element>
           </optional>
           <optional>
@@ -125,32 +125,32 @@
               <interleave>
                 <optional>
                   <element name="bank">
-                    <ref name="dicEl"/>
+                    <ref name="TDic"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="bank_approval">
-                    <ref name="booleanEl"/>
+                    <ref name="TBoolean"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="summ">
-                    <ref name="integerEl"/>
+                    <ref name="TIntegerPos"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="date">
-                    <ref name="timeEl"/>
+                    <ref name="TDate"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="borrower">
-                    <ref name="stringEl"/>
+                    <ref name="TString"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="contract">
-                    <ref name="stringEl"/>
+                    <ref name="TString"/>
                   </element>
                 </optional>
               </interleave>
@@ -161,12 +161,12 @@
               <interleave>
                 <optional>
                   <element name="bank">
-                    <ref name="dicEl"/>
+                    <ref name="TDic"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="date">
-                    <ref name="timeEl"/>
+                    <ref name="TDate"/>
                   </element>
                 </optional>
               </interleave>
@@ -174,7 +174,7 @@
           </optional>
           <optional>
             <element name="subsidy">
-              <ref name="booleanEl"/>
+              <ref name="TBoolean"/>
             </element>
           </optional>
           <optional>
@@ -182,17 +182,17 @@
               <interleave>
                 <optional>
                   <attribute name="id">
-                    <ref name="idEl"/>
+                    <ref name="TID"/>
                   </attribute>
                 </optional>
                 <optional>
                   <attribute name="ctm">
-                    <ref name="timeEl"/>
+                    <ref name="TTimestamp"/>
                   </attribute>
                 </optional>
                 <optional>
                   <attribute name="mtm">
-                    <ref name="timeEl"/>
+                    <ref name="TTimestamp"/>
                   </attribute>
                 </optional>
                 <optional>
@@ -200,62 +200,62 @@
                     <interleave>
                       <optional>
                         <element name="string">
-                          <ref name="stringEl"/>
+                          <ref name="TString"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="zip">
-                          <ref name="stringEl"/>
+                          <ref name="TString"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="country">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="region">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="area">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="city">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="district">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="street">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="house">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="flat">
-                          <ref name="stringEl"/>
+                          <ref name="TString"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="gps">
                           <interleave>
                             <element name="lat">
-                              <ref name="floatEl"/>
+                              <ref name="TFloat"/>
                             </element>
                             <element name="lng">
-                              <ref name="floatEl"/>
+                              <ref name="TFloat"/>
                             </element>
                           </interleave>
                         </element>
@@ -264,11 +264,11 @@
                   </element>
                 </optional>
                 <element name="type">
-                  <ref name="dicEl"/>
+                  <ref name="TDic"/>
                 </element>
                 <optional>
                   <element name="desc">
-                    <ref name="commentEl"/>
+                    <ref name="TComment"/>
                   </element>
                 </optional>
                 <optional>
@@ -276,42 +276,42 @@
                     <interleave>
                       <optional>
                         <element name="type">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="series">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="size">
-                          <ref name="stringEl"/>
+                          <ref name="TString"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="build_date">
-                          <ref name="stringEl"/>
+                          <ref name="TString"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="build_year">
-                          <ref name="integerEl"/>
+                          <ref name="TIntegerPos"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="build_quarter">
-                          <ref name="integerEl"/>
+                          <ref name="TIntegerPos"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="ready_status">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="repair_year">
-                          <ref name="integerEl"/>
+                          <ref name="TIntegerPos"/>
                         </element>
                       </optional>
                       <optional>
@@ -319,27 +319,27 @@
                           <interleave>
                             <optional>
                               <element name="name">
-                                <ref name="stringEl"/>
+                                <ref name="TString"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="penthouse">
-                                <ref name="booleanEl"/>
+                                <ref name="TBoolean"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="townhouse">
-                                <ref name="booleanEl"/>
+                                <ref name="TBoolean"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="class">
-                                <ref name="stringEl"/>
+                                <ref name="TString"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="settlement">
-                                <ref name="stringEl"/>
+                                <ref name="TString"/>
                               </element>
                             </optional>
                           </interleave>
@@ -356,27 +356,27 @@
                           <interleave>
                             <optional>
                               <element name="total">
-                                <ref name="rangeEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="living">
-                                <ref name="rangeEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="kitchen">
-                                <ref name="rangeEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="hall">
-                                <ref name="rangeEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="desc">
-                                <ref name="stringEl"/>
+                                <ref name="TString"/>
                               </element>
                             </optional>
                           </interleave>
@@ -384,12 +384,12 @@
                       </optional>
                       <optional>
                         <element name="height">
-                          <ref name="floatEl"/>
+                          <ref name="TFloat"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="levels">
-                          <ref name="integerEl"/>
+                          <ref name="TIntegerPos"/>
                         </element>
                       </optional>
                       <optional>
@@ -397,12 +397,12 @@
                           <interleave>
                             <optional>
                               <element name="actual">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="total">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                           </interleave>
@@ -410,7 +410,7 @@
                       </optional>
                       <optional>
                         <element name="style">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
@@ -418,17 +418,17 @@
                           <interleave>
                             <optional>
                               <element name="actual">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="total">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="type">
-                                <ref name="dicEl"/>
+                                <ref name="TDic"/>
                               </element>
                             </optional>
                           </interleave>
@@ -439,12 +439,12 @@
                           <interleave>
                             <optional>
                               <element name="bedrooms">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="bathrooms">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                           </interleave>
@@ -458,12 +458,12 @@
                     <interleave>
                       <optional>
                         <element name="purpose">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="space">
-                          <ref name="rangeEl"/>
+                          <ref name="TFloat"/>
                         </element>
                       </optional>
                       <optional>
@@ -471,17 +471,17 @@
                           <interleave>
                             <optional>
                               <element name="sauna">
-                                <ref name="booleanEl"/>
+                                <ref name="TBoolean"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="shed">
-                                <ref name="booleanEl"/>
+                                <ref name="TBoolean"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="garage">
-                                <ref name="booleanEl"/>
+                                <ref name="TBoolean"/>
                               </element>
                             </optional>
                           </interleave>
@@ -494,19 +494,19 @@
                   <element name="commerce">
                     <interleave>
                       <element name="purpose">
-                        <ref name="dicEl"/>
+                        <ref name="TDic"/>
                       </element>
                       <optional>
                         <element name="space">
                           <interleave>
                             <optional>
                               <element name="total">
-                                <ref name="rangeEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="business">
-                                <ref name="rangeEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                           </interleave>
@@ -514,7 +514,7 @@
                       </optional>
                       <optional>
                         <element name="subrent">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
@@ -522,12 +522,12 @@
                           <interleave>
                             <optional>
                               <element name="actual">
-                                <ref name="rangeEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="total">
-                                <ref name="integerEl"/>
+                                <ref name="TIntegerPos"/>
                               </element>
                             </optional>
                           </interleave>
@@ -535,7 +535,7 @@
                       </optional>
                       <optional>
                         <element name="max_energy">
-                          <ref name="integerEl"/>
+                          <ref name="TIntegerPos"/>
                         </element>
                       </optional>
                       <optional>
@@ -557,17 +557,17 @@
                           <interleave>
                             <optional>
                               <element name="distance">
-                                <ref name="integerEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="time">
-                                <ref name="integerEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <zeroOrMore>
                               <element name="highway">
-                                <ref name="stringEl"/>
+                                <ref name="TString"/>
                               </element>
                             </zeroOrMore>
                           </interleave>
@@ -578,22 +578,22 @@
                           <interleave>
                             <optional>
                               <element name="station">
-                                <ref name="dicEl"/>
+                                <ref name="TDic"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="distance">
-                                <ref name="integerEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="time">
-                                <ref name="integerEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="type">
-                                <ref name="dicEl"/>
+                                <ref name="TDic"/>
                               </element>
                             </optional>
                           </interleave>
@@ -604,22 +604,22 @@
                           <interleave>
                             <optional>
                               <element name="station">
-                                <ref name="dicEl"/>
+                                <ref name="TDic"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="distance">
-                                <ref name="integerEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="time">
-                                <ref name="integerEl"/>
+                                <ref name="TFloat"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="type">
-                                <ref name="dicEl"/>
+                                <ref name="TDic"/>
                               </element>
                             </optional>
                           </interleave>
@@ -633,102 +633,102 @@
                     <interleave>
                       <optional>
                         <element name="gas">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="bath">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="sewer">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="water">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="heating">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="decoration">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="balcony">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="windows">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="view">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="floor">
-                          <ref name="dicEl"/>
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="electricity">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="concierge">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="fridge">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="washmachine">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="tv">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="aircon">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="garbage_chute">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="internet">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="parking">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="elevator">
-                          <ref name="booleanEl"/>
+                          <ref name="TBoolean"/>
                         </element>
                       </optional>
                     </interleave>
@@ -742,27 +742,27 @@
               <interleave>
                 <optional>
                   <element name="source">
-                    <ref name="dicEl"/>
+                    <ref name="TDic"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="imported">
-                    <ref name="stringEl"/>
+                    <ref name="TString"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="url">
-                    <ref name="stringEl"/>
+                    <ref name="TURL"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="link">
-                    <ref name="stringEl"/>
+                    <ref name="TURL"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="extid">
-                    <ref name="idEl"/>
+                    <ref name="TID"/>
                   </element>
                 </optional>
                 <optional>
@@ -772,42 +772,42 @@
                         <interleave>
                           <optional>
                             <element name="type">
-                              <ref name="stringEl"/>
+                              <ref name="TString"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="url">
-                              <ref name="stringEl"/>
+                              <ref name="TURL"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="title">
-                              <ref name="stringEl"/>
+                              <ref name="TString"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="mime">
-                              <ref name="stringEl"/>
+                              <ref name="TString"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="size">
-                              <ref name="integerEl"/>
+                              <ref name="TIntegerPos"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="width">
-                              <ref name="integerEl"/>
+                              <ref name="TIntegerPos"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="height">
-                              <ref name="integerEl"/>
+                              <ref name="TIntegerPos"/>
                             </element>
                           </optional>
                           <optional>
                             <element name="length">
-                              <ref name="integerEl"/>
+                              <ref name="TIntegerPos"/>
                             </element>
                           </optional>
                         </interleave>
@@ -822,66 +822,89 @@
       </element>
     </oneOrMore>
   </define>
-  <define name="dicEl">
-    <interleave>
-      <optional>
-        <attribute name="dic"/>
-      </optional>
-      <attribute name="id"/>
-      <text/>
-    </interleave>
+  <define name="TDic">
+    <data type="string"/>
+    <optional>
+      <attribute name="dic">
+        <data type="string"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="id">
+        <data type="integer"/>
+      </attribute>
+    </optional>
   </define>
-  <define name="rangeEl">
-    <interleave>
-      <optional>
-        <attribute name="max"/>
-      </optional>
-      <text/>
-    </interleave>
+  <define name="TInteger">
+    <data type="integer"/>
+    <optional>
+      <attribute name="max">
+        <data type="integer"/>
+      </attribute>
+    </optional>
   </define>
-  <define name="integerEl">
-    <interleave>
-      <optional>
-        <attribute name="max"/>
-      </optional>
-      <text/>
-    </interleave>
+  <define name="TIntegerPos">
+    <data type="positiveInteger"/>
+    <optional>
+      <attribute name="max">
+        <data type="positiveInteger"/>
+      </attribute>
+    </optional>
   </define>
-  <define name="floatEl">
-    <interleave>
-      <optional>
-        <attribute name="max"/>
-      </optional>
-      <text/>
-    </interleave>
+  <define name="TFloat">
+    <data type="decimal"/>
+    <optional>
+      <attribute name="max">
+        <data type="decimal"/>
+      </attribute>
+    </optional>
   </define>
-  <define name="booleanEl">
-    <text/>
+  <define name="TBoolean">
+    <choice>
+      <value>true</value>
+      <value>false</value>
+    </choice>
   </define>
-  <define name="stringEl">
-    <text/>
+  <define name="TString">
+    <data type="string"/>
   </define>
-  <define name="timeEl">
-    <text/>
+  <define name="TDate">
+    <data type="string">
+      <param name="pattern">[0-9]{1,2}.[0-9]{1,2}.[0-9]{2,4}</param>
+    </data>
   </define>
-  <define name="idEl">
-    <text/>
+  <define name="TTime">
+    <data type="string">
+      <param name="pattern">[0-9]{1,2}:[0-9]{1,2}:?[0-9]{0,2}</param>
+    </data>
   </define>
-  <define name="commentEl">
+  <define name="TTimestamp">
+    <data type="integer"/>
+  </define>
+  <define name="TID">
+    <data type="string"/>
+  </define>
+  <define name="TComment">
     <interleave>
       <element name="text">
-        <ref name="stringEl"/>
+        <text/>
       </element>
       <optional>
         <element name="html">
-          <ref name="stringEl"/>
+          <text/>
         </element>
       </optional>
       <optional>
         <element name="short">
-          <ref name="stringEl"/>
+          <text/>
         </element>
       </optional>
     </interleave>
+  </define>
+  <define name="TEmail">
+    <data type="string"/>
+  </define>
+  <define name="TURL">
+    <data type="string"/>
   </define>
 </grammar>
