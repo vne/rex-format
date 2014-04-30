@@ -1,0 +1,29 @@
+{
+  "name": "rex-cli",
+  "version": "0.0.1",
+  "description": "Simple CLI for REX format import and export testing",
+  "main": "rex-cli.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vne/rex-format"
+  },
+  "keywords": [
+    "rex",
+    "format",
+    "cli",
+    "testing",
+    "import",
+    "export"
+  ],
+  "author": "Vladimir Neverov <sanguini@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vne/rex-format/issues"
+  },
+  "dependencies": {
+    "minimist": "0.0.8"
+  }
+}
