@@ -295,5 +295,44 @@
 				</attachments>
 			</meta>
 		</order>
+		<order>
+			<title>Комплекс на Невском проспекте</title>
+			<type dic="order_type" id="2">продажа</type>
+			<group>
+				<type dic="group_type" id="1">жилой комплекс</type>
+				<members>
+					<order>
+						<type dic="order_type" id="2">продажа</type>
+						<price>
+							<full>2500000</full>
+						</price>
+						<estate>
+							<type dic="estate_type" id="1">жилая</type>
+							<object dic="object_type" id="1">квартира</object>
+							<flat>
+								<rooms>
+									<total>3</total>
+								</rooms>
+							</flat>
+						</estate>
+					</order>
+					<order>
+						<type dic="order_type" id="2">продажа</type>
+						<price>
+							<full>3500000</full>
+						</price>
+						<estate>
+							<type dic="estate_type" id="1">жилая</type>
+							<object dic="object_type" id="1">квартира</object>
+							<flat>
+								<rooms>
+									<total>4</total>
+								</rooms>
+							</flat>
+						</estate>
+					</order>
+				</members>
+			</group>
+		</order>
 	</orders>
 </root>

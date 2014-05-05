@@ -17,6 +17,11 @@
 		<entry id="2">загородная</entry>
 		<entry id="3">коммерческая</entry>
 	</dic>
+	<dic name="group_type" comment="Тип группы объектов">
+		<entry id="1">жилой комплекс</entry>
+		<entry id="2">коттеджный посёлок</entry>
+		<entry id="3">коммерческий комплекс</entry>
+	</dic>
 	<dic name="object_type" comment="Тип объекта недвижимости">
 		<!-- атрибут estate указывает на значение из словаря estate_type, для которого релевантна запись -->
 		<entry estate="1" id="1">квартира</entry>

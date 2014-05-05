@@ -15,6 +15,12 @@ grammar {
 			element full { TIntegerPos }? &
 			element per_meter { TIntegerPos }?
 		}? &
+		element group {
+			element type { TDic } &
+			element members {
+				order*
+			}?
+		}? &
 		element rent {
 			element short { TBoolean }? &
 			element term { TIntegerPos }? &

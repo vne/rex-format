@@ -54,6 +54,22 @@
             </element>
           </optional>
           <optional>
+            <element name="group">
+              <interleave>
+                <element name="type">
+                  <ref name="TDic"/>
+                </element>
+                <optional>
+                  <element name="members">
+                    <zeroOrMore>
+                      <ref name="order"/>
+                    </zeroOrMore>
+                  </element>
+                </optional>
+              </interleave>
+            </element>
+          </optional>
+          <optional>
             <element name="rent">
               <interleave>
                 <optional>
