@@ -67,9 +67,11 @@ if (dir > 0) {
 	// no need to validate the input since it is in REX format and we
 	// assume that it is always valid for now :)
 	try {
-		cresult = converter.export({
+		converter.export({
 			data: indata,
 			format: format
+		}, function(result) {
+			printResult(result);
 		});
 	} catch(e) {
 		return console.log('Converter has thrown an exception during export:', e);
@@ -78,61 +80,67 @@ if (dir > 0) {
 	// case of import
 	// first try to validate the data
 	try {
-		vresult = converter.validate({
+		converter.validate({
 			data: indata,
 			format: format
+		}, function(vresult) {
+			// if there were errors during validation, print them out
+			if (vresult) {
+				console.log('---------------------------------------');
+				console.log('Validation failed');
+				printErrors('validation', vresult);
+			}
+			if (!vresult || force) {
+				// validation was successfull or force is used
+				// do the conversion
+				try {
+					converter.import({
+						data: indata,
+						format: format
+					}, function(result) {
+						printResult(result);
+					});
+				} catch(e) {
+					return console.log('Converter has thrown an exception during import:', e);
+				}
+			}
 		});
 	} catch(e) {
 		return console.log('Converter has thrown an exception during validation:', e);
 	}
-	// if there were errors during validation, print them out
-	if (vresult) {
-		console.log('---------------------------------------');
-		console.log('Validation failed');
-		printErrors('validation', vresult);
-	}
-	if (!vresult || force) {
-		// validation was successfull or force is used
-		// do the conversion
-		try {
-			cresult = converter.import({
-				data: indata,
-				format: format
-			});
-		} catch(e) {
-			return console.log('Converter has thrown an exception during import:', e);
-		}
-	}
 }
-if (cresult) {
-	// something was converted
-	console.log('---------------------------------------');
-	// errors first
-	if (!cresult.errors) {
-		console.log('Conversion OK');
-	} else {
-		console.log('There were errors during conversion');
-		printErrors('error', cresult.errors);
-	}
-	// print out metadata if there are some
-	if (cresult.meta) {
-		console.log('Conversion produced metadata for %d objects', cresult.meta.length);
-		if (verbose) {
-			printErrors('metadata', cresult.meta);
-		}
-	}
-	// write converted data to file or stdout
-	if (cresult.data) {
-		if (outfile) {
-			fs.writeFileSync(outfile, cresult.data, { encoding: 'utf-8' });
+
+function printResult(cresult) {
+	if (cresult) {
+		// something was converted
+		console.log('---------------------------------------');
+		// errors first
+		if (!cresult.errors) {
+			console.log('Conversion OK');
 		} else {
-			console.log(cresult.data);
+			console.log('There were errors during conversion');
+			printErrors('error', cresult.errors);
+		}
+		// print out metadata if there are some
+		if (cresult.meta) {
+			console.log('Conversion produced metadata for %d objects', cresult.meta.length);
+			if (verbose) {
+				printErrors('metadata', cresult.meta);
+			}
+		}
+		// write converted data to file or stdout
+		if (cresult.data) {
+			if (outfile) {
+				fs.writeFileSync(outfile, cresult.data, { encoding: 'utf-8' });
+			} else {
+				console.log(cresult.data);
+			}
+		} else {
+			console.log('No data was returned');
 		}
 	} else {
-		console.log('No data was returned');
+		console.log('Conversion failed');
 	}
-} else {
-	console.log('Conversion failed');
 }
 
 function printErrors(prefix, errors) {
