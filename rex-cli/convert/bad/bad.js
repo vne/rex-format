@@ -6,6 +6,7 @@ module.exports = {
 	export: function(task, callback) {
 		// task.data is something
 		// task.format === 'bad'
+		// task.log is the logging function
 		callback({
 			data: task.data,
 			from: 'rex',
@@ -20,6 +21,7 @@ module.exports = {
 	import: function(task, callback) {
 		// task.data is something
 		// task.format === 'bad'
+		// task.log is the logging function
 		callback({
 			data: task.data,
 			from: task.format,
@@ -34,6 +36,7 @@ module.exports = {
 	validate: function(task, callback) {
 		// task.data is something
 		// task.format === 'bad'
+		// task.log is the logging function
 		callback([
 			{ id: 10, error: 'Указано некорректное значение для цены объекта' },
 			{ id: 20, error: 'Минимальное количество комнат больше максимального' }

@@ -12,7 +12,7 @@ var exec = process.argv[1],
 	outformat = argv.t,
 	verbose = argv.v,
 	force = argv.force,
-	dir, indata, converter;
+	dir, indata, converter, log;
 
 // display help if needed
 if (argv.h || (!informat && !outformat)) {
@@ -60,6 +60,15 @@ try {
 console.log('Converter library found. Calling it now');
 console.log();
 
+log = function() {
+	console.log.apply(console, Array.prototype.slice.call(arguments, 0));
+};
+log.error = log;
+log.alert = log;
+log.info = log;
+log.debug = log;
+log.progress = log;
+
 // try to convert data
 var cresult, vresult;
 if (dir > 0) {
@@ -69,7 +78,8 @@ if (dir > 0) {
 	try {
 		converter.export({
 			data: indata,
-			format: format
+			format: format,
+			log: log
 		}, function(result) {
 			printResult(result);
 		});
@@ -82,7 +92,8 @@ if (dir > 0) {
 	try {
 		converter.validate({
 			data: indata,
-			format: format
+			format: format,
+			log: log
 		}, function(vresult) {
 			// if there were errors during validation, print them out
 			if (vresult) {
@@ -96,7 +107,8 @@ if (dir > 0) {
 				try {
 					converter.import({
 						data: indata,
-						format: format
+						format: format,
+						log: log
 					}, function(result) {
 						printResult(result);
 					});
