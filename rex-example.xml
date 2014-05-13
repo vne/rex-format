@@ -199,14 +199,10 @@
 				</transport>
 				<!-- удобства, фишки и инфраструктура -->
 				<facilities>
-					<!-- газоснабжение -->
-					<gas>true</gas>
 					<!-- тип ванной -->
 					<bath dic="bath_type" id="2">джакузи</bath>
 					<!-- тип санузла -->
 					<sewer dic="sewer_type" id="2">на улице</sewer>
-					<!-- тип водоснабжения -->
-					<water>true</water>
 					<!-- тип отопления -->
 					<heating dic="heating_type" id="2">джакузи</heating>
 					<!-- тип отделки -->
@@ -219,6 +215,10 @@
 					<view dic="view_type" id="10">на озеро</view>
 					<!-- тип напольного покрытия -->
 					<floor dic="floor_type" id="11">ламинат</floor>
+					<!-- газоснабжение -->
+					<gas>true</gas>
+					<!-- тип водоснабжения -->
+					<water>true</water>
 					<!-- наличие электричества -->
 					<electricity>true</electricity>
 					<!-- наличие консьержа -->
