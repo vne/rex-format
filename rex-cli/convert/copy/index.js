@@ -7,7 +7,7 @@ module.exports = {
 		// task.data is in REX format
 		// task.format === 'copy'
 		// task.log is the logging function
-		callback({
+		callback(null, {
 			data: task.data,
 			from: 'rex',
 			to: task.format,
@@ -19,7 +19,7 @@ module.exports = {
 		// task.data is something
 		// task.format === 'null'
 		// task.log is the logging function
-		callback({
+		callback(null, {
 			data: task.data,
 			from: task.format,
 			to: 'rex',

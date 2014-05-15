@@ -80,7 +80,8 @@ if (dir > 0) {
 			data: indata,
 			format: format,
 			log: log
-		}, function(result) {
+		}, function(err, result) {
+			if (err) { return console.log('An error occured during export: ', err); }
 			printResult(result);
 		});
 	} catch(e) {
@@ -94,7 +95,8 @@ if (dir > 0) {
 			data: indata,
 			format: format,
 			log: log
-		}, function(vresult) {
+		}, function(err, vresult) {
+			if (err) { return console.log('An error occured during validation: ', err); }
 			// if there were errors during validation, print them out
 			if (vresult) {
 				console.log('---------------------------------------');
@@ -109,7 +111,8 @@ if (dir > 0) {
 						data: indata,
 						format: format,
 						log: log
-					}, function(result) {
+					}, function(err, result) {
+						if (err) { return console.log('An error occured during import: ', err); }
 						printResult(result);
 					});
 				} catch(e) {

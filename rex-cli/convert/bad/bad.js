@@ -7,7 +7,7 @@ module.exports = {
 		// task.data is something
 		// task.format === 'bad'
 		// task.log is the logging function
-		callback({
+		callback(null, {
 			data: task.data,
 			from: 'rex',
 			to: task.format,
@@ -22,7 +22,7 @@ module.exports = {
 		// task.data is something
 		// task.format === 'bad'
 		// task.log is the logging function
-		callback({
+		callback(null, {
 			data: task.data,
 			from: task.format,
 			to: 'rex',
@@ -37,7 +37,7 @@ module.exports = {
 		// task.data is something
 		// task.format === 'bad'
 		// task.log is the logging function
-		callback([
+		callback(null, [
 			{ id: 10, error: 'Указано некорректное значение для цены объекта' },
 			{ id: 20, error: 'Минимальное количество комнат больше максимального' }
 		]);
