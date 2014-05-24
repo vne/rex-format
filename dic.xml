@@ -2,52 +2,52 @@
 
 <root>
 	<dic name="order_type" comment="Тип операции с недвижимостью">
-		<entry id="1">покупка</entry>
-		<entry id="2">продажа</entry>
-		<entry id="3">съём</entry>
-		<entry id="4">сдача в аренду</entry>
-		<entry id="5">консультация</entry>
-		<entry id="6">сопровождение</entry>
-		<entry id="7">стоимость услуг</entry>
-		<entry id="8">приватизация</entry>
-		<entry id="9">одобрение ипотеки</entry>
+		<entry id="1" codename="purchase">покупка</entry>
+		<entry id="2" codename="sale">продажа</entry>
+		<entry id="3" codename="rent">съём</entry>
+		<entry id="4" codename="farming">сдача в аренду</entry>
+		<entry id="5" codename="consultation">консультация</entry>
+		<entry id="6" codename="escort">сопровождение</entry>
+		<entry id="7" codename="price">стоимость услуг</entry>
+		<entry id="8" codename="privatization">приватизация</entry>
+		<entry id="9" codename="mortgage">одобрение ипотеки</entry>
 	</dic>
 	<dic name="estate_type" comment="Тип недвижимости">
-		<entry id="1">жилая</entry>
-		<entry id="2">загородная</entry>
-		<entry id="3">коммерческая</entry>
+		<entry id="1" codename="living">жилая</entry>
+		<entry id="2" codename="country">загородная</entry>
+		<entry id="3" codename="commerce">коммерческая</entry>
 	</dic>
-	<dic name="group_type" comment="Тип группы объектов">
-		<entry id="1">жилой комплекс</entry>
-		<entry id="2">коттеджный посёлок</entry>
-		<entry id="3">коммерческий комплекс</entry>
-		<entry id="4">корпус жилого дома</entry>
+	<dic name="objectgroup_type" comment="Тип группы объектов">
+		<entry id="1" codename="complex">жилой комплекс</entry>
+		<entry id="2" codename="cottages">коттеджный посёлок</entry>
+		<entry id="3" codename="commerce">коммерческий комплекс</entry>
+		<entry id="4" codename="building">корпус жилого дома</entry>
 	</dic>
 	<dic name="object_type" comment="Тип объекта недвижимости">
 		<!-- атрибут estate указывает на значение из словаря estate_type, для которого релевантна запись -->
-		<entry estate="1" id="1">квартира</entry>
-		<entry estate="1" id="2">комната</entry>
-		<entry estate="1,2" id="3">дом</entry>
-		<entry estate="2" id="4">дача</entry>
-		<entry estate="2" id="5">таунхаус</entry>
-		<entry estate="2" id="6">коттедж</entry>
-		<entry estate="2,3" id="7">земельный участок</entry>
-		<entry estate="3" id="8">нежилое помещение</entry>
-		<entry estate="3" id="9">нежилое здание</entry>
+		<entry estate="1"   codename="flat"        id="1">квартира</entry>
+		<entry estate="1"   codename="room"        id="2">комната</entry>
+		<entry estate="1,2" codename="house"       id="3">дом</entry>
+		<entry estate="2"   codename="summer"      id="4">дача</entry>
+		<entry estate="2"   codename="townhouse"   id="5">таунхаус</entry>
+		<entry estate="2"   codename="cottage"     id="6">коттедж</entry>
+		<entry estate="2,3" codename="plot"        id="7">земельный участок</entry>
+		<entry estate="3"   codename="nr_flat"     id="8">нежилое помещение</entry>
+		<entry estate="3"   codename="nr_building" id="9">нежилое здание</entry>
 	</dic>
 	<dic name="ready_status" comment="Этап строительства дома">
-		<entry id="1">строится</entry>
-		<entry id="2">госкомиссия</entry>
-		<entry id="3">сдан</entry>
+		<entry id="1" codename="building">строится</entry>
+		<entry id="2" codename="commission">госкомиссия</entry>
+		<entry id="3" codename="done">сдан</entry>
 	</dic>
 	<dic name="after_transport" comment="Способ добраться до дома">
-		<entry id="1">пешком</entry>
-		<entry id="2">транспортом</entry>
+		<entry id="1" codename="afoot">пешком</entry>
+		<entry id="2" codename="transport">транспортом</entry>
 	</dic>
 	<dic name="balcony_type" comment="Тип балкона">
-		<entry id="1">нет</entry>
-		<entry id="2">лоджия</entry>
-		<entry id="3">балкон</entry>
+		<entry id="1" codename="no">нет</entry>
+		<entry id="2" codename="loggia">лоджия</entry>
+		<entry id="3" codename="balcony">балкон</entry>
 	</dic>
 	<dic name="storey_type" comment="Тип этажа">
 		<entry id="1">нормальный этаж</entry>
@@ -109,6 +109,7 @@
 		<entry id="2">ДНП</entry>
 		<entry id="3">ЛПХ</entry>
 		<entry id="4">садоводство</entry>
+		<entry id="5">фермерское хозяйство</entry>
 	</dic>
 	<dic name="purpose_type" comment="Целевое назначение коммерческого помещения">
 		<entry id="1">кафе</entry>
@@ -126,7 +127,7 @@
 		<entry id="4">монолитный</entry>
 		<entry id="5">панельный</entry>
 		<entry id="6">деревянный</entry>
-	</div>
+	</dic>
 	<dic name="house_series" comment="Серия дома">
 		<entry id="1">504</entry>
 		<entry id="2">600.11</entry>
@@ -242,6 +243,145 @@
 		<entry line="5" id="70">Дунайская</entry>
 		<entry line="5" id="71">Шушары</entry>
 	</dic>
+	<dic name="adv_constraint" comment="Тип ограничения на свойства объекта недвижимости">
+		<entry id="1">поле не пусто</entry>
+		<entry id="2">целое число</entry>
+		<entry id="3">вещественное число</entry>
+		<entry id="4">строка</entry>
+		<entry id="5">дата/дата и время</entry>
+	</dic>
+	<dic name="adv_payscheme" comment="Тип оплаты рекламы">
+		<entry id="1">бесплатно</entry>
+		<entry id="2">абонентская плата</entry>
+		<entry id="3">за каждый объект</entry>
+	</dic>
+	<dic name="call_media" comment="Способ контакта">
+		<entry id="1">звонок</entry>
+		<entry id="2">визит</entry>
+		<entry id="3">заявка с сайта</entry>
+		<entry id="4">онлайн-консультант</entry>
+		<entry id="5">электронная почта</entry>
+	</dic>
+	<dic name="client_interaction_type" comment="Тип взаимодействия с клиентом">
+		<entry id="1">Риэлтор</entry>
+		<entry id="2">HR-менеджер</entry>
+		<entry parent="1" id="3">повторный звонок</entry>
+		<entry parent="1" id="4">встреча на объекте для оценки</entry>
+		<entry parent="1" id="5">встреча в офисе</entry>
+		<entry parent="1" id="6">отправка информации на e-mail</entry>
+		<entry parent="2" id="7">повторный звонок</entry>
+		<entry parent="2" id="8">передан руководителю (ФИО, кому)</entry>
+		<entry parent="2" id="9">назначено собеседование</entry>
+		<entry parent="2" id="10">не отвечает</entry>
+		<entry parent="2" id="11">думает</entry>
+		<entry parent="2" id="12">отказ кандидата (причина)</entry>
+		<entry parent="2" id="13">отклонен нашим специалистом (причина)</entry>
+		<entry parent="2" id="14">переведён в другую группу</entry>
+	</dic>
+	<dic name="client_type" comment="Тип клиента">
+		<entry id="1">прямой</entry>
+		<entry id="2">посредник</entry>
+		<entry id="3">агент</entry>
+	</dic>
+	<dic name="contact_ownership" comment="Принадлежность контакта">
+		<entry id="1">мобильный</entry>
+		<entry id="2">домашний</entry>
+		<entry id="3">рабочий</entry>
+		<entry id="4">местный</entry>
+	</dic>
+	<dic name="contact_type" comment="Тип контакта">
+		<entry id="1">телефон</entry>
+		<entry id="2">EMail</entry>
+		<entry id="3">Skype</entry>
+		<entry id="4">Вконтакте</entry>
+		<entry id="5">Facebook</entry>
+		<entry id="6">Одноклассники</entry>
+		<entry id="7">веб-страница</entry>
+	</dic>
+	<dic name="contract_type" comment="Тип договора">
+		<entry id="1">предварительный договор купли-продажи</entry>
+		<entry id="2">договор на оказание информационных услуг</entry>
+		<entry id="3">договор комиссии</entry>
+		<entry id="4">договор на сопровождение сделки</entry>
+		<entry id="5">агентский договор</entry>
+		<entry id="6">договор аренды</entry>
+		<entry id="7">договор на одобрение ипотеки</entry>
+	</dic>
+	<dic name="idcard_type" comment="Тип удостоверения личности">
+		<entry id="1">паспорт РФ</entry>
+		<entry id="2">заграничный паспорт РФ</entry>
+		<entry id="3">паспорт моряка</entry>
+		<entry id="4">водительское удостоверение</entry>
+		<entry id="5">дипломатический паспорт РФ</entry>
+		<entry id="6">паспорт другого государства</entry>
+		<entry id="7">вид на жительство</entry>
+	</dic>
+	<dic name="marital_status" comment="Семейное положение">
+		<entry id="1">никогда не состоял (не состояла) в браке</entry>
+		<entry id="2">состоит в зарегистрированном браке</entry>
+		<entry id="3">состоит в незарегистрированном браке</entry>
+		<entry id="4">вдовец (вдова)</entry>
+		<entry id="5">разведен (разведена)</entry>
+		<entry id="6">разошелся (разошлась)</entry>
+	</dic>
+	<dic name="position" comment="Должность">
+		<entry id="1">обучающийся</entry>
+		<entry id="2">стажёр 0</entry>
+		<entry id="3">стажёр 1</entry>
+		<entry id="4">стажёр 2</entry>
+		<entry id="5">стажёр 3</entry>
+		<entry id="6">агент за штатом</entry>
+		<entry id="7">агент</entry>
+		<entry id="8">брокер</entry>
+		<entry id="9">куратор</entry>
+		<entry id="10">менеджер</entry>
+		<entry id="11">администратор аренды</entry>
+		<entry id="12">офис-менеджер</entry>
+		<entry id="13">диспетчер</entry>
+		<entry id="14">референт</entry>
+		<entry id="15">водитель</entry>
+		<entry id="16">завхоз</entry>
+		<entry id="17">юрист</entry>
+		<entry id="18">менеджер по персоналу</entry>
+		<entry id="19">инспектор по кадрам</entry>
+		<entry id="20">сотрудник службы</entry>
+		<entry id="21">сотрудник финансового отдела</entry>
+		<entry id="22">заместитель главного бухгалтера</entry>
+		<entry id="23">главный бухгалтер</entry>
+		<entry id="24">системный администратор</entry>
+		<entry id="25">начальник службы</entry>
+		<entry id="26">директор отделения</entry>
+		<entry id="27">директор по ИТ</entry>
+		<entry id="28">директор по организационному развитию</entry>
+		<entry id="29">финансовый директор</entry>
+		<entry id="30">председатель совета директоров</entry>
+		<entry id="31">президент</entry>
+	</dic>
+	<dic name="group_type" comment="Тип группы сотрудников">
+		<entry id="1">территориальное подразделение</entry>
+		<entry id="2">департамент</entry>
+		<entry id="3">администрация</entry>
+		<entry id="4">группа</entry>
+		<entry id="5">права доступа</entry>
+		<entry id="6">техническая группа</entry>
+	</dic>
+	<dic name="gender" comment="Пол">
+		<entry id="1">женский</entry>
+		<entry id="2">мужской</entry>
+	</dic>
+	<dic name="additional_terms" comment="Дополнительные условия сделки">
+		<entry id="1">доля</entry>
+		<entry id="2">ипотека</entry>
+		<entry id="3">кредит</entry>
+		<entry id="4">рента</entry>
+		<entry id="5">обмен</entry>
+		<entry id="6">городская программа</entry>
+		<entry id="7">рассрочка</entry>
+		<entry id="8">отягощение</entry>
+		<entry id="9">цессия</entry>
+		<entry id="10">субсидия</entry>
+		<entry id="11">материнский капитал</entry>
+    </dic>
 </root>
 
 
