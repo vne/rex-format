@@ -87,6 +87,16 @@
                     <ref name="TIntegerPos"/>
                   </element>
                 </optional>
+                <optional>
+                  <element name="tenants">
+                    <ref name="TIntegerPos"/>
+                  </element>
+                </optional>
+                <optional>
+                  <element name="neighbors">
+                    <ref name="TIntegerPos"/>
+                  </element>
+                </optional>
               </interleave>
             </element>
           </optional>
@@ -139,6 +149,11 @@
           <optional>
             <element name="mortgage">
               <interleave>
+                <zeroOrMore>
+                  <element name="term">
+                    <ref name="TDic"/>
+                  </element>
+                </zeroOrMore>
                 <optional>
                   <element name="bank">
                     <ref name="TDic"/>
@@ -186,11 +201,6 @@
                   </element>
                 </optional>
               </interleave>
-            </element>
-          </optional>
-          <optional>
-            <element name="subsidy">
-              <ref name="TBoolean"/>
             </element>
           </optional>
           <optional>
@@ -782,6 +792,11 @@
                 <optional>
                   <element name="extid">
                     <ref name="TID"/>
+                  </element>
+                </optional>
+                <optional>
+                  <element name="highlight">
+                    <text/>
                   </element>
                 </optional>
                 <optional>

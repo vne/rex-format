@@ -24,7 +24,9 @@ grammar {
 		element rent {
 			element short { TBoolean }? &
 			element term { TIntegerPos }? &
-			element pledge { TIntegerPos }?
+			element pledge { TIntegerPos }? &
+			element tenants { TIntegerPos }? &
+			element neighbors { TIntegerPos }?
 		}? &
 		element owner {
 			element agent {
@@ -39,6 +41,7 @@ grammar {
 		}? &
 		element comment { TComment }? &
 		element mortgage {
+			element term { TDic }* &
 			element bank { TDic }? &
 			element bank_approval { TBoolean }? &
 			element summ { TIntegerPos }? &
@@ -50,7 +53,6 @@ grammar {
 			element bank { TDic }? &
 			element date { TDate }?
 		}? &
-		element subsidy { TBoolean }? &
 		element estate {
 			attribute id { TID }? &
 			attribute ctm { TTimestamp }? &
@@ -190,6 +192,7 @@ grammar {
 			element url { TURL }? &
 			element link { TURL }? &
 			element extid { TID }? &
+			element highlight { text }? &
 			element attachments {
 				element attachment {
 					element type { TString }? &
