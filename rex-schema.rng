@@ -35,7 +35,7 @@
             </element>
           </optional>
           <element name="type">
-            <ref name="TDic"/>
+            <ref name="TRequiredDic"/>
           </element>
           <optional>
             <element name="price">
@@ -290,10 +290,10 @@
                   </element>
                 </optional>
                 <element name="type">
-                  <ref name="TDic"/>
+                  <ref name="TRequiredDic"/>
                 </element>
                 <element name="object">
-                  <ref name="TDic"/>
+                  <ref name="TRequiredDic"/>
                 </element>
                 <optional>
                   <element name="desc">
@@ -523,7 +523,7 @@
                   <element name="commerce">
                     <interleave>
                       <element name="purpose">
-                        <ref name="TDic"/>
+                        <ref name="TRequiredDic"/>
                       </element>
                       <optional>
                         <element name="space">
@@ -868,6 +868,17 @@
         <data type="integer"/>
       </attribute>
     </optional>
+  </define>
+  <define name="TRequiredDic">
+    <data type="string"/>
+    <optional>
+      <attribute name="dic">
+        <data type="string"/>
+      </attribute>
+    </optional>
+    <attribute name="id">
+      <data type="integer"/>
+    </attribute>
   </define>
   <define name="TInteger">
     <data type="integer"/>

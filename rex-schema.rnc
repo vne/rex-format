@@ -10,7 +10,7 @@ grammar {
 		attribute ctm { TTimestamp }? &
 		attribute mtm { TTimestamp }? &
 		element title { TString }? &
-		element type { TDic } &
+		element type { TRequiredDic } &
 		element price {
 			element full { TIntegerPos }? &
 			element per_meter { TIntegerPos }?
@@ -73,8 +73,8 @@ grammar {
 					element lng { TFloat }
 				}?
 			}? &
-			element type { TDic } &
-			element object { TDic } &
+			element type { TRequiredDic } &
+			element object { TRequiredDic } &
 			element desc { TComment }? &
 			element house {
 				element type { TDic }? &
@@ -128,7 +128,7 @@ grammar {
 				}?
 			}? &
 			element commerce {
-				element purpose { TDic } &
+				element purpose { TRequiredDic } &
 				element space {
 					element total { TFloat }? &
 					element business { TFloat }?
@@ -213,6 +213,11 @@ grammar {
 		xsd:string,
 		attribute dic { xsd:string }?,
 		attribute id { xsd:integer }?
+
+	TRequiredDic =
+		xsd:string,
+		attribute dic { xsd:string }?,
+		attribute id { xsd:integer }
 
 	TInteger =
 		xsd:integer,
