@@ -23,7 +23,7 @@ grammar {
 		}? &
 		element rent {
 			element short { TBoolean }? &
-			element term { TIntegerPos }? &
+			element term { TInteger }? &
 			element pledge { TIntegerPos }? &
 			element tenants { TIntegerPos }? &
 			element neighbors { TIntegerPos }?
@@ -109,8 +109,8 @@ grammar {
 				}? &
 				element style { TDic }? &
 				element storey {
-					element actual { TIntegerPos }? &
-					element total { TIntegerPos }? &
+					element actual { TInteger }? &
+					element total { TInteger }? &
 					element type { TDic }?
 				}? &
 				element elite {
@@ -135,12 +135,12 @@ grammar {
 				}? &
 				element subrent { TBoolean }? &
 				element storey {
-					element actual { TIntegerPos }? &
-					element total { TIntegerPos }?
+					element actual { TInteger }? &
+					element total { TInteger }?
 				}? &
 				element max_energy { TIntegerPos }? &
 				element phonelines {
-					attribute add { text } &
+					attribute add { text }? &
 					text
 				}?
 			}? &

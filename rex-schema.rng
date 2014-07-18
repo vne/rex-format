@@ -79,7 +79,7 @@
                 </optional>
                 <optional>
                   <element name="term">
-                    <ref name="TIntegerPos"/>
+                    <ref name="TInteger"/>
                   </element>
                 </optional>
                 <optional>
@@ -447,12 +447,12 @@
                           <interleave>
                             <optional>
                               <element name="actual">
-                                <ref name="TIntegerPos"/>
+                                <ref name="TInteger"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="total">
-                                <ref name="TIntegerPos"/>
+                                <ref name="TInteger"/>
                               </element>
                             </optional>
                             <optional>
@@ -551,12 +551,12 @@
                           <interleave>
                             <optional>
                               <element name="actual">
-                                <ref name="TIntegerPos"/>
+                                <ref name="TInteger"/>
                               </element>
                             </optional>
                             <optional>
                               <element name="total">
-                                <ref name="TIntegerPos"/>
+                                <ref name="TInteger"/>
                               </element>
                             </optional>
                           </interleave>
@@ -570,7 +570,9 @@
                       <optional>
                         <element name="phonelines">
                           <interleave>
-                            <attribute name="add"/>
+                            <optional>
+                              <attribute name="add"/>
+                            </optional>
                             <text/>
                           </interleave>
                         </element>
