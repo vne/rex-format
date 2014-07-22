@@ -2,7 +2,8 @@
 
 // process command line arguments
 var argv = require('minimist')(process.argv.slice(2)),
-	fs = require('fs');
+	fs = require('fs'),
+	path = require('path');
 
 var exec = process.argv[1],
 	infile = argv.i ? argv.i : '/dev/stdin', // will work only on Unix
@@ -12,7 +13,7 @@ var exec = process.argv[1],
 	outformat = argv.t,
 	verbose = argv.v,
 	force = argv.force,
-	dir, indata, converter, log;
+	dir, indata, converter, log, task;
 
 // display help if needed
 if (argv.h || (!informat && !outformat)) {
@@ -21,7 +22,7 @@ if (argv.h || (!informat && !outformat)) {
 	console.log('Arguments:');
 	console.log(' -i <file> - input file name. If not specified, STDIN is used');
 	console.log(' -o <file> - output file name. If not specified, STDOUT is used');
-	console.log(' -d <file> - name of the file with dictionaries. Reserved for the future');
+	console.log(' -d <file> - dictionary file. Converter may access this file as task.config.dicfile');
 	console.log(' -f <name> - format name, from which the conversion should be performed');
 	console.log(' -t <name> - format name, to which the conversion should be perform');
 	console.log(' -v        - be verbose and print metadata and other useless stuff');
@@ -69,6 +70,18 @@ log.info = log;
 log.debug = log;
 log.progress = log;
 
+task = {
+	data: indata,
+	format: format,
+	config: {
+		fetch: "file",
+		convert: format,
+		publish: "file",
+		dicfile: argv.d ? path.resolve(argv.d) : null
+	},
+	log: log
+}
+
 // try to convert data
 var cresult, vresult;
 if (dir > 0) {
@@ -76,11 +89,7 @@ if (dir > 0) {
 	// no need to validate the input since it is in REX format and we
 	// assume that it is always valid for now :)
 	try {
-		converter.export({
-			data: indata,
-			format: format,
-			log: log
-		}, function(err, result) {
+		converter.export(task, function(err, result) {
 			if (err) { return console.log('An error occured during export: ', err); }
 			printResult(result);
 		});
@@ -91,11 +100,7 @@ if (dir > 0) {
 	// case of import
 	// first try to validate the data
 	try {
-		converter.validate({
-			data: indata,
-			format: format,
-			log: log
-		}, function(err, vresult) {
+		converter.validate(task, function(err, vresult) {
 			if (err) { return console.log('An error occured during validation: ', err); }
 			// if there were errors during validation, print them out
 			if (vresult) {
@@ -107,11 +112,7 @@ if (dir > 0) {
 				// validation was successfull or force is used
 				// do the conversion
 				try {
-					converter.import({
-						data: indata,
-						format: format,
-						log: log
-					}, function(err, result) {
+					converter.import(task, function(err, result) {
 						if (err) { return console.log('An error occured during import: ', err); }
 						printResult(result);
 					});
