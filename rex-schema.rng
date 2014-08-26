@@ -753,6 +753,11 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="phone">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="parking">
                           <ref name="TBoolean"/>
                         </element>

@@ -182,6 +182,7 @@ grammar {
 				element aircon { TBoolean }? &
 				element garbage_chute { TBoolean }? &
 				element internet { TBoolean }? &
+				element phone { TBoolean }? &
 				element parking { TBoolean }? &
 				element elevator { TBoolean }?
 			}?

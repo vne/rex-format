@@ -246,6 +246,8 @@
 					<garbage_chute>true</garbage_chute>
 					<!-- наличие интернета или возможности его подключить -->
 					<internet>true</internet>
+					<!-- наличие телефона -->
+					<phone>true</phone>
 					<!-- наличие парковки -->
 					<parking>true</parking>
 					<!-- наличие лифта -->
