@@ -33,11 +33,21 @@
 			<owner>
 				<agent dic="employee" id="1260">
 					<name><![CDATA[Петрова Любовь Валентиновна]]></name>
-					<phone><![CDATA[8-921-123-45-67]]></phone>
-					<email><![CDATA[petrova@agentstvo.ru]]></email>
+					<!-- основной (первый) телефон -->
+					<phone dic="contact_ownership" id="1"><![CDATA[8-921-123-45-67]]></phone>
+					<!-- основной (первый) email -->
+					<email dic="contact_ownership" id="2"><![CDATA[petrova@agentstvo.ru]]></email>
+					<!-- дополнительные контакты -->
+					<additional>
+						<phone dic="contact_ownership" id="2"><![CDATA[123-45-67]]></phone>
+						<phone dic="contact_ownership" id="3"><![CDATA[987-34-65]]></phone>
+						<email dic="contact_ownership" id="3"><![CDATA[x@y.com]]></email>
+					</additional>
 				</agent>
 				<group dic="group" id="15">Группа вторичной недвижимости</group>
 				<company dic="company" id="28">Экотон</company>
+				<!-- сайт компании -->
+				<url>http://ecoton.spb.ru</url>
 			</owner>
 			<!-- текстовый комментарий, касающийся сделки -->
 			<comment>
@@ -234,6 +244,8 @@
 					<electricity>true</electricity>
 					<!-- наличие консьержа -->
 					<concierge>true</concierge>
+					<!-- наличие охраны -->
+					<guard>true</guard>
 					<!-- наличие холодильника -->
 					<fridge>true</fridge>
 					<!-- наличие стиральной машины -->
@@ -252,6 +264,8 @@
 					<parking>true</parking>
 					<!-- наличие лифта -->
 					<elevator>true</elevator>
+					<!-- наличие мебели -->
+					<furniture>true</furniture>
 				</facilities>
 			</estate>
 			<!-- метаданные об объекте и сделке -->

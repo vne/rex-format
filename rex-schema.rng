@@ -118,12 +118,28 @@
                     </optional>
                     <optional>
                       <element name="phone">
-                        <ref name="TString"/>
+                        <ref name="TDic"/>
                       </element>
                     </optional>
                     <optional>
                       <element name="email">
-                        <ref name="TEmail"/>
+                        <ref name="TDic"/>
+                      </element>
+                    </optional>
+                    <optional>
+                      <element name="additional">
+                        <interleave>
+                          <zeroOrMore>
+                            <element name="phone">
+                              <ref name="TDic"/>
+                            </element>
+                          </zeroOrMore>
+                          <zeroOrMore>
+                            <element name="email">
+                              <ref name="TDic"/>
+                            </element>
+                          </zeroOrMore>
+                        </interleave>
                       </element>
                     </optional>
                   </interleave>
@@ -136,6 +152,11 @@
                 <optional>
                   <element name="company">
                     <ref name="TDic"/>
+                  </element>
+                </optional>
+                <optional>
+                  <element name="url">
+                    <ref name="TString"/>
                   </element>
                 </optional>
               </interleave>
@@ -723,6 +744,11 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="guard">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="fridge">
                           <ref name="TBoolean"/>
                         </element>
@@ -764,6 +790,11 @@
                       </optional>
                       <optional>
                         <element name="elevator">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="furniture">
                           <ref name="TBoolean"/>
                         </element>
                       </optional>

@@ -33,11 +33,16 @@ grammar {
 				attribute dic { text }? &
 				attribute id { text }? &
 				element name { TString }? &
-				element phone { TString }? &
-				element email { TEmail }?
+				element phone { TDic }? &
+				element email { TDic }? &
+				element additional {
+					element phone { TDic }* &
+					element email { TDic }*
+				}?
 			} &
 			element group { TDic }? &
-			element company { TDic }?
+			element company { TDic }? &
+			element url { TString }?
 		}? &
 		element comment { TComment }? &
 		element mortgage {
@@ -176,6 +181,7 @@ grammar {
 				element floor { TDic }? &
 				element electricity { TBoolean }? &
 				element concierge { TBoolean }? &
+				element guard { TBoolean }? &
 				element fridge { TBoolean }? &
 				element washmachine { TBoolean }? &
 				element tv { TBoolean }? &
@@ -184,7 +190,8 @@ grammar {
 				element internet { TBoolean }? &
 				element phone { TBoolean }? &
 				element parking { TBoolean }? &
-				element elevator { TBoolean }?
+				element elevator { TBoolean }? &
+				element furniture { TBoolean }?
 			}?
 		}? &
 		element meta {
