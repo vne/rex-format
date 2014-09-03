@@ -67,6 +67,7 @@
 		<entry id="2">хорошая</entry>
 		<entry id="3">отличная</entry>
 		<entry id="4">отсутствует</entry>
+		<entry id="5">нужен ремонт</entry>
 	</dic>
 	<dic name="flat_style" comment="Тип планировки">
 		<entry id="1">изолированная</entry>
