@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:element name="flats">
+	<xs:complexType>
+	<xs:sequence>  
+
+	<xs:element name="flat" minOccurs="1" maxOccurs="unbounded">	
+	<xs:complexType>
+	  <xs:sequence> 
+
+		<xs:element name="id" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Уникальный идентификатор объекта. Для одного и того же объекта значение данного элемента не должно изменяться.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="date">
+			<xs:annotation>
+				<xs:documentation>Дата обновления состояния объекта, в формате 'DD.MM.YYYY', например: 12.02.2013</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-9]{2}.[0-9]{2}.[0-9]{4}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="actual">
+			<xs:annotation>
+				<xs:documentation>Актуальность объявления</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="продается"/>
+					<xs:enumeration value="аванс"/>
+					<xs:enumeration value="продана"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="aptp">
+			<xs:annotation>
+				<xs:documentation>Тип объекта</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="квартира"/>
+					<xs:enumeration value="комната"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="nova" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Является ли объект новостройкой или нет</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="+">
+						<xs:annotation>
+							<xs:documentation>Объект является новостройкой</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Объект не является новостройкой - вторичная недвижимость</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="region_geo">
+			<xs:annotation>
+				<xs:documentation>Регион объекта</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Санкт-Петербург"/>
+					<xs:enumeration value="Ленинградская область"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="area_geo" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Район Лен.области или район Санкт-Петербурга</xs:documentation>
+			</xs:annotation>
+		</xs:element> 
+
+		<xs:element name="place_geo" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Населенный пункт с указанием типа поселения после названия: г., д., пос. и.т.д.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="metro" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Название станции метро. Данный элемент обязателен и заполняется только для объектов по региону "Санкт-Петербург".</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:simpleContent>
+					<xs:extension base="xs:string">
+						<xs:attribute name="farval">
+							<xs:annotation>
+								<xs:documentation>Удаленность в минутах</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+									<xs:maxInclusive value="240"/> 
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="fartp"> 
+							<xs:annotation>
+								<xs:documentation>Тип удаленности объекта</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="п">
+										<xs:annotation>
+											<xs:documentation>Пешком</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+									<xs:enumeration value="т">
+										<xs:annotation>
+											<xs:documentation>Транспортом</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:extension>	  
+				</xs:simpleContent>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="address" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Улица с указанием ее типа после названия: ул., бул., проезд и т.д. 
+				Данный элемент обязателен только для объектов по региону "Санкт-Петербург", 
+				для объектов по региону "Ленинградская область" его заполнение желательно, но не обязательно.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="dom" type="xs:string" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Номер дома, корпуса.</xs:documentation>
+			</xs:annotation>
+		</xs:element> 
+
+		<xs:element name="price"> 
+			<xs:annotation>
+				<xs:documentation>Стоимость объекта</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:simpleContent> 
+					<xs:extension base="xs:integer">
+						<xs:attribute name="currency" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="RUB"/>
+									<xs:enumeration value="USD"/>
+									<xs:enumeration value="EUR"/>
+								</xs:restriction>		
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:extension>	
+				</xs:simpleContent>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="flats">
+			<xs:annotation>
+				<xs:documentation>Количество комнат в квартире (всего).</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="20"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="rooms" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Количество продаваемых комнат в квартире. Обязательный элемент только если тип объекта "комната".</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:maxInclusive value="19"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="sq">
+			<xs:complexType>
+				<xs:attribute name="pl_ob" use="required">
+					<xs:annotation>
+						<xs:documentation>Всегда общая площадь всей квартиры</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="12"/>
+							<xs:maxInclusive value="2500"/> 
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="pl">
+					<xs:annotation>
+						<xs:documentation>Жилая площадь, если тип объекта "квартира"  или площадь продаваемой комнаты, если тип объекта "комната"</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="3"/>
+							<xs:maxInclusive value="2000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="kitch"> 
+					<xs:annotation>
+						<xs:documentation>Площадь кухни</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:maxInclusive value="500"/> 
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="pl_r" type="xs:string"> 
+					<xs:annotation>
+						<xs:documentation>Разбивка площади по комнатам</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="floor">
+			<xs:annotation>
+				<xs:documentation>Этаж, на котором расположен объект.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="127"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="fl_ob">
+			<xs:annotation>
+				<xs:documentation>Этажность строения, в котором расположен объект.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="127"/> 
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="tip" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Тип дома</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Б">
+						<xs:annotation>
+							<xs:documentation>Блочный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="П">
+						<xs:annotation>
+							<xs:documentation>Панельный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="К">
+						<xs:annotation>
+							<xs:documentation>Кирпичный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="С">
+						<xs:annotation>
+							<xs:documentation>Сталинский</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="М">
+						<xs:annotation>
+							<xs:documentation>Монолитный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Э">
+						<xs:annotation>
+							<xs:documentation>Элитный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="МК">
+						<xs:annotation>
+							<xs:documentation>Монолитно-Кирпичный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="БП">
+						<xs:annotation>
+							<xs:documentation>Блочно-Панельный</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="lift" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Тип лифта</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="без лифта"/>
+					<xs:enumeration value="лифт"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="musor" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Тип мусоропровода</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="без мусоропровода"/>
+					<xs:enumeration value="мусоропровод"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="balkon" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Наличие балконов, лоджий</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Балкон/лоджия отсутствует</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Б">
+						<xs:annotation>
+							<xs:documentation>Один балкон</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Л">
+						<xs:annotation>
+							<xs:documentation>Одна лоджия</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Эрк">
+						<xs:annotation>
+							<xs:documentation>Эркер</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ЭркЛ">
+						<xs:annotation>
+							<xs:documentation>Эркер и лоджия</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="БЛ">
+						<xs:annotation>
+							<xs:documentation>Балкон и лоджия</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2Б">
+						<xs:annotation>
+							<xs:documentation>Два балкона</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2Л">
+						<xs:annotation>
+							<xs:documentation>Две лоджии</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3Б">
+						<xs:annotation>
+							<xs:documentation>Три балкона</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3Л">
+						<xs:annotation>
+							<xs:documentation>Три лоджии</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="4Л">
+						<xs:annotation>
+							<xs:documentation>Четыре и более лоджий</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Б2Л">
+						<xs:annotation>
+							<xs:documentation>Балкон и две лоджии</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2Б2Л">
+						<xs:annotation>
+							<xs:documentation>Два балкона и две лоджии</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="san" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Наличие санузла</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Нет санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="+">
+						<xs:annotation>
+							<xs:documentation>Есть санузел</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2">
+						<xs:annotation>
+							<xs:documentation>Два санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3">
+						<xs:annotation>
+							<xs:documentation>Три санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="4">
+						<xs:annotation>
+							<xs:documentation>Четыре санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="С">
+						<xs:annotation>
+							<xs:documentation>Совмещенный санузел</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Р">
+						<xs:annotation>
+							<xs:documentation>Раздельный санузел</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2С">
+						<xs:annotation>
+							<xs:documentation>Два совмещенных санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2Р">
+						<xs:annotation>
+							<xs:documentation>Два раздельных санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3С">
+						<xs:annotation>
+							<xs:documentation>Три совмещенных санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="3Р">
+						<xs:annotation>
+							<xs:documentation>Три раздельных санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="4С">
+						<xs:annotation>
+							<xs:documentation>Четыре совмещенных санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="4Р">
+						<xs:annotation>
+							<xs:documentation>Четыре раздельных санузла</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="okna" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Тип окон</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="окна на улицу"/>
+					<xs:enumeration value="окна во двор"/>
+					<xs:enumeration value="окна во двор и на улицу"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="pol" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Тип полов</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Не определен</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Д">
+						<xs:annotation>
+							<xs:documentation>Дерево</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="п/д">
+						<xs:annotation>
+							<xs:documentation>Паркетная доска</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ЛМ">
+						<xs:annotation>
+							<xs:documentation>Ламинат</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="К">
+						<xs:annotation>
+							<xs:documentation>Ковролин</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="П">
+						<xs:annotation>
+							<xs:documentation>Паркет</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="ЛН">
+						<xs:annotation>
+							<xs:documentation>Линолеум</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Стяж">
+						<xs:annotation>
+							<xs:documentation>Стяжка пола</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="remont" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Состояние объекта (ремонт)</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="требуется капитальный ремонт"/>
+					<xs:enumeration value="плохое состояние"/>
+					<xs:enumeration value="без отделки"/>
+					<xs:enumeration value="требуется ремонт"/>
+					<xs:enumeration value="среднее состояние"/>
+					<xs:enumeration value="хорошее состояние"/>
+					<xs:enumeration value="сделан ремонт"/>
+					<xs:enumeration value="отличное состояние"/>
+					<xs:enumeration value="евроремонт"/>
+					<xs:enumeration value="эксклюзивный евроремонт"/>
+					<xs:enumeration value="первичная отделка"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="tel" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Наличие телефонной линии</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Нет телефонной линии</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Т">
+						<xs:annotation>
+							<xs:documentation>Есть телефонная линия</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="2Т">
+						<xs:annotation>
+							<xs:documentation>Две и более телефонные линии</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="status" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Статус, тип сделки, операции</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="прямая продажа"/>
+					<xs:enumeration value="альтернатива"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="ipoteka" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Возможность покупки по ипотеке</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Нет возможности покупки по ипотеке</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="+">
+						<xs:annotation>
+							<xs:documentation>Ипотека возможна</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="telefon">
+			<xs:annotation>
+				<xs:documentation>Номера телефонов для контактов в формате "8xxxxxxxxxx" или "7xxxxxxxxxx". В списке значения разделяются символом ";"</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\d{11}(;\d{11})*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="email" type="xs:string" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>E-mail для контактов. В списке значения разделяются символом ";"</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="company_url" type="xs:anyURI" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>URL сайта агентства</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="object_url" type="xs:anyURI" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>URL карточки объекта на сайте агентства.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="photos" type="xs:anyURI" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Список URL фотографий объекта. В списке значения разделяются символом ";"</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="remark" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Дополнительная информация об объекте. Значение данного элемента необходимо указывать в секции <![CDATA[...]]></xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="10000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element> 
+
+	  </xs:sequence>
+	</xs:complexType>
+	</xs:element>
+	</xs:sequence>
+	</xs:complexType>
+
+		<xs:key name="uniqueID">
+			<xs:selector xpath="flat"/>
+			<xs:field xpath="id"/>
+		</xs:key>
+
+</xs:element>
+
+</xs:schema>

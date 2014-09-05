@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:element name="region_commercial">
+	<xs:complexType>
+	<xs:sequence>  
+
+	<xs:element name="region_commercial" minOccurs="1" maxOccurs="unbounded">	
+	<xs:complexType>
+	  <xs:sequence>
+
+		<xs:element name="id" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Уникальный идентификатор объекта. Для одного и того же объекта значение данного элемента не должно изменяться.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="date">
+			<xs:annotation>
+				<xs:documentation>Дата обновления состояния объекта, в формате 'DD.MM.YYYY', например: 12.02.2013</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[0-9]{2}.[0-9]{2}.[0-9]{4}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="actual">
+			<xs:annotation>
+				<xs:documentation>Актуальность объявления</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="продается/арендуется"/>
+					<xs:enumeration value="аванс/задаток"/>
+					<xs:enumeration value="продана/арендована"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="aptp">
+  			<xs:annotation>
+				<xs:documentation>Тип объекта</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Офис"/>
+					<xs:enumeration value="Магазин"/>
+					<xs:enumeration value="Склад"/>
+					<xs:enumeration value="Иное"/>
+					<xs:enumeration value="Бизнес-центр"/>
+					<xs:enumeration value="Торговый центр"/>
+					<xs:enumeration value="Производственно-промышленное помещение"/>
+					<xs:enumeration value="Предприятие питания"/>
+					<xs:enumeration value="ПСН"/>
+					<xs:enumeration value="ОСЗ"/>
+					<xs:enumeration value="Гостиница"/>
+					<xs:enumeration value="Земельный участок"/>
+					<xs:enumeration value="Автомойка"/>
+					<xs:enumeration value="Автосервис"/>
+					<xs:enumeration value="Ателье"/>
+					<xs:enumeration value="Гараж. комплекс"/>
+					<xs:enumeration value="Медцентр"/>
+					<xs:enumeration value="Парикмахерская"/>
+					<xs:enumeration value="Стоматология"/>
+					<xs:enumeration value="Турфирма"/>
+					<xs:enumeration value="Учеб. цели"/>
+					<xs:enumeration value="Фотоателье"/>
+					<xs:enumeration value="Химчистка"/>
+					<xs:enumeration value="Офисное здание"/>
+					<xs:enumeration value="Торговая площадь"/>
+					<xs:enumeration value="Промышленные земли"/>
+					<xs:enumeration value="Сельхоз. земли"/>
+					<xs:enumeration value="Банк"/>
+					<xs:enumeration value="Кафе/Ресторан"/>
+					<xs:enumeration value="Инвестиционный проект"/>
+					<xs:enumeration value="Готовый бизнес"/>
+					<xs:enumeration value="База отдыха/Лагерь"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		
+		<xs:element name="optp">
+  			<xs:annotation>
+				<xs:documentation>Тип операции</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="аренда"/>
+					<xs:enumeration value="продажа"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="region_geo" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Регион (область, край, республика и т.д.).</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="area_geo" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Район области (края, республики и т.д.).</xs:documentation>
+			</xs:annotation>
+		</xs:element>	
+
+		<xs:element name="place_geo" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Населенный пункт.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="address" type="xs:string" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Улица с указанием ее типа после названия: ул., бул., проезд и т.д. 
+				Заполнение данного элемента не обязательно, но желательно.</xs:documentation>
+			</xs:annotation>
+		</xs:element>	
+
+		<xs:element name="dom" type="xs:string" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Номер дома, корпуса.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="price"> 
+			<xs:annotation>
+				<xs:documentation>Цена за весь объект (НЕ за кв.м)</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:simpleContent> 
+					<xs:extension base="xs:integer">
+						<xs:attribute name="currency" use="required">
+							<xs:annotation>
+								<xs:documentation>Тип валюты, в которой указана стоимость объекта</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="RUB"/>
+									<xs:enumeration value="USD"/>
+									<xs:enumeration value="EUR"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:extension>	
+				</xs:simpleContent>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="factor" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Период оплаты за весь объект</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="в год"/>
+					<xs:enumeration value="в месяц"/>
+					<xs:enumeration value="в квартал"/>
+					<xs:enumeration value="в сутки"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="price_sq" minOccurs="0"> 
+			<xs:annotation>
+				<xs:documentation>Цена за весь объект (НЕ за кв.м)</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:simpleContent> 
+					<xs:extension base="xs:integer">
+						<xs:attribute name="currency" use="required">
+							<xs:annotation>
+								<xs:documentation>Тип валюты, в которой указана стоимость объекта</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="RUB"/>
+									<xs:enumeration value="USD"/>
+									<xs:enumeration value="EUR"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:extension>	
+				</xs:simpleContent>
+			</xs:complexType>
+		</xs:element>		
+
+		<xs:element name="factor_sq" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Период оплаты за площадь за кв.м.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="в год"/>
+					<xs:enumeration value="в месяц"/>
+					<xs:enumeration value="в квартал"/>
+					<xs:enumeration value="в сутки"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="sq">
+			<xs:annotation>
+				<xs:documentation>Площадь объекта</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:attribute name="pl_min">
+					<xs:annotation>
+						<xs:documentation>Минимальная площадь</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="5"/> 
+							<xs:maxInclusive value="214000000"/> 
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="pl_max">
+					<xs:annotation>
+						<xs:documentation>Максимальная площадь</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="5"/>
+							<xs:maxInclusive value="214000000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="floor">
+			<xs:annotation>
+				<xs:documentation>Этаж, на котором расположен объект.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="127"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="fl_ob">
+			<xs:annotation>
+				<xs:documentation>Этажность строения, в котором расположен объект.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="127"/> 
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="park" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Парковка</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="+">
+						<xs:annotation>
+							<xs:documentation>Есть парковка</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Нет парковки</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="ohrana" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Охрана</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="+">
+						<xs:annotation>
+							<xs:documentation>Есть охрана</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="-">
+						<xs:annotation>
+							<xs:documentation>Нет охраны</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="telefon">
+			<xs:annotation>
+				<xs:documentation>Номера телефонов для контактов в формате "8xxxxxxxxxx" или "7xxxxxxxxxx". В списке значения разделяются символом ";"</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\d{11}(;\d{11})*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="email" type="xs:string" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>E-mail для контактов. В списке значения разделяются символом ";"</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="company_url" type="xs:anyURI" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>URL сайта агентства</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="object_url" type="xs:anyURI" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>URL карточки объекта на сайте агентства.</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="photos" type="xs:anyURI" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Список URL фотографий объекта. В списке значения разделяются символом ";"</xs:documentation>
+			</xs:annotation>
+		</xs:element>
+
+		<xs:element name="remark" minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Дополнительная информация об объекте. Значение данного элемента необходимо указывать в секции <![CDATA[...]]></xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="10000"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+	  </xs:sequence>
+	</xs:complexType>
+	</xs:element>
+	</xs:sequence>
+	</xs:complexType>
+
+		<xs:key name="uniqueID">
+			<xs:selector xpath="region_commercial"/>
+			<xs:field    xpath="id"/>
+		</xs:key>
+
+</xs:element>
+
+</xs:schema>

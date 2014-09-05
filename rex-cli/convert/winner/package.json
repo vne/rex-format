@@ -1,0 +1,16 @@
+{
+  "name": "imex-convert-winner",
+  "version": "0.0.1",
+  "description": "REX -> Winner converter for imex (ollon) project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vladimir Neverov <sanguini@gmail.com>",
+  "license": "Closed license, you must contact the author to gain a written permission to use this code",
+  "dependencies": {
+    "traverse": "~0.6.6",
+    "moment": "~2.8.2",
+    "object-path": "~0.6.0"
+  }
+}
