@@ -3,7 +3,9 @@
 // process command line arguments
 var argv = require('minimist')(process.argv.slice(2)),
 	fs = require('fs'),
-	path = require('path');
+	path = require('path'),
+	ErrorHandler = require('errh'),
+	rexstat = require('rex-stat');
 
 var exec = process.argv[1],
 	infile = argv.i ? argv.i : '/dev/stdin', // will work only on Unix
@@ -13,6 +15,7 @@ var exec = process.argv[1],
 	outformat = argv.t,
 	verbose = argv.v,
 	force = argv.force,
+	stat: new rexstat(),
 	dir, indata, converter, log, task;
 
 // display help if needed
@@ -79,7 +82,9 @@ task = {
 		publish: "file",
 		dicfile: argv.d ? path.resolve(argv.d) : null
 	},
-	log: log
+	log: log,
+	error: new ErrorHandler(format, "convert"),
+	stat: stat
 }
 
 // try to convert data
