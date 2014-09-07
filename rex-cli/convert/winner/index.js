@@ -608,8 +608,8 @@ function false_is(x, tr) {
 }
 
 /*
-    return string 'false' if first argument is equal to second (case-insensitive and
-	with stripping of spaces) and 'true' otherwise
+    return string 'true' if first argument is equal to second (case-insensitive and
+	with stripping of spaces) and 'false' otherwise
  */
 function bool_is(x, tr) {
 	if (!x && !tr && x === tr) { return 'true'; }
