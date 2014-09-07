@@ -15,7 +15,7 @@ var exec = process.argv[1],
 	outformat = argv.t,
 	verbose = argv.v,
 	force = argv.force,
-	stat: new rexstat(),
+	stat = new rexstat(),
 	dir, indata, converter, log, task;
 
 // display help if needed
