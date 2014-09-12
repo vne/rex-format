@@ -510,7 +510,11 @@ function exportOrder(task, order, dic) {
 		if (!flat.fl_ob) { ok = false; task.error.fatal(oid, "Missing total number of floors"); }
 		if (!flat.sq.$.pl_ob) { ok = false; task.error.fatal(oid, "Missing total flat space"); }
 		if (!flat.flats) { ok = false; task.error.fatal(oid, "Missing full number of rooms in flat (flats)"); }
-		if ((zint(op(order, "type.0.$.id")) === 2) && !flat.rooms) { ok = false; task.error.fatal(oid, "Missing actual number of rooms in flat (flats)"); }
+		if (
+			(zint(op(order, "type.0.$.id")) === 2) &&             // sell
+			(zint(op(order, "estate.0.object.0.$.id")) === 2) &&  // room
+			!flat.rooms
+			) { ok = false; task.error.fatal(oid, "Missing actual number of rooms in flat (flats)"); }
 	} else if (is_rent) {
 		if (!flat.price._) { ok = false; task.error.fatal(oid, "Missing price (price)"); }
 		if (!flat.flats) { ok = false; task.error.fatal(oid, "Missing full number of rooms in flat (flats)"); }
