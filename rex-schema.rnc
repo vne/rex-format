@@ -12,8 +12,8 @@ grammar {
 		element title { TString }? &
 		element type { TRequiredDic } &
 		element price {
-			element full { TIntegerPos }? &
-			element per_meter { TIntegerPos }?
+			element full { TPrice }? &
+			element per_meter { TPrice }?
 		}? &
 		element group {
 			element type { TDic } &
@@ -234,6 +234,12 @@ grammar {
 	TIntegerPos =
 		xsd:positiveInteger,
 		attribute max { xsd:positiveInteger }?
+
+	TPrice =
+		xsd:positiveInteger,
+		attribute max { xsd:positiveInteger }?,
+		attribute currency { xsd:string }?
+
 
 	TFloat =
 		xsd:decimal,

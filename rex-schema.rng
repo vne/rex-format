@@ -42,12 +42,12 @@
               <interleave>
                 <optional>
                   <element name="full">
-                    <ref name="TIntegerPos"/>
+                    <ref name="TPrice"/>
                   </element>
                 </optional>
                 <optional>
                   <element name="per_meter">
-                    <ref name="TIntegerPos"/>
+                    <ref name="TPrice"/>
                   </element>
                 </optional>
               </interleave>
@@ -931,6 +931,19 @@
     <optional>
       <attribute name="max">
         <data type="positiveInteger"/>
+      </attribute>
+    </optional>
+  </define>
+  <define name="TPrice">
+    <data type="positiveInteger"/>
+    <optional>
+      <attribute name="max">
+        <data type="positiveInteger"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="currency">
+        <data type="string"/>
       </attribute>
     </optional>
   </define>

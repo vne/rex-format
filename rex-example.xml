@@ -13,8 +13,8 @@
 			<type dic="order_type" id="1">продажа</type>
 			<!-- стоимость: full - продажа или аренда, per_meter - за кв.м., rent_period - за какой период указана стоимость аренды -->
 			<price>
-				<full max="3250000">2500000</full>
-				<per_meter>12500</per_meter>
+				<full max="3250000" currency="RUR">2500000</full>
+				<per_meter currency="USD">12500</per_meter>
 			</price>
 			<!-- аренда -->
 			<rent>

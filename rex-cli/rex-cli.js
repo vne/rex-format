@@ -16,7 +16,33 @@ var exec = process.argv[1],
 	verbose = argv.v,
 	force = argv.force,
 	stat = new rexstat(),
+	currencies = {
+		RUR: 1,
+		EUR: 48,
+		USD: 37
+	},
 	dir, indata, converter, log, task;
+
+var currency = {};
+currency.rate = function(name) {
+	if (!name || !name.toUpperCase) { return 1; }
+	name = name.toUpperCase().trim();
+	return currencies[name] ? currencies[name] : null;
+};
+currency.to = function(name, value) {
+	var rate = currency.rate(name),
+		v = parseFloat(value);
+	if (!rate || rate === 1) { return value; }
+	if (isNaN(v) || !v) { return v; }
+	return v / rate;
+}
+currency.from = function(name, value) {
+	var rate = currency.rate(name),
+		v = parseFloat(value);
+	if (!rate || rate === 1) { return value; }
+	if (isNaN(v) || !v) { return v; }
+	return v * rate;
+}
 
 // display help if needed
 if (argv.h || (!informat && !outformat)) {
@@ -84,7 +110,8 @@ task = {
 	},
 	log: log,
 	error: new ErrorHandler(format, "convert"),
-	stat: stat
+	stat: stat,
+	currency: currency
 }
 
 // try to convert data
