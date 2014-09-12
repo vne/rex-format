@@ -47,7 +47,7 @@
 				<group dic="group" id="15">Группа вторичной недвижимости</group>
 				<company dic="company" id="28">Экотон</company>
 				<!-- сайт компании -->
-				<url>http://ecoton.spb.ru</url>
+				<url><![CDATA[http://ecoton.spb.ru]]></url>
 			</owner>
 			<!-- текстовый комментарий, касающийся сделки -->
 			<comment>
