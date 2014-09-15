@@ -15,6 +15,7 @@
  - схема Relax NG для проверки валидности XML ([rex-schema.rnc](rex-schema.rnc) и [rex-schema.rng](rex-schema.rng))
  - файл со словарями, на которые ссылаются словарные элементы в XML ([dic.xml](dic.xml))
  - пример программы, запускающей преобразование из командной строки, описание API, которое должны реализовывать модули преобразования и примитивные примеры таких модулей ([rex-cli](rex-cli))
+ - рабочий [пример конвертера](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner) для формата [Winner](https://baza-winner.ru/winner/support/xml-template.html)
 
 О терминах и названиях
 ----------------------
