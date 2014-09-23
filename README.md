@@ -15,6 +15,13 @@
  - схема Relax NG для проверки валидности XML ([rex-schema.rnc](rex-schema.rnc) и [rex-schema.rng](rex-schema.rng))
  - файл со словарями, на которые ссылаются словарные элементы в XML ([dic.xml](dic.xml))
  - пример программы, запускающей преобразование из командной строки, описание API, которое должны реализовывать модули преобразования и примитивные примеры таких модулей ([rex-cli](rex-cli))
+ - рабочий [пример конвертера](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner) для формата [Winner](https://baza-winner.ru/winner/support/xml-template.html)
+ - несколько вспомогательных библиотек, либо упрощающих жизнь при написании конвертера, либо использующихся во фреймворке, который эти конвертеры запускает:
+   - [errh](https://github.com/vne/rex-format/blob/master/rex-cli/node_modules/errh) - коллекционирование ошибок
+   - [rex-stat](https://github.com/vne/rex-format/blob/master/rex-cli/node_modules/rex-stat) - сбор статистики об обработанных объектах недвижимости
+   - [Dicset](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner/node_modules/Dicset) - работа со словарями для преобразования данных
+   - [Saxmlp](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner/node_modules/saxmlp) - обёртка для XML-парсера, позволяющая вешать обработчики на XPath-выражения, и умеющая, к тому же, валидацию XML по XSD-схемам
+   - [js2xml](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner/node_modules/js2xml) - преобразование объектов Javascript в XML (функциональность, аналогичная xml2js Builder, в будущем, вероятно, будет упразднена)
 
 О терминах и названиях
 ----------------------
