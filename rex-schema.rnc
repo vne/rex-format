@@ -35,6 +35,7 @@ grammar {
 				element name { TString }? &
 				element phone { TDic }? &
 				element email { TDic }? &
+				element contact { TString }? &
 				element additional {
 					element phone { TDic }* &
 					element email { TDic }*
@@ -104,6 +105,8 @@ grammar {
 					element living { TFloat }? &
 					element kitchen { TFloat }? &
 					element hall { TFloat }? &
+					element bath { TFloat }? &
+					element wc { TFloat }? &
 					element desc { TString }?
 				}? &
 				element height { TFloat }? &

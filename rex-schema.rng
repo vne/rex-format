@@ -127,6 +127,11 @@
                       </element>
                     </optional>
                     <optional>
+                      <element name="contact">
+                        <ref name="TString"/>
+                      </element>
+                    </optional>
+                    <optional>
                       <element name="additional">
                         <interleave>
                           <zeroOrMore>
@@ -421,6 +426,16 @@
                             </optional>
                             <optional>
                               <element name="hall">
+                                <ref name="TFloat"/>
+                              </element>
+                            </optional>
+                            <optional>
+                              <element name="bath">
+                                <ref name="TFloat"/>
+                              </element>
+                            </optional>
+                            <optional>
+                              <element name="wc">
                                 <ref name="TFloat"/>
                               </element>
                             </optional>

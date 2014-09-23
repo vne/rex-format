@@ -37,6 +37,8 @@
 					<phone dic="contact_ownership" id="1"><![CDATA[8-921-123-45-67]]></phone>
 					<!-- основной (первый) email -->
 					<email dic="contact_ownership" id="2"><![CDATA[petrova@agentstvo.ru]]></email>
+					<!-- контактная информация в произвольном виде (в основном - для импорта) -->
+					<contact><![CDATA[по понедельникам и пятницам жду вас у метро Василеостровская, одета в чёрное пальто и траурную рамку]]></contact>
 					<!-- дополнительные контакты -->
 					<additional>
 						<phone dic="contact_ownership" id="2"><![CDATA[123-45-67]]></phone>
@@ -136,6 +138,8 @@
 						<living max="180">150</living>
 						<kitchen>25</kitchen>
 						<hall>30</hall>
+						<bath>10</bath>
+						<wc>3</wc>
 						<desc><![CDATA[25+30+(11+12)+14]]></desc>
 					</space>
 					<!-- высота потолков -->
