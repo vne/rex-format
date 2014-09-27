@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="orders"/>
+      </xs:sequence>
+      <xs:attribute name="rev" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="orders">
+    <xs:complexType>
+      <xs:group ref="order"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="order">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="order"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="order">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="title"/>
+        <xs:element name="type" type="TRequiredDic"/>
+        <xs:element minOccurs="0" ref="price"/>
+        <xs:element minOccurs="0" name="group">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="type" type="TDic"/>
+              <xs:element minOccurs="0" ref="members"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" ref="rent"/>
+        <xs:element minOccurs="0" ref="owner"/>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:element minOccurs="0" ref="mortgage"/>
+        <xs:element minOccurs="0" ref="safebox"/>
+        <xs:element minOccurs="0" ref="estate"/>
+        <xs:element minOccurs="0" ref="meta"/>
+      </xs:all>
+      <xs:attribute name="id" type="TID"/>
+      <xs:attribute name="ctm" type="TTimestamp"/>
+      <xs:attribute name="mtm" type="TTimestamp"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="TString"/>
+  <xs:element name="price">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="full"/>
+        <xs:element minOccurs="0" ref="per_meter"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="full" type="TPrice"/>
+  <xs:element name="per_meter" type="TPrice"/>
+  <xs:element name="members">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="order"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rent">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="short" type="TBoolean"/>
+        <xs:element minOccurs="0" name="term" type="TInteger"/>
+        <xs:element minOccurs="0" ref="pledge"/>
+        <xs:element minOccurs="0" ref="tenants"/>
+        <xs:element minOccurs="0" ref="neighbors"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pledge" type="TIntegerPos"/>
+  <xs:element name="tenants" type="TIntegerPos"/>
+  <xs:element name="neighbors" type="TIntegerPos"/>
+  <xs:element name="owner">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="agent"/>
+        <xs:element minOccurs="0" name="group" type="TDic"/>
+        <xs:element minOccurs="0" ref="company"/>
+        <xs:element minOccurs="0" name="url" type="TString"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agent">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="name"/>
+        <xs:element minOccurs="0" name="phone" type="TDic"/>
+        <xs:element minOccurs="0" ref="email"/>
+        <xs:element minOccurs="0" ref="contact"/>
+        <xs:element minOccurs="0" ref="additional"/>
+      </xs:all>
+      <xs:attribute name="dic"/>
+      <xs:attribute name="id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="TString"/>
+  <xs:element name="email" type="TDic"/>
+  <xs:element name="contact" type="TString"/>
+  <xs:element name="additional">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="phone" type="TDic"/>
+        <xs:element ref="email"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="company" type="TDic"/>
+  <xs:element name="comment" type="TComment"/>
+  <xs:element name="mortgage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="term" type="TDic"/>
+        <xs:element ref="bank"/>
+        <xs:element ref="bank_approval"/>
+        <xs:element ref="summ"/>
+        <xs:element ref="date"/>
+        <xs:element ref="borrower"/>
+        <xs:element ref="contract"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bank" type="TDic"/>
+  <xs:element name="bank_approval" type="TBoolean"/>
+  <xs:element name="summ" type="TIntegerPos"/>
+  <xs:element name="date" type="TDate"/>
+  <xs:element name="borrower" type="TString"/>
+  <xs:element name="contract" type="TString"/>
+  <xs:element name="safebox">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="bank"/>
+        <xs:element minOccurs="0" ref="date"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="estate">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="location"/>
+        <xs:element name="type" type="TRequiredDic"/>
+        <xs:element ref="object"/>
+        <xs:element minOccurs="0" name="desc" type="TComment"/>
+        <xs:element minOccurs="0" name="house">
+          <xs:complexType>
+            <xs:all>
+              <xs:element minOccurs="0" name="type" type="TDic"/>
+              <xs:element minOccurs="0" ref="series"/>
+              <xs:element minOccurs="0" name="size" type="TString"/>
+              <xs:element minOccurs="0" ref="build_date"/>
+              <xs:element minOccurs="0" ref="build_year"/>
+              <xs:element minOccurs="0" ref="build_quarter"/>
+              <xs:element minOccurs="0" ref="ready_status"/>
+              <xs:element minOccurs="0" ref="repair_year"/>
+              <xs:element minOccurs="0" name="elite">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" ref="name"/>
+                    <xs:element minOccurs="0" ref="penthouse"/>
+                    <xs:element minOccurs="0" ref="townhouse"/>
+                    <xs:element minOccurs="0" ref="class"/>
+                    <xs:element minOccurs="0" ref="settlement"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="flat">
+          <xs:complexType>
+            <xs:all>
+              <xs:element minOccurs="0" name="space">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" name="total" type="TFloat"/>
+                    <xs:element minOccurs="0" ref="living"/>
+                    <xs:element minOccurs="0" ref="kitchen"/>
+                    <xs:element minOccurs="0" ref="hall"/>
+                    <xs:element minOccurs="0" name="bath" type="TFloat"/>
+                    <xs:element minOccurs="0" ref="wc"/>
+                    <xs:element minOccurs="0" name="desc" type="TString"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="height" type="TFloat"/>
+              <xs:element minOccurs="0" ref="levels"/>
+              <xs:element minOccurs="0" ref="rooms"/>
+              <xs:element minOccurs="0" ref="style"/>
+              <xs:element minOccurs="0" name="storey">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" name="actual" type="TInteger"/>
+                    <xs:element minOccurs="0" name="total" type="TInteger"/>
+                    <xs:element minOccurs="0" name="type" type="TDic"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="elite">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" ref="bedrooms"/>
+                    <xs:element minOccurs="0" ref="bathrooms"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" ref="plot"/>
+        <xs:element minOccurs="0" ref="commerce"/>
+        <xs:element minOccurs="0" ref="transport"/>
+        <xs:element minOccurs="0" ref="facilities"/>
+      </xs:all>
+      <xs:attribute name="id" type="TID"/>
+      <xs:attribute name="ctm" type="TTimestamp"/>
+      <xs:attribute name="mtm" type="TTimestamp"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="location">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="string"/>
+        <xs:element minOccurs="0" ref="zip"/>
+        <xs:element minOccurs="0" ref="country"/>
+        <xs:element minOccurs="0" ref="region"/>
+        <xs:element minOccurs="0" ref="area"/>
+        <xs:element minOccurs="0" ref="city"/>
+        <xs:element minOccurs="0" ref="district"/>
+        <xs:element minOccurs="0" ref="street"/>
+        <xs:element minOccurs="0" name="house" type="TDic"/>
+        <xs:element minOccurs="0" name="flat" type="TString"/>
+        <xs:element minOccurs="0" ref="gps"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="string" type="TString"/>
+  <xs:element name="zip" type="TString"/>
+  <xs:element name="country" type="TDic"/>
+  <xs:element name="region" type="TDic"/>
+  <xs:element name="area" type="TDic"/>
+  <xs:element name="city" type="TDic"/>
+  <xs:element name="district" type="TDic"/>
+  <xs:element name="street" type="TDic"/>
+  <xs:element name="gps">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="lat"/>
+        <xs:element ref="lng"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lat" type="TFloat"/>
+  <xs:element name="lng" type="TFloat"/>
+  <xs:element name="object" type="TRequiredDic"/>
+  <xs:element name="series" type="TDic"/>
+  <xs:element name="build_date" type="TString"/>
+  <xs:element name="build_year" type="TIntegerPos"/>
+  <xs:element name="build_quarter" type="TIntegerPos"/>
+  <xs:element name="ready_status" type="TDic"/>
+  <xs:element name="repair_year" type="TIntegerPos"/>
+  <xs:element name="penthouse" type="TBoolean"/>
+  <xs:element name="townhouse" type="TBoolean"/>
+  <xs:element name="class" type="TString"/>
+  <xs:element name="settlement" type="TString"/>
+  <xs:element name="living" type="TFloat"/>
+  <xs:element name="kitchen" type="TFloat"/>
+  <xs:element name="hall" type="TFloat"/>
+  <xs:element name="wc" type="TFloat"/>
+  <xs:element name="levels" type="TIntegerPos"/>
+  <xs:element name="rooms">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="actual" type="TIntegerPos"/>
+        <xs:element minOccurs="0" name="total" type="TIntegerPos"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="style" type="TDic"/>
+  <xs:element name="bedrooms" type="TIntegerPos"/>
+  <xs:element name="bathrooms" type="TIntegerPos"/>
+  <xs:element name="plot">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="purpose" type="TDic"/>
+        <xs:element minOccurs="0" name="space" type="TFloat"/>
+        <xs:element minOccurs="0" ref="buildings"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buildings">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="sauna"/>
+        <xs:element minOccurs="0" ref="shed"/>
+        <xs:element minOccurs="0" ref="garage"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sauna" type="TBoolean"/>
+  <xs:element name="shed" type="TBoolean"/>
+  <xs:element name="garage" type="TBoolean"/>
+  <xs:element name="commerce">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="purpose" type="TRequiredDic"/>
+        <xs:element minOccurs="0" name="space">
+          <xs:complexType>
+            <xs:all>
+              <xs:element minOccurs="0" name="total" type="TFloat"/>
+              <xs:element minOccurs="0" ref="business"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" ref="subrent"/>
+        <xs:element minOccurs="0" name="storey">
+          <xs:complexType>
+            <xs:all>
+              <xs:element minOccurs="0" name="actual" type="TInteger"/>
+              <xs:element minOccurs="0" name="total" type="TInteger"/>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" ref="max_energy"/>
+        <xs:element minOccurs="0" ref="phonelines"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="business" type="TFloat"/>
+  <xs:element name="subrent" type="TBoolean"/>
+  <xs:element name="max_energy" type="TIntegerPos"/>
+  <xs:element name="phonelines">
+    <xs:complexType mixed="true">
+      <xs:attribute name="add"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transport">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="car"/>
+        <xs:element minOccurs="0" ref="railway"/>
+        <xs:element minOccurs="0" ref="metro"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="car">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="distance"/>
+        <xs:element ref="time"/>
+        <xs:element ref="highway"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="distance" type="TFloat"/>
+  <xs:element name="time" type="TFloat"/>
+  <xs:element name="highway" type="TString"/>
+  <xs:element name="railway">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="station"/>
+        <xs:element minOccurs="0" ref="distance"/>
+        <xs:element minOccurs="0" ref="time"/>
+        <xs:element minOccurs="0" name="type" type="TDic"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="station" type="TDic"/>
+  <xs:element name="metro">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="station"/>
+        <xs:element minOccurs="0" ref="distance"/>
+        <xs:element minOccurs="0" ref="time"/>
+        <xs:element minOccurs="0" name="type" type="TDic"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="facilities">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="gas"/>
+        <xs:element minOccurs="0" name="bath" type="TDic"/>
+        <xs:element minOccurs="0" ref="sewer"/>
+        <xs:element minOccurs="0" ref="water"/>
+        <xs:element minOccurs="0" ref="heating"/>
+        <xs:element minOccurs="0" ref="decoration"/>
+        <xs:element minOccurs="0" ref="balcony"/>
+        <xs:element minOccurs="0" ref="windows"/>
+        <xs:element minOccurs="0" ref="view"/>
+        <xs:element minOccurs="0" ref="floor"/>
+        <xs:element minOccurs="0" ref="electricity"/>
+        <xs:element minOccurs="0" ref="concierge"/>
+        <xs:element minOccurs="0" ref="guard"/>
+        <xs:element minOccurs="0" ref="fridge"/>
+        <xs:element minOccurs="0" ref="washmachine"/>
+        <xs:element minOccurs="0" ref="tv"/>
+        <xs:element minOccurs="0" ref="aircon"/>
+        <xs:element minOccurs="0" ref="garbage_chute"/>
+        <xs:element minOccurs="0" ref="internet"/>
+        <xs:element minOccurs="0" name="phone" type="TBoolean"/>
+        <xs:element minOccurs="0" ref="parking"/>
+        <xs:element minOccurs="0" ref="elevator"/>
+        <xs:element minOccurs="0" ref="furniture"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gas" type="TBoolean"/>
+  <xs:element name="sewer" type="TDic"/>
+  <xs:element name="water" type="TBoolean"/>
+  <xs:element name="heating" type="TDic"/>
+  <xs:element name="decoration" type="TDic"/>
+  <xs:element name="balcony" type="TDic"/>
+  <xs:element name="windows" type="TDic"/>
+  <xs:element name="view" type="TDic"/>
+  <xs:element name="floor" type="TDic"/>
+  <xs:element name="electricity" type="TBoolean"/>
+  <xs:element name="concierge" type="TBoolean"/>
+  <xs:element name="guard" type="TBoolean"/>
+  <xs:element name="fridge" type="TBoolean"/>
+  <xs:element name="washmachine" type="TBoolean"/>
+  <xs:element name="tv" type="TBoolean"/>
+  <xs:element name="aircon" type="TBoolean"/>
+  <xs:element name="garbage_chute" type="TBoolean"/>
+  <xs:element name="internet" type="TBoolean"/>
+  <xs:element name="parking" type="TBoolean"/>
+  <xs:element name="elevator" type="TBoolean"/>
+  <xs:element name="furniture" type="TBoolean"/>
+  <xs:element name="meta">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="source"/>
+        <xs:element minOccurs="0" ref="imported"/>
+        <xs:element minOccurs="0" name="url" type="TURL"/>
+        <xs:element minOccurs="0" ref="link"/>
+        <xs:element minOccurs="0" ref="extid"/>
+        <xs:element minOccurs="0" ref="highlight"/>
+        <xs:element minOccurs="0" ref="attachments"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="source" type="TDic"/>
+  <xs:element name="imported" type="TString"/>
+  <xs:element name="link" type="TURL"/>
+  <xs:element name="extid" type="TID"/>
+  <xs:element name="highlight" type="xs:string"/>
+  <xs:element name="attachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="attachment"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attachment">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="type" type="TString"/>
+        <xs:element minOccurs="0" name="url" type="TURL"/>
+        <xs:element minOccurs="0" ref="title"/>
+        <xs:element minOccurs="0" ref="mime"/>
+        <xs:element minOccurs="0" name="size" type="TIntegerPos"/>
+        <xs:element minOccurs="0" ref="width"/>
+        <xs:element minOccurs="0" name="height" type="TIntegerPos"/>
+        <xs:element minOccurs="0" ref="length"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mime" type="TString"/>
+  <xs:element name="width" type="TIntegerPos"/>
+  <xs:element name="length" type="TIntegerPos"/>
+  <xs:complexType name="TDic">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="dic" type="xs:string"/>
+        <xs:attribute name="id" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TRequiredDic">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="dic" type="xs:string"/>
+        <xs:attribute name="id" use="required" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TInteger">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:attribute name="max" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TIntegerPos">
+    <xs:simpleContent>
+      <xs:extension base="xs:positiveInteger">
+        <xs:attribute name="max" type="xs:positiveInteger"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TPrice">
+    <xs:simpleContent>
+      <xs:extension base="xs:positiveInteger">
+        <xs:attribute name="max" type="xs:positiveInteger"/>
+        <xs:attribute name="currency" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TFloat">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="max" type="xs:decimal"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TBoolean">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="true"/>
+      <xs:enumeration value="false"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TString">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="TDate">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,2}.[0-9]{1,2}.[0-9]{2,4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TTime">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{1,2}:[0-9]{1,2}:?[0-9]{0,2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TTimestamp">
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  <xs:simpleType name="TID">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:complexType name="TComment">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="text"/>
+      <xs:element ref="html"/>
+      <xs:element ref="short"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="text" type="xs:string"/>
+  <xs:element name="html" type="xs:string"/>
+  <xs:element name="short" type="xs:string"/>
+  <xs:simpleType name="TEmail">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="TURL">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>
