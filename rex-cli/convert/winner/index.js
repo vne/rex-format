@@ -140,9 +140,9 @@ module.exports = {
   reason why: object root tag in Winner format varies depending on object type)
 
   Arguments:
-  	- what - string, one of 'flat', 'rent', 'country', 'commerce'. These values are related to Winner format.
-  	- task - a task object as it is passed to import/export/validate functions
-  	- obj  - input data in Winner format in xml2js notation
+	- what - string, one of 'flat', 'rent', 'country', 'commerce'. These values are related to Winner format.
+	- task - a task object as it is passed to import/export/validate functions
+	- obj  - input data in Winner format in xml2js notation
 	- dic  - a Dicset instance
 */
 
@@ -599,7 +599,7 @@ function bool(x, tr, fl, und) {
 }
 
 /*
-    return string 'false' if first argument is equal to second (case-insensitive and
+	return string 'false' if first argument is equal to second (case-insensitive and
 	with stripping of spaces) and 'true' otherwise
 */
 function false_is(x, tr) {
@@ -612,7 +612,7 @@ function false_is(x, tr) {
 }
 
 /*
-    return string 'true' if first argument is equal to second (case-insensitive and
+	return string 'true' if first argument is equal to second (case-insensitive and
 	with stripping of spaces) and 'false' otherwise
  */
 function bool_is(x, tr) {

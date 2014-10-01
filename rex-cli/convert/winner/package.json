@@ -9,8 +9,11 @@
   "author": "Vladimir Neverov <sanguini@gmail.com>",
   "license": "Closed license, you must contact the author to gain a written permission to use this code",
   "dependencies": {
-    "traverse": "~0.6.6",
+    "dicset": "0.0.1",
+    "jso2xml": "0.0.1",
     "moment": "~2.8.2",
-    "object-path": "~0.6.0"
+    "object-path": "~0.6.0",
+    "saxmlp": "0.0.1",
+    "traverse": "~0.6.6"
   }
 }

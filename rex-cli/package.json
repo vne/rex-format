@@ -24,6 +24,8 @@
     "url": "https://github.com/vne/rex-format/issues"
   },
   "dependencies": {
-    "minimist": "0.0.8"
+    "errh": "0.0.1",
+    "minimist": "0.0.8",
+    "rex-stat": "0.0.1"
   }
 }
