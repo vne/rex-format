@@ -21,15 +21,15 @@ rex-cli: REX command line interface
 
 Подробнее о формате REX: [https://github.com/vne/rex-format](https://github.com/vne/rex-format)
 
-Кроме того, здесь ещё присутствуют:
+Кроме того, здесь ещё присутствует рабочий [пример конвертера](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner) для формата [Winner](https://baza-winner.ru/winner/support/xml-template.html).
 
- - рабочий [пример конвертера](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner) для формата [Winner](https://baza-winner.ru/winner/support/xml-template.html)
- - несколько вспомогательных библиотек, либо упрощающих жизнь при написании конвертера, либо использующихся во фреймворке, который эти конвертеры запускает:
-   - [errh](https://github.com/vne/rex-format/blob/master/rex-cli/node_modules/errh) - коллекционирование ошибок
-   - [rex-stat](https://github.com/vne/rex-format/blob/master/rex-cli/node_modules/rex-stat) - сбор статистики об обработанных объектах недвижимости
-   - [Dicset](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner/node_modules/Dicset) - работа со словарями для преобразования данных
-   - [Saxmlp](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner/node_modules/saxmlp) - обёртка для XML-парсера, позволяющая вешать обработчики на XPath-выражения, и умеющая, к тому же, валидацию XML по XSD-схемам
-   - [js2xml](https://github.com/vne/rex-format/tree/master/rex-cli/convert/winner/node_modules/js2xml) - преобразование объектов Javascript в XML (функциональность, аналогичная xml2js Builder, в будущем, вероятно, будет упразднена)
+Используются несколько вспомогательных библиотек, которые либо упрощают жизнь при написании конвертера, либо используются во фреймворке, который эти конвертеры запускает:
+
+   - [errh](https://github.com/vne/errh) - коллекционирование ошибок
+   - [rex-stat](https://github.com/vne/rex-stat) - сбор статистики об обработанных объектах недвижимости
+   - [Dicset](https://github.com/vne/Dicset) - работа со словарями для преобразования данных
+   - [Saxmlp](https://github.com/vne/saxmlp) - обёртка для XML-парсера, позволяющая вешать обработчики на XPath-выражения, и умеющая, к тому же, валидацию XML по XSD-схемам
+   - [js2xml](https://github.com/vne/jso2xml) - преобразование объектов Javascript в XML (функциональность, аналогичная xml2js Builder; в будущем, вероятно, будет упразднена)
 
 Экземпляр класса **ErrorHandler** из библиотеки _errh_ передаётся функциям в аргументе **task.error**. Экземпляр класса **REXStat** из библиотеки _rex-stat_ передаётя в аргументе **task.stat**. Об использовании этих классов см. ниже в разделах про логи и статистику, а также в разделе про API.
 
