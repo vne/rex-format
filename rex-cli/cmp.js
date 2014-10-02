@@ -124,7 +124,7 @@ try {
 }
 
 if (limit_object_count) {
-	console.log("Limiting object count to", limit_object_count, "use -s or -v to process the whole input");
+	console.log("Limiting object count to", limit_object_count + ", use -s or -v to process the whole input");
 }
 
 // read input data from file
@@ -151,7 +151,7 @@ task = {
 };
 
 // create a map of input objects
-parseResult(infiles, limit_object_count, function(err, inmap) {
+createMap(infiles, limit_object_count, function(err, inmap) {
 	if (err) { return console.log(err); }
 	// export input data
 	console.log("Exporting orders");
@@ -163,7 +163,7 @@ parseResult(infiles, limit_object_count, function(err, inmap) {
 		converter.import(task, function(err, ires) {
 			if (err) { return console.error("Import error", err.toString()); }
 			// create a map of imported objects
-			parseResult(ires.data, limit_object_count, function(err, exmap) {
+			createMap(ires.data, limit_object_count, function(err, exmap) {
 				if (err) { return console.error('Import error', err.toString()); }
 				console.log('Double conversion done, comparing data');
 				// do the comparison of original and imported objects
@@ -177,7 +177,7 @@ parseResult(infiles, limit_object_count, function(err, inmap) {
 
 
 /* parse REX XML and return a map of orders where order IDs are the keys */
-function parseResult(data, lim, callback) {
+function createMap(data, lim, callback) {
 	var xmlp = new Saxmlp(data),
 		res = {}, cnt = 0;
 	xmlp.error(function(msg) { console.error("Error parsing XML", msg); callback(new Error("Error parsing XML" + msg.toString()) )})
@@ -220,7 +220,7 @@ function compareResults(inmap, exmap) {
 				return cstat[b].total - cstat[a].total;
 			})
 			.map(function(x) {
-				console.log("%50s: %5.1f%% %4d/%d (%4d changed, %4d new, %4d deleted, %4d array changed)".pyfmt(x, cstat[x].total/ks.length*100, cstat[x].total, ks.length, cstat[x].E||0, cstat[x].N||0, cstat[x].D||0, cstat[x].A||0));
+				console.log("%50s: %5.1f%% %4d/%d (%4d changed, %4d redundant, %4d missing)".pyfmt(x, cstat[x].total/ks.length*100, cstat[x].total, ks.length, cstat[x].E||0, cstat[x].N||0, cstat[x].D||0));
 			});
 
 	}
