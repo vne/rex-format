@@ -24,8 +24,13 @@
     "url": "https://github.com/vne/rex-format/issues"
   },
   "dependencies": {
+    "deep-diff": "^0.2.0",
     "errh": "0.0.1",
     "minimist": "0.0.8",
-    "rex-stat": "0.0.1"
+    "object-path": "^0.6.0",
+    "pyfmt": "0.0.8",
+    "rex-stat": "0.0.1",
+    "saxmlp": "0.0.1",
+    "traverse": "^0.6.6"
   }
 }

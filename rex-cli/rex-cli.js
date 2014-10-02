@@ -8,7 +8,7 @@ var argv = require('minimist')(process.argv.slice(2)),
 	rexstat = require('rex-stat');
 
 var exec = process.argv[1],
-	infiles = argv.i ? argv.i : '/dev/stdin', // will work only on Unix
+	infiles = [ argv.i ? argv.i : '/dev/stdin' ], // will work only on Unix
 	outfile = argv.o,
 	dicfile = argv.d ? argv.d : 'dic.xml',
 	informat = argv.f,
@@ -21,7 +21,7 @@ var exec = process.argv[1],
 		EUR: 48,
 		USD: 37
 	},
-	dir, indata = [], converter, log, task, i, contents;
+	dir, indata = [], converter, log, task, i, contents, req;
 
 var currency = {};
 currency.rate = function(name) {
@@ -81,7 +81,7 @@ for (i = 0; i < infiles.length; i++) {
         name: infiles[i],
         contents: contents
     });
-    console.log('Input data length = %d read from %s', contents.length, infiles[i]);
+    console.log('Input data length = %d read from "%s"', contents.length, infiles[i]);
 }
 
 if (indata.length == 0) {
@@ -90,8 +90,9 @@ if (indata.length == 0) {
 
 // try to load the converter
 try {
-	console.log('req', path.resolve(path.join('./convert', format)));
-	converter = require(path.resolve(path.join('./convert', format)));
+	req = path.resolve(path.join('./convert', format));
+	console.log('require', req);
+	converter = require(req);
 } catch(e) {
 	return console.log('Failed to load converter library for format %s: %s', format, e);
 }
@@ -119,7 +120,9 @@ task = {
 	log: log,
 	error: new ErrorHandler(format, "convert"),
 	stat: stat,
-	currency: currency
+	currency: currency,
+	__file: req,
+	__dir: path.dirname(req)
 }
 
 // try to convert data
@@ -174,8 +177,8 @@ function printResult(cresult) {
 		if (!cresult.errors || !cresult.errors.length) {
 			console.log('Conversion OK');
 		} else {
-			console.log('There were errors during conversion', cresult.errors.constructor.name);
-			console.log(cresult.errors.toString());
+			console.log('There were errors during conversion');
+			console.log(new ErrorHandler(cresult.to).merge(cresult.errors));
 		}
 		// print out metadata if there are some
 		if (cresult.meta) {
