@@ -83,7 +83,8 @@ console.log('Input data length = %d read from %s', indata.length, infile);
 
 // try to load the converter
 try {
-	converter = require('./convert/' + format);
+	console.log('req', path.resolve(path.join('./convert', format)));
+	converter = require(path.resolve(path.join('./convert', format)));
 } catch(e) {
 	return console.log('Failed to load converter library for format %s: %s', format, e);
 }
@@ -163,11 +164,11 @@ function printResult(cresult) {
 		// something was converted
 		console.log('---------------------------------------');
 		// errors first
-		if (!cresult.errors) {
+		if (!cresult.errors || !cresult.errors.length) {
 			console.log('Conversion OK');
 		} else {
-			console.log('There were errors during conversion');
-			printErrors('error', cresult.errors);
+			console.log('There were errors during conversion', cresult.errors.constructor.name);
+			console.log(cresult.errors.toString());
 		}
 		// print out metadata if there are some
 		if (cresult.meta) {
