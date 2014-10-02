@@ -8,7 +8,7 @@ var argv = require('minimist')(process.argv.slice(2)),
 	rexstat = require('rex-stat');
 
 var exec = process.argv[1],
-	infile = argv.i ? argv.i : '/dev/stdin', // will work only on Unix
+	infiles = argv.i ? argv.i : '/dev/stdin', // will work only on Unix
 	outfile = argv.o,
 	dicfile = argv.d ? argv.d : 'dic.xml',
 	informat = argv.f,
@@ -21,7 +21,7 @@ var exec = process.argv[1],
 		EUR: 48,
 		USD: 37
 	},
-	dir, indata, converter, log, task;
+	dir, indata = [], converter, log, task, i, contents;
 
 var currency = {};
 currency.rate = function(name) {
@@ -74,12 +74,19 @@ if (informat) {
 }
 
 // read data from file
-indata = fs.readFileSync(infile, { encoding: 'utf-8' });
+for (i = 0; i < infiles.length; i++) {
+    contents = fs.readFileSync(infiles[i], { encoding: 'utf-8'});
+    if (!contents) continue;
+    indata.push({
+        name: infiles[i],
+        contents: contents
+    });
+    console.log('Input data length = %d read from %s', contents.length, infiles[i]);
+}
 
-if (!indata) {
+if (indata.length == 0) {
 	return console.error('No input data');
 }
-console.log('Input data length = %d read from %s', indata.length, infile);
 
 // try to load the converter
 try {
@@ -177,15 +184,25 @@ function printResult(cresult) {
 			}
 		}
 		// write converted data to file or stdout
-		if (cresult.data) {
-			if (outfile) {
-				fs.writeFileSync(outfile, cresult.data, { encoding: 'utf-8' });
-			} else {
-				console.log(cresult.data);
-			}
-		} else {
-			console.log('No data was returned');
-		}
+        if (cresult.data) {
+            if (cresult.data.constructor === Array) {
+                cresult.data.forEach(function (d) {
+                    if (outfile) {  // treat value existing as flag that write to file needed
+                        writeToFile(d);
+                    } else {
+                        console.log(cresult.data);
+                    }
+                });
+            } else {    // old behavior
+                if (outfile) {
+                    writeToFile({ name: outfile, contents: cresult.data });
+                } else {
+                    console.log(cresult.data);
+                }
+            }
+        } else {
+            console.log('No data was returned');
+        }
 	} else {
 		console.log('Conversion failed');
 	}
@@ -195,4 +212,10 @@ function printErrors(prefix, errors) {
 	for (var i = 0; i < errors.length; i++) {
 		console.log("%s: object %s: %s", prefix, errors[i].id, errors[i].error);
 	}
+}
+
+function writeToFile(d, i, self) {
+    //append path to filename, if it has no path already
+    var f = path.dirname(d.name) == '.' ? path.join(path.dirname(outfile), d.name) : d.name;
+    fs.writeFileSync(f, d.contents, { encoding: 'utf-8' });
 }
