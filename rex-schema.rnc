@@ -209,6 +209,11 @@ grammar {
 					element type { TString }? &
 					element url { TURL }? &
 					element title { TString }? &
+					element hash {
+						element md5 { THash }? &
+						element sha1 { THash }? &
+						element sha256 { THash }?
+					}? &
 					element mime { TString }? &
 					element size { TIntegerPos }? &
 					element width { TIntegerPos }? &
@@ -252,6 +257,9 @@ grammar {
 		"true" | "false"
 
 	TString =
+		xsd:string
+
+	THash =
 		xsd:string
 
 	TDate =

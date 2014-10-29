@@ -460,6 +460,7 @@
         <xs:element minOccurs="0" name="type" type="TString"/>
         <xs:element minOccurs="0" name="url" type="TURL"/>
         <xs:element minOccurs="0" ref="title"/>
+        <xs:element minOccurs="0" ref="hash"/>
         <xs:element minOccurs="0" ref="mime"/>
         <xs:element minOccurs="0" name="size" type="TIntegerPos"/>
         <xs:element minOccurs="0" ref="width"/>
@@ -468,6 +469,18 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="hash">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" ref="md5"/>
+        <xs:element minOccurs="0" ref="sha1"/>
+        <xs:element minOccurs="0" ref="sha256"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="md5" type="THash"/>
+  <xs:element name="sha1" type="THash"/>
+  <xs:element name="sha256" type="THash"/>
   <xs:element name="mime" type="TString"/>
   <xs:element name="width" type="TIntegerPos"/>
   <xs:element name="length" type="TIntegerPos"/>
@@ -523,6 +536,9 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="TString">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="THash">
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
   <xs:simpleType name="TDate">

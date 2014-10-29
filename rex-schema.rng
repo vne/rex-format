@@ -873,6 +873,27 @@
                             </element>
                           </optional>
                           <optional>
+                            <element name="hash">
+                              <interleave>
+                                <optional>
+                                  <element name="md5">
+                                    <ref name="THash"/>
+                                  </element>
+                                </optional>
+                                <optional>
+                                  <element name="sha1">
+                                    <ref name="THash"/>
+                                  </element>
+                                </optional>
+                                <optional>
+                                  <element name="sha256">
+                                    <ref name="THash"/>
+                                  </element>
+                                </optional>
+                              </interleave>
+                            </element>
+                          </optional>
+                          <optional>
                             <element name="mime">
                               <ref name="TString"/>
                             </element>
@@ -977,6 +998,9 @@
     </choice>
   </define>
   <define name="TString">
+    <data type="string"/>
+  </define>
+  <define name="THash">
     <data type="string"/>
   </define>
   <define name="TDate">
