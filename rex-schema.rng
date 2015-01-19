@@ -823,6 +823,11 @@
             <element name="meta">
               <interleave>
                 <optional>
+                  <element name="extra">
+                    <ref name="TString"/>
+                  </element>
+                </optional>
+                <optional>
                   <element name="source">
                     <ref name="TDic"/>
                   </element>

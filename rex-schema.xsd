@@ -432,6 +432,7 @@
   <xs:element name="meta">
     <xs:complexType>
       <xs:all>
+        <xs:element minOccurs="0" ref="extra"/>
         <xs:element minOccurs="0" ref="source"/>
         <xs:element minOccurs="0" ref="imported"/>
         <xs:element minOccurs="0" name="url" type="TURL"/>
@@ -442,6 +443,7 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="extra" type="TString"/>
   <xs:element name="source" type="TDic"/>
   <xs:element name="imported" type="TString"/>
   <xs:element name="link" type="TURL"/>

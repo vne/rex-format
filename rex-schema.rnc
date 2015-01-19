@@ -198,6 +198,7 @@ grammar {
 			}?
 		}? &
 		element meta {
+			element extra { TString }? &
 			element source { TDic }? &
 			element imported { TString }? &
 			element url { TURL }? &
