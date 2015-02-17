@@ -146,6 +146,12 @@
 		<entry id="14">индивидуальный проект</entry>
 		<entry id="15">реконструкция</entry>
 	</dic>
+	<dic name="object_state" table="dic_object_state" comment="Состояние объекта">
+		<entry id="1">отличное</entry>
+		<entry id="2">хорошее</entry>
+		<entry id="3">удовлетворительное</entry>
+		<entry id="4">требуется ремонт</entry>
+	</dic>
 	<dic name="district" comment="Район города">
 		<!-- атрибут fias указывает код в БД ФИАС и определяет принадлежность района к какому-то городу -->
 		<entry fias="7800000000000" id="1">Адмиралтейский</entry>

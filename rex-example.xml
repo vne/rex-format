@@ -159,6 +159,8 @@
 						<total>10</total>
 						<type dic="storey_type" id="5">бельэтаж</type>
 					</storey>
+					<!-- состояние жилого помещения -->
+					<state dic="object_state" id="4">требуется ремонт</state>
 					<!-- параметры элитной квартиры: количество спален, количество ванных -->
 					<elite>
 						<bedrooms>3</bedrooms>
@@ -194,6 +196,8 @@
 						<actual max="4">2</actual>
 						<total>10</total>
 					</storey>
+					<!-- состояние коммерческого помещения -->
+					<state dic="object_state" id="1">отличное</state>
 					<max_energy>10000</max_energy>
 					<!-- количество телефонных линий, add=true, если есть возможность подключения новых -->
 					<phonelines add="true">10</phonelines>
