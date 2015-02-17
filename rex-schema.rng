@@ -500,6 +500,11 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="state">
+                          <ref name="TDic"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="elite">
                           <interleave>
                             <optional>
@@ -596,6 +601,11 @@
                               </element>
                             </optional>
                           </interleave>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="state">
+                          <ref name="TDic"/>
                         </element>
                       </optional>
                       <optional>

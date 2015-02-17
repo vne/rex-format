@@ -199,6 +199,7 @@
                   </xs:all>
                 </xs:complexType>
               </xs:element>
+              <xs:element minOccurs="0" ref="state"/>
               <xs:element minOccurs="0" name="elite">
                 <xs:complexType>
                   <xs:all>
@@ -280,6 +281,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="style" type="TDic"/>
+  <xs:element name="state" type="TDic"/>
   <xs:element name="bedrooms" type="TIntegerPos"/>
   <xs:element name="bathrooms" type="TIntegerPos"/>
   <xs:element name="plot">
@@ -324,6 +326,7 @@
             </xs:all>
           </xs:complexType>
         </xs:element>
+        <xs:element minOccurs="0" ref="state"/>
         <xs:element minOccurs="0" ref="max_energy"/>
         <xs:element minOccurs="0" ref="phonelines"/>
       </xs:all>

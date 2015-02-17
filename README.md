@@ -168,9 +168,11 @@
  - estate > house > series (house_series)
  - estate > house > ready_status (ready_status)
  - estate > flat > flat_style (flat_style)
+ - estate > flat > state (object_state)
  - estate > storey > storey_type (storey_type)
  - estate > commerce > purpose (purpose_type)
  - estate > commerce > security_type (security_type)
+ - estate > commerce > state (object_state)
  - estate > transport > railway > station (railway_station)
  - estate > transport > railway > type (after_transport)
  - estate > transport > metro > station (metro_station)
@@ -293,6 +295,7 @@
 	     - total - полное количество этажей в здании (на данной лестнице)
 	     - actual - этаж, на котором находится объект
 	     - type - тип этажа (мансарда, подвал, бельэтаж)
+	 - state - состояние жилого помещения, словарное значение
 	 - elite - параметры элитного жилья
 	     - bedrooms - количество спален
 	     - bathrooms - количество ванных комнат и санузлов
@@ -312,6 +315,7 @@
      - storey - этажи
 	     - total - полное количество этажей в здании (на данной лестнице)
 	     - actual - этаж, на котором находится объект. Если объект находится на нескольких этажах, а с коммерцией такое бывает, стандартным образом указывается диапазон с помощью атрибута max.
+	 - state - состояние коммерческого помещения, словарное значение
 	 - max\_energy - число, определяющее полную электрическую мощность, доступную на объекте
 	 - phonelines - количество телефонных линий на объекте. Необязательный логический атрибут add указывает, возможно ли увеличение этого количества.
  - transport - описание того, как добираться до объекта

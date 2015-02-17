@@ -121,6 +121,7 @@ grammar {
 					element total { TInteger }? &
 					element type { TDic }?
 				}? &
+				element state { TDic }? &
 				element elite {
 					element bedrooms { TIntegerPos }? &
 					element bathrooms { TIntegerPos }?
@@ -146,6 +147,7 @@ grammar {
 					element actual { TInteger }? &
 					element total { TInteger }?
 				}? &
+				element state { TDic }? &
 				element max_energy { TIntegerPos }? &
 				element phonelines {
 					attribute add { text }? &
