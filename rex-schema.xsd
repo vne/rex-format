@@ -51,11 +51,21 @@
       <xs:all>
         <xs:element minOccurs="0" ref="full"/>
         <xs:element minOccurs="0" ref="per_meter"/>
+        <xs:element minOccurs="0" ref="commission"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="full" type="TPrice"/>
   <xs:element name="per_meter" type="TPrice"/>
+  <xs:element name="commission">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="agent" type="TIntegerPos"/>
+        <xs:element minOccurs="0" ref="client"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="client" type="TIntegerPos"/>
   <xs:element name="members">
     <xs:complexType>
       <xs:group minOccurs="0" maxOccurs="unbounded" ref="order"/>
@@ -78,24 +88,23 @@
   <xs:element name="owner">
     <xs:complexType>
       <xs:all>
-        <xs:element ref="agent"/>
+        <xs:element name="agent">
+          <xs:complexType>
+            <xs:all>
+              <xs:element minOccurs="0" ref="name"/>
+              <xs:element minOccurs="0" name="phone" type="TDic"/>
+              <xs:element minOccurs="0" ref="email"/>
+              <xs:element minOccurs="0" ref="contact"/>
+              <xs:element minOccurs="0" ref="additional"/>
+            </xs:all>
+            <xs:attribute name="dic"/>
+            <xs:attribute name="id"/>
+          </xs:complexType>
+        </xs:element>
         <xs:element minOccurs="0" name="group" type="TDic"/>
         <xs:element minOccurs="0" ref="company"/>
         <xs:element minOccurs="0" name="url" type="TString"/>
       </xs:all>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="agent">
-    <xs:complexType>
-      <xs:all>
-        <xs:element minOccurs="0" ref="name"/>
-        <xs:element minOccurs="0" name="phone" type="TDic"/>
-        <xs:element minOccurs="0" ref="email"/>
-        <xs:element minOccurs="0" ref="contact"/>
-        <xs:element minOccurs="0" ref="additional"/>
-      </xs:all>
-      <xs:attribute name="dic"/>
-      <xs:attribute name="id"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="name" type="TString"/>

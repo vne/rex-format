@@ -15,6 +15,11 @@
 			<price>
 				<full max="3250000" currency="RUR">2500000</full>
 				<per_meter currency="USD">12500</per_meter>
+				<!-- комиссия агента и клиента в процентах -->
+				<commission>
+					<agent>50</agent>
+					<client>100</client>
+				</commission>
 			</price>
 			<!-- аренда -->
 			<rent>

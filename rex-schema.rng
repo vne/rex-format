@@ -50,6 +50,22 @@
                     <ref name="TPrice"/>
                   </element>
                 </optional>
+                <optional>
+                  <element name="commission">
+                    <interleave>
+                      <optional>
+                        <element name="agent">
+                          <ref name="TIntegerPos"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="client">
+                          <ref name="TIntegerPos"/>
+                        </element>
+                      </optional>
+                    </interleave>
+                  </element>
+                </optional>
               </interleave>
             </element>
           </optional>

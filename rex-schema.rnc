@@ -13,7 +13,11 @@ grammar {
 		element type { TRequiredDic } &
 		element price {
 			element full { TPrice }? &
-			element per_meter { TPrice }?
+			element per_meter { TPrice }? &
+			element commission {
+				element agent { TIntegerPos }? &
+				element client { TIntegerPos }?
+			}?
 		}? &
 		element group {
 			element type { TDic } &
