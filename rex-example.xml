@@ -355,7 +355,7 @@
 			<title>Комплекс на Невском проспекте</title>
 			<type dic="order_type" id="2">продажа</type>
 			<group>
-				<type dic="group_type" id="1">жилой комплекс</type>
+				<type dic="objectgroup_type" id="1">жилой комплекс</type>
 				<members>
 					<order>
 						<type dic="order_type" id="2">продажа</type>
