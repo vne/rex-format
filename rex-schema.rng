@@ -839,6 +839,21 @@
                           <ref name="TBoolean"/>
                         </element>
                       </optional>
+                      <optional>
+                        <element name="kitchen_furniture">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="animals_allowed">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="children_allowed">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
                     </interleave>
                   </element>
                 </optional>

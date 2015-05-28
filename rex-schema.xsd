@@ -417,6 +417,9 @@
         <xs:element minOccurs="0" ref="parking"/>
         <xs:element minOccurs="0" ref="elevator"/>
         <xs:element minOccurs="0" ref="furniture"/>
+        <xs:element minOccurs="0" ref="kitchen_furniture"/>
+        <xs:element minOccurs="0" ref="animals_allowed"/>
+        <xs:element minOccurs="0" ref="children_allowed"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
@@ -441,6 +444,9 @@
   <xs:element name="parking" type="TBoolean"/>
   <xs:element name="elevator" type="TBoolean"/>
   <xs:element name="furniture" type="TBoolean"/>
+  <xs:element name="kitchen_furniture" type="TBoolean"/>
+  <xs:element name="animals_allowed" type="TBoolean"/>
+  <xs:element name="children_allowed" type="TBoolean"/>
   <xs:element name="meta">
     <xs:complexType>
       <xs:all>

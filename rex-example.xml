@@ -277,8 +277,14 @@
 					<parking>true</parking>
 					<!-- наличие лифта -->
 					<elevator>true</elevator>
-					<!-- наличие мебели -->
+					<!-- наличие мебели в жилых или коммерческих помещениях -->
 					<furniture>true</furniture>
+					<!-- наличие мебели на кухне -->
+					<kitchen_furniture>true</kitchen_furniture>
+					<!-- разрешены ли животные -->
+					<animals_allowed>true</animals_allowed>
+					<!-- разрешены ли дети -->
+					<children_allowed>true</children_allowed>
 				</facilities>
 			</estate>
 			<!-- метаданные об объекте и сделке -->

@@ -200,7 +200,10 @@ grammar {
 				element phone { TBoolean }? &
 				element parking { TBoolean }? &
 				element elevator { TBoolean }? &
-				element furniture { TBoolean }?
+				element furniture { TBoolean }? &
+				element kitchen_furniture { TBoolean }? &
+				element animals_allowed { TBoolean }? &
+				element children_allowed { TBoolean }?
 			}?
 		}? &
 		element meta {
