@@ -282,7 +282,7 @@
 					<!-- наличие мебели на кухне -->
 					<kitchen_furniture>true</kitchen_furniture>
 					<!-- разрешены ли животные -->
-					<animals_allowed>true</animals_allowed>
+					<pets_allowed>true</pets_allowed>
 					<!-- разрешены ли дети -->
 					<children_allowed>true</children_allowed>
 				</facilities>

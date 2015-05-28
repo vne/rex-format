@@ -202,7 +202,7 @@ grammar {
 				element elevator { TBoolean }? &
 				element furniture { TBoolean }? &
 				element kitchen_furniture { TBoolean }? &
-				element animals_allowed { TBoolean }? &
+				element pets_allowed { TBoolean }? &
 				element children_allowed { TBoolean }?
 			}?
 		}? &

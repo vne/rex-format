@@ -845,7 +845,7 @@
                         </element>
                       </optional>
                       <optional>
-                        <element name="animals_allowed">
+                        <element name="pets_allowed">
                           <ref name="TBoolean"/>
                         </element>
                       </optional>
