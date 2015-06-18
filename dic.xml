@@ -389,6 +389,253 @@
 		<entry id="10">субсидия</entry>
 		<entry id="11">материнский капитал</entry>
     </dic>
+	<dic name="country" table="country" comment="Страна">
+		<entry id="1" code="643" highlight="true" fullname="Российская Федерация" alpha2="RU" alpha3="RUS">Россия</entry>
+		<entry id="2" code="112" highlight="true" fullname="Республика Беларусь" alpha2="BY" alpha3="BLR">Беларусь</entry>
+		<entry id="3" code="804" highlight="true" fullname="Украина" alpha2="UA" alpha3="UKR">Украина</entry>
+		<entry id="4" code="233" highlight="true" fullname="Эстонская Республика" alpha2="EE" alpha3="EST">Эстония</entry>
+		<entry id="5" code="428" highlight="true" fullname="Латвийская Республика" alpha2="LV" alpha3="LVA">Латвия</entry>
+		<entry id="6" code="440" highlight="true" fullname="Литовская Республика" alpha2="LT" alpha3="LTU">Литва</entry>
+		<entry id="7" code="246" highlight="true" fullname="Финляндская Республика" alpha2="FI" alpha3="FIN">Финляндия</entry>
+		<entry id="8" code="398" highlight="true" fullname="Республика Казахстан" alpha2="KZ" alpha3="KAZ">Казахстан</entry>
+		<entry id="9" code="36" fullname="Австралия" alpha2="AU" alpha3="AUS">Австралия</entry>
+		<entry id="10" code="40" fullname="Австрийская Республика" alpha2="AT" alpha3="AUT">Австрия</entry>
+		<entry id="11" code="31" fullname="Республика Азербайджан" alpha2="AZ" alpha3="AZE">Азербайджан</entry>
+		<entry id="12" code="8" fullname="Республика Албания" alpha2="AL" alpha3="ALB">Албания</entry>
+		<entry id="13" code="12" fullname="Алжирская Народная Демократическая Республика" alpha2="DZ" alpha3="DZA">Алжир</entry>
+		<entry id="14" code="660" fullname="Ангилья" alpha2="AI" alpha3="AIA">Ангилья</entry>
+		<entry id="15" code="24" fullname="Республика Ангола" alpha2="AO" alpha3="AGO">Ангола</entry>
+		<entry id="16" code="20" fullname="Княжество Андорра" alpha2="AD" alpha3="AND">Андорра</entry>
+		<entry id="17" code="10" fullname="Антарктида" alpha2="AQ" alpha3="ATA">Антарктида</entry>
+		<entry id="18" code="28" fullname="Антигуа и Барбуда" alpha2="AG" alpha3="ATG">Антигуа и Барбуда</entry>
+		<entry id="19" code="32" fullname="Аргентинская Республика" alpha2="AR" alpha3="ARG">Аргентина</entry>
+		<entry id="20" code="51" fullname="Республика Армения" alpha2="AM" alpha3="ARM">Армения</entry>
+		<entry id="21" code="533" fullname="Остров Аруба" alpha2="AW" alpha3="ABW">Аруба</entry>
+		<entry id="22" code="4" fullname="Переходное Исламское Государство Афганистан" alpha2="AF" alpha3="AFG">Афганистан</entry>
+		<entry id="23" code="44" fullname="Содружество Багамы" alpha2="BS" alpha3="BHS">Багамы</entry>
+		<entry id="24" code="50" fullname="Народная Республика Бангладеш" alpha2="BD" alpha3="BGD">Бангладеш</entry>
+		<entry id="25" code="52" fullname="Барбадос" alpha2="BB" alpha3="BRB">Барбадос</entry>
+		<entry id="26" code="48" fullname="Королевство Бахрейн" alpha2="BH" alpha3="BHR">Бахрейн</entry>
+		<entry id="27" code="84" fullname="Белиз" alpha2="BZ" alpha3="BLZ">Белиз</entry>
+		<entry id="28" code="56" fullname="Королевство Бельгии" alpha2="BE" alpha3="BEL">Бельгия</entry>
+		<entry id="29" code="204" fullname="Республика Бенин" alpha2="BJ" alpha3="BEN">Бенин</entry>
+		<entry id="30" code="60" fullname="Бермудские Острова" alpha2="BM" alpha3="BMU">Бермуды</entry>
+		<entry id="31" code="100" fullname="Республика Болгария" alpha2="BG" alpha3="BGR">Болгария</entry>
+		<entry id="32" code="68" fullname="Республика Боливия" alpha2="BO" alpha3="BOL">Боливия</entry>
+		<entry id="33" code="70" fullname="Босния и Герцеговина" alpha2="BA" alpha3="BIH">Босния и Герцеговина</entry>
+		<entry id="34" code="72" fullname="Республика Ботсвана" alpha2="BW" alpha3="BWA">Ботсвана</entry>
+		<entry id="35" code="76" fullname="Федеративная Республика Бразилия" alpha2="BR" alpha3="BRA">Бразилия</entry>
+		<entry id="36" code="86" fullname="Британская Территория В Индийском Океане (Брит.)" alpha2="IO" alpha3="IOT">Британ. Террит.</entry>
+		<entry id="37" code="96" fullname="Бруней-Даруссалам" alpha2="BN" alpha3="BRN">Бруней</entry>
+		<entry id="38" code="74" fullname="Остров Буве" alpha2="BV" alpha3="BVT">Буве</entry>
+		<entry id="39" code="854" fullname="Буркина-Фасо" alpha2="BF" alpha3="BFA">Буркина-Фасо</entry>
+		<entry id="40" code="108" fullname="Республика Бурунди" alpha2="BI" alpha3="BDI">Бурунди</entry>
+		<entry id="41" code="64" fullname="Королевство Бутан" alpha2="BT" alpha3="BTN">Бутан</entry>
+		<entry id="42" code="548" fullname="Республика Вануату" alpha2="VU" alpha3="VUT">Вануату</entry>
+		<entry id="43" code="336" fullname="Папский Престол (Государство-Город Ватикан)" alpha2="VA" alpha3="VAT">Ватикан</entry>
+		<entry id="44" code="348" fullname="Венгерская Республика" alpha2="HU" alpha3="HUN">Венгрия</entry>
+		<entry id="45" code="862" fullname="Боливарийская Республика Венесуэла" alpha2="VE" alpha3="VEN">Венесуэла</entry>
+		<entry id="46" code="850" fullname="Виргинские Острова (Сша)" alpha2="VI" alpha3="VIR">Виргин. О-Ва</entry>
+		<entry id="47" code="92" fullname="Британские Виргинские Острова" alpha2="VG" alpha3="VGB">Виргин. О-Ва, Британские</entry>
+		<entry id="48" code="16" fullname="Американское Самоа (Сша)" alpha2="AS" alpha3="ASM">Восточное Самоа</entry>
+		<entry id="49" code="704" fullname="Социалистическая Республика Вьетнам" alpha2="VN" alpha3="VNM">Вьетнам</entry>
+		<entry id="50" code="266" fullname="Габонская Республика" alpha2="GA" alpha3="GAB">Габон</entry>
+		<entry id="51" code="332" fullname="Республика Гаити" alpha2="HT" alpha3="HTI">Гаити</entry>
+		<entry id="52" code="328" fullname="Республика Гайана" alpha2="GY" alpha3="GUY">Гайана</entry>
+		<entry id="53" code="270" fullname="Республика Гамбия" alpha2="GM" alpha3="GMB">Гамбия</entry>
+		<entry id="54" code="288" fullname="Республика Гана" alpha2="GH" alpha3="GHA">Гана</entry>
+		<entry id="55" code="312" fullname="Гваделупа (Фр.)" alpha2="GP" alpha3="GLP">Гваделупа</entry>
+		<entry id="56" code="320" fullname="Республика Гватемала" alpha2="GT" alpha3="GTM">Гватемала</entry>
+		<entry id="57" code="254" fullname="Французская Гвиана (Фр.)" alpha2="GF" alpha3="GUF">Гвиана</entry>
+		<entry id="58" code="324" fullname="Гвинейская Республика" alpha2="GN" alpha3="GIN">Гвинея</entry>
+		<entry id="59" code="624" fullname="Республика Гвинея-Бисау" alpha2="GW" alpha3="GNB">Гвинея-Бисау</entry>
+		<entry id="60" code="276" fullname="Федеративная Республика Германия" alpha2="DE" alpha3="DEU">Германия</entry>
+		<entry id="61" code="831" fullname="Гернси" alpha2="GG" alpha3="GGY">Гернси</entry>
+		<entry id="62" code="292" fullname="Гибралтар (Брит.)" alpha2="GI" alpha3="GIB">Гибралтар</entry>
+		<entry id="63" code="340" fullname="Республика Гондурас" alpha2="HN" alpha3="HND">Гондурас</entry>
+		<entry id="64" code="344" fullname="Специальный Административный Регион Китая Гонконг" alpha2="HK" alpha3="HKG">Гонконг</entry>
+		<entry id="65" code="308" fullname="Гренада" alpha2="GD" alpha3="GRD">Гренада</entry>
+		<entry id="66" code="304" fullname="Гренландия" alpha2="GL" alpha3="GRL">Гренландия</entry>
+		<entry id="67" code="300" fullname="Греческая Республика" alpha2="GR" alpha3="GRC">Греция</entry>
+		<entry id="68" code="268" fullname="Республика Грузия" alpha2="GE" alpha3="GEO">Грузия</entry>
+		<entry id="69" code="316" fullname="Гуам (Сша)" alpha2="GU" alpha3="GUM">Гуам</entry>
+		<entry id="70" code="208" fullname="Королевство Дания" alpha2="DK" alpha3="DNK">Дания</entry>
+		<entry id="71" code="832" fullname="Джерси" alpha2="JE" alpha3="JEY">Джерси</entry>
+		<entry id="72" code="262" fullname="Республика Джибути" alpha2="DJ" alpha3="DJI">Джибути</entry>
+		<entry id="73" code="212" fullname="Содружество Доминики" alpha2="DM" alpha3="DMA">Доминика</entry>
+		<entry id="74" code="214" fullname="Доминиканская Республика" alpha2="DO" alpha3="DOM">Доминиканская Республика</entry>
+		<entry id="75" code="818" fullname="Арабская Республика Египет (Аре)" alpha2="EG" alpha3="EGY">Египет</entry>
+		<entry id="76" code="894" fullname="Республика Замбия" alpha2="ZM" alpha3="ZMB">Замбия</entry>
+		<entry id="77" code="732" fullname="Западная Сахара" alpha2="EH" alpha3="ESH">Западная Сахара</entry>
+		<entry id="78" code="716" fullname="Республика Зимбабве" alpha2="ZW" alpha3="ZWE">Зимбабве</entry>
+		<entry id="79" code="376" fullname="Государство Израиль" alpha2="IL" alpha3="ISR">Израиль</entry>
+		<entry id="80" code="356" fullname="Республика Индия" alpha2="IN" alpha3="IND">Индия</entry>
+		<entry id="81" code="360" fullname="Республика Индонезия" alpha2="ID" alpha3="IDN">Индонезия</entry>
+		<entry id="82" code="400" fullname="Иорданское Хашимитское Королевство" alpha2="JO" alpha3="JOR">Иордания</entry>
+		<entry id="83" code="368" fullname="Республика Ирак" alpha2="IQ" alpha3="IRQ">Ирак</entry>
+		<entry id="84" code="364" fullname="Исламская Республика Иран" alpha2="IR" alpha3="IRN">Иран</entry>
+		<entry id="85" code="372" fullname="Ирландия" alpha2="IE" alpha3="IRL">Ирландия</entry>
+		<entry id="86" code="352" fullname="Республика Исландия" alpha2="IS" alpha3="ISL">Исландия</entry>
+		<entry id="87" code="724" fullname="Королевство Испания" alpha2="ES" alpha3="ESP">Испания</entry>
+		<entry id="88" code="380" fullname="Итальянская Республика" alpha2="IT" alpha3="ITA">Италия</entry>
+		<entry id="89" code="887" fullname="Йеменская Республика" alpha2="YE" alpha3="YEM">Йемен</entry>
+		<entry id="90" code="132" fullname="Республика Кабо-Верде" alpha2="CV" alpha3="CPV">Кабо-Верде</entry>
+		<entry id="91" code="136" fullname="Острова Кайман" alpha2="KY" alpha3="CYM">Кайман</entry>
+		<entry id="92" code="116" fullname="Королевство Камбоджа" alpha2="KH" alpha3="KHM">Камбоджа</entry>
+		<entry id="93" code="120" fullname="Республика Камерун" alpha2="CM" alpha3="CMR">Камерун</entry>
+		<entry id="94" code="124" fullname="Канада" alpha2="CA" alpha3="CAN">Канада</entry>
+		<entry id="95" code="634" fullname="Государство Катар" alpha2="QA" alpha3="QAT">Катар</entry>
+		<entry id="96" code="404" fullname="Республика Кения" alpha2="KE" alpha3="KEN">Кения</entry>
+		<entry id="97" code="196" fullname="Республика Кипр" alpha2="CY" alpha3="CYP">Кипр</entry>
+		<entry id="98" code="296" fullname="Республика Кирибати" alpha2="KI" alpha3="KIR">Кирибати</entry>
+		<entry id="99" code="156" fullname="Китайская Народная Республика (Кнр)" alpha2="CN" alpha3="CHN">Китай</entry>
+		<entry id="100" code="166" fullname="Кокосовые (Килинг) Острова" alpha2="CC" alpha3="CCK">Кокосовые О-Ва</entry>
+		<entry id="101" code="170" fullname="Республика Колумбия" alpha2="CO" alpha3="COL">Колумбия</entry>
+		<entry id="102" code="174" fullname="Союз Коморы" alpha2="KM" alpha3="COM">Коморы</entry>
+		<entry id="103" code="178" fullname="Республика Конго" alpha2="CG" alpha3="COG">Конго</entry>
+		<entry id="104" code="180" fullname="Демократическая Республика Конго" alpha2="CD" alpha3="COD">Конго</entry>
+		<entry id="105" code="410" fullname="Республика Корея" alpha2="KR" alpha3="KOR">Корея</entry>
+		<entry id="106" code="408" fullname="Корейская Народно-Демократическая Республика" alpha2="KP" alpha3="PRK">Корея (Кндр)</entry>
+		<entry id="107" code="188" fullname="Республика Коста-Рика" alpha2="CR" alpha3="CRI">Коста-Рика</entry>
+		<entry id="108" code="384" fullname="Республика Кот Д'Ивуар" alpha2="CI" alpha3="CIV">Кот Д'Вуар</entry>
+		<entry id="109" code="192" fullname="Республика Куба" alpha2="CU" alpha3="CUB">Куба</entry>
+		<entry id="110" code="414" fullname="Государство Кувейт" alpha2="KW" alpha3="KWT">Кувейт</entry>
+		<entry id="111" code="417" fullname="Республика Кыргызстан" alpha2="KG" alpha3="KGZ">Кыргызстан</entry>
+		<entry id="112" code="418" fullname="Лаосская Народно-Демократическая Республика" alpha2="LA" alpha3="LAO">Лаос</entry>
+		<entry id="113" code="426" fullname="Королевство Лесото" alpha2="LS" alpha3="LSO">Лесото</entry>
+		<entry id="114" code="430" fullname="Республика Либерия" alpha2="LR" alpha3="LBR">Либерия</entry>
+		<entry id="115" code="422" fullname="Ливанская Республика" alpha2="LB" alpha3="LBN">Ливан</entry>
+		<entry id="116" code="434" fullname="Социалистическая Народная Ливийская Арабская Джамахирия" alpha2="LY" alpha3="LBY">Ливия</entry>
+		<entry id="117" code="438" fullname="Княжество Лихтенштейн" alpha2="LI" alpha3="LIE">Лихтенштейн</entry>
+		<entry id="118" code="442" fullname="Великое Герцогство Люксембург" alpha2="LU" alpha3="LUX">Люксембург</entry>
+		<entry id="119" code="480" fullname="Республика Маврикий" alpha2="MU" alpha3="MUS">Маврикий</entry>
+		<entry id="120" code="478" fullname="Исламская Республика Мавритания" alpha2="MR" alpha3="MRT">Мавритания</entry>
+		<entry id="121" code="450" fullname="Демократическая Республика Мадагаскар" alpha2="MG" alpha3="MDG">Мадагаскар</entry>
+		<entry id="122" code="175" fullname="Майотта" alpha2="YT" alpha3="MYT">Майотта</entry>
+		<entry id="123" code="446" fullname="Специальный Административный Регион Китая Макао" alpha2="MO" alpha3="MAC">Макао</entry>
+		<entry id="124" code="807" fullname="Республика Македония" alpha2="MK" alpha3="MKD">Македония</entry>
+		<entry id="125" code="454" fullname="Республика Малави" alpha2="MW" alpha3="MWI">Малави</entry>
+		<entry id="126" code="458" fullname="Малайзия" alpha2="MY" alpha3="MYS">Малайзия</entry>
+		<entry id="127" code="466" fullname="Республика Мали" alpha2="ML" alpha3="MLI">Мали</entry>
+		<entry id="128" code="581" fullname="Малые Тихоокеанские Отдаленные Острова (Сша)" alpha2="UM" alpha3="UMI">Малые Тихоок. Острова (Сша)</entry>
+		<entry id="129" code="462" fullname="Мальдивская Республика" alpha2="MV" alpha3="MDV">Мальдивы</entry>
+		<entry id="130" code="470" fullname="Республика Мальта" alpha2="MT" alpha3="MLT">Мальта</entry>
+		<entry id="131" code="580" fullname="Содружество Северных Марианских Островов" alpha2="MP" alpha3="MNP">Марианские Острова</entry>
+		<entry id="132" code="504" fullname="Королевство Марокко" alpha2="MA" alpha3="MAR">Марокко</entry>
+		<entry id="133" code="474" fullname="Мартиника (Фр.)" alpha2="MQ" alpha3="MTQ">Мартиника</entry>
+		<entry id="134" code="584" fullname="Республика Маршалловы Острова" alpha2="MH" alpha3="MHL">Маршалловы Острова</entry>
+		<entry id="135" code="484" fullname="Мексиканские Соединенные Штаты" alpha2="MX" alpha3="MEX">Мексика</entry>
+		<entry id="136" code="583" fullname="Федеративные Штаты Микронезии" alpha2="FM" alpha3="FSM">Микронезия</entry>
+		<entry id="137" code="508" fullname="Республика Мозамбик" alpha2="MZ" alpha3="MOZ">Мозамбик</entry>
+		<entry id="138" code="498" fullname="Республика Молдова" alpha2="MD" alpha3="MDA">Молдова</entry>
+		<entry id="139" code="492" fullname="Княжество Монако" alpha2="MC" alpha3="MCO">Монако</entry>
+		<entry id="140" code="496" fullname="Монголия" alpha2="MN" alpha3="MHG">Монголия</entry>
+		<entry id="141" code="500" fullname="Монтсеррат (Брит.)" alpha2="MS" alpha3="MSR">Монтсеррат</entry>
+		<entry id="142" code="104" fullname="Союз Мьянма" alpha2="MM" alpha3="MMR">Мьянма</entry>
+		<entry id="143" code="516" fullname="Республика Намибия" alpha2="NA" alpha3="NAM">Намибия</entry>
+		<entry id="144" code="520" fullname="Республика Науру" alpha2="NR" alpha3="NRU">Науру</entry>
+		<entry id="145" code="524" fullname="Королевство Непал" alpha2="NP" alpha3="NPL">Непал</entry>
+		<entry id="146" code="562" fullname="Республика Нигер" alpha2="NE" alpha3="NER">Нигер</entry>
+		<entry id="147" code="566" fullname="Федеративная Республика Нигерия" alpha2="NG" alpha3="NGA">Нигерия</entry>
+		<entry id="148" code="530" fullname="Нидерландские Антилы" alpha2="AN" alpha3="ANT">Нидерландские Антилы</entry>
+		<entry id="149" code="528" fullname="Королевство Нидерланды" alpha2="NL" alpha3="NLD">Нидерланды</entry>
+		<entry id="150" code="558" fullname="Республика Никарагуа" alpha2="NI" alpha3="NIC">Никарагуа</entry>
+		<entry id="151" code="570" fullname="Республика Ниуэ" alpha2="NU" alpha3="NIU">Ниуэ</entry>
+		<entry id="152" code="554" fullname="Новая Зеландия" alpha2="NZ" alpha3="NZL">Новая Зеландия</entry>
+		<entry id="153" code="540" fullname="Новая Каледония" alpha2="NC" alpha3="NCL">Новая Каледония</entry>
+		<entry id="154" code="578" fullname="Королевство Норвегия" alpha2="NO" alpha3="NOR">Норвегия</entry>
+		<entry id="155" code="574" fullname="Остров Норфолк" alpha2="NF" alpha3="NFK">Норфолк</entry>
+		<entry id="156" code="784" fullname="Объединенные Арабские Эмираты" alpha2="AE" alpha3="ARE">Объед. Арабские Эмираты</entry>
+		<entry id="157" code="833" fullname="Остров Мэн" alpha2="IM" alpha3="IMY">О-В Мэн</entry>
+		<entry id="158" code="162" fullname="Остров Рождества (Австрал.)" alpha2="CX" alpha3="CXR">О-В Рождества</entry>
+		<entry id="159" code="184" fullname="Острова Кука (Н. Зел.)" alpha2="Ск" alpha3="COK">О-Ва Кука</entry>
+		<entry id="160" code="512" fullname="Султанат Оман" alpha2="OM" alpha3="OMN">Оман</entry>
+		<entry id="161" code="586" fullname="Исламская Республика Пакистан" alpha2="PK" alpha3="PAK">Пакистан</entry>
+		<entry id="162" code="585" fullname="Республика Палау" alpha2="PW" alpha3="PLW">Палау</entry>
+		<entry id="163" code="275" fullname="Оккупированная Палестинская Территория" alpha2="PS" alpha3="PSE">Палестинская Территория, Оккупированная</entry>
+		<entry id="164" code="591" fullname="Республика Панама" alpha2="PA" alpha3="PAN">Панама</entry>
+		<entry id="165" code="598" fullname="Папуа - Новая Гвинея" alpha2="PG" alpha3="PNG">Папуа - Новая Гвинея</entry>
+		<entry id="166" code="600" fullname="Республика Парагвай" alpha2="PY" alpha3="PRY">Парагвай</entry>
+		<entry id="167" code="604" fullname="Республика Перу" alpha2="PE" alpha3="PER">Перу</entry>
+		<entry id="168" code="612" fullname="Питкэрн (Брит.)" alpha2="PN" alpha3="PCN">Питкэрн</entry>
+		<entry id="169" code="616" fullname="Республика Польша" alpha2="PL" alpha3="POL">Польша</entry>
+		<entry id="170" code="620" fullname="Португальская Республика" alpha2="PT" alpha3="PRT">Португалия</entry>
+		<entry id="171" code="630" fullname="Пуэрто-Рико" alpha2="PR" alpha3="PRI">Пуэрто-Рико</entry>
+		<entry id="172" code="638" fullname="Реюньон" alpha2="RE" alpha3="REU">Реюньон</entry>
+		<entry id="173" code="646" fullname="Руандийская Республика" alpha2="RW" alpha3="RWA">Руанда</entry>
+		<entry id="174" code="642" fullname="Румыния" alpha2="RO" alpha3="ROM">Румыния</entry>
+		<entry id="175" code="882" fullname="Независимое Государство Самоа" alpha2="WS" alpha3="WSM">Самоа</entry>
+		<entry id="176" code="678" fullname="Демократическая Республика Сан-Томе и Принсипи" alpha2="ST" alpha3="STR">Сан-Томе и Принсипи</entry>
+		<entry id="177" code="674" fullname="Республика Сан-Марино" alpha2="SM" alpha3="SMR">Сан-Марино</entry>
+		<entry id="178" code="682" fullname="Королевство Саудовская Аравия" alpha2="SA" alpha3="SAU">Саудовская Аравия</entry>
+		<entry id="179" code="748" fullname="Королевство Свазиленд" alpha2="SZ" alpha3="SWZ">Свазиленд</entry>
+		<entry id="180" code="654" fullname="Остров Святой Елены (Брит.)" alpha2="SH" alpha3="SHN">Святая Елена</entry>
+		<entry id="181" code="690" fullname="Республика Сейшелы" alpha2="SC" alpha3="SYC">Сейшелы</entry>
+		<entry id="182" code="666" fullname="Сен-Пьер и Микелон (Фр.)" alpha2="PM" alpha3="SPM">Сен-Пьер и Микелон</entry>
+		<entry id="183" code="686" fullname="Республика Сенегал" alpha2="SN" alpha3="SEN">Сенегал</entry>
+		<entry id="184" code="670" fullname="Сент-Винсент и Гренадины" alpha2="VC" alpha3="VCT">Сент-Винсент и Гренадины</entry>
+		<entry id="185" code="659" fullname="Федерация Сент-Китс (Сент-Кристофер) и Невис" alpha2="KN" alpha3="KNA">Сент-Китс и Невис</entry>
+		<entry id="186" code="662" fullname="Сент-Люсия" alpha2="LC" alpha3="LCA">Сент-Люсия</entry>
+		<entry id="187" code="688" fullname="Республика Сербия" alpha2="RS" alpha3="SRB">Сербия</entry>
+		<entry id="188" code="702" fullname="Республика Сингапур" alpha2="SG" alpha3="SGP">Сингапур</entry>
+		<entry id="189" code="760" fullname="Сирийская Арабская Республика" alpha2="SY" alpha3="SYR">Сирия</entry>
+		<entry id="190" code="703" fullname="Словацкая Республика" alpha2="SK" alpha3="SVK">Словакия</entry>
+		<entry id="191" code="705" fullname="Республика Словения" alpha2="SI" alpha3="SVN">Словения</entry>
+		<entry id="192" code="826" fullname="Соединенное Королевство Великобритании и Северной Ирландии" alpha2="GB" alpha3="GBR">Соединенное Королевство</entry>
+		<entry id="193" code="90" fullname="Соломоновы Острова" alpha2="SB" alpha3="SLB">Соломоновы О-Ва</entry>
+		<entry id="194" code="706" fullname="Сомалийская Республика" alpha2="SO" alpha3="SOM">Сомали</entry>
+		<entry id="195" code="736" fullname="Республика Судан" alpha2="SD" alpha3="SDN">Судан</entry>
+		<entry id="196" code="740" fullname="Республика Суринам" alpha2="SR" alpha3="SUR">Суринам</entry>
+		<entry id="197" code="840" fullname="Соединенные Штаты Америки" alpha2="US" alpha3="USA">Сша</entry>
+		<entry id="198" code="694" fullname="Республика Сьерра-Леоне" alpha2="SL" alpha3="SLE">Сьерра-Леоне</entry>
+		<entry id="199" code="762" fullname="Республика Таджикистан" alpha2="TJ" alpha3="TJK">Таджикистан</entry>
+		<entry id="200" code="764" fullname="Королевство Таиланд" alpha2="TH" alpha3="THA">Таиланд</entry>
+		<entry id="201" code="158" fullname="Тайвань (В Составе Китая)" alpha2="TW" alpha3="TWN">Тайвань</entry>
+		<entry id="202" code="834" fullname="Объединенная Республика Танзания (Орт)" alpha2="TZ" alpha3="TZA">Танзания</entry>
+		<entry id="203" code="796" fullname="Острова Теркс и Кайкос (Брит.)" alpha2="TC" alpha3="TCA">Теркс и Кайкос</entry>
+		<entry id="204" code="626" fullname="Демократическая Республика Тимор-Лесте" alpha2="TP" alpha3="TMP">Тимор-Лесте</entry>
+		<entry id="205" code="768" fullname="Тоголезская Республика" alpha2="TG" alpha3="TGO">Того</entry>
+		<entry id="206" code="772" fullname="Токелау (Юнион) (Н. Зел.)" alpha2="TK" alpha3="TKL">Токелау</entry>
+		<entry id="207" code="776" fullname="Королевство Тонга" alpha2="TO" alpha3="TON">Тонга</entry>
+		<entry id="208" code="780" fullname="Республика Тринидад и Тобаго" alpha2="TT" alpha3="TTO">Тринидад и Тобаго</entry>
+		<entry id="209" code="798" fullname="Тувалу" alpha2="TV" alpha3="TUV">Тувалу</entry>
+		<entry id="210" code="788" fullname="Тунисская Республика" alpha2="TN" alpha3="TUN">Тунис</entry>
+		<entry id="211" code="795" fullname="Туркменистан" alpha2="TM" alpha3="TKM">Туркмения</entry>
+		<entry id="212" code="792" fullname="Турецкая Республика" alpha2="TR" alpha3="TUR">Турция</entry>
+		<entry id="213" code="800" fullname="Республика Уганда" alpha2="UG" alpha3="UGA">Уганда</entry>
+		<entry id="214" code="860" fullname="Республика Узбекистан" alpha2="UZ" alpha3="UZB">Узбекистан</entry>
+		<entry id="215" code="876" fullname="Острова Уоллис и Футуна" alpha2="WF" alpha3="WLF">Уоллис и Футуна</entry>
+		<entry id="216" code="858" fullname="Восточная Республика Уругвай" alpha2="UY" alpha3="URY">Уругвай</entry>
+		<entry id="217" code="234" fullname="Фарерские Острова (В Составе Дании)" alpha2="FO" alpha3="FRO">Фарерские О-Ва</entry>
+		<entry id="218" code="242" fullname="Республика Островов Фиджи" alpha2="FJ" alpha3="FJI">Фиджи</entry>
+		<entry id="219" code="608" fullname="Республика Филиппины" alpha2="PH" alpha3="PHL">Филиппины</entry>
+		<entry id="220" code="238" fullname="Фолклендские Острова (Мальвинские)" alpha2="FK" alpha3="FLK">Фолклендские О-Ва</entry>
+		<entry id="221" code="260" fullname="Французские Южные Территории (Фр.)" alpha2="TF" alpha3="ATF">Фр. Южные Территории</entry>
+		<entry id="222" code="250" fullname="Французская Республика" alpha2="FR" alpha3="FRA">Франция</entry>
+		<entry id="223" code="258" fullname="Французская Полинезия (Фр.)" alpha2="PF" alpha3="PYF">Французская Полинезия</entry>
+		<entry id="224" code="334" fullname="Остров Херд и Острова Макдональд" alpha2="HM" alpha3="HMD">Херд и Макдональд</entry>
+		<entry id="225" code="191" fullname="Республика Хорватия" alpha2="HR" alpha3="HRV">Хорватия</entry>
+		<entry id="226" code="140" fullname="Центрально-Африканская Республика (Цар)" alpha2="CF" alpha3="CAF">Центр. - Афр. Республика</entry>
+		<entry id="227" code="148" fullname="Республика Чад" alpha2="TD" alpha3="TCD">Чад</entry>
+		<entry id="228" code="499" fullname="Республика Черногория" alpha2="ME" alpha3="MNE">Черногория</entry>
+		<entry id="229" code="203" fullname="Чешская Республика" alpha2="CZ" alpha3="CZE">Чехия</entry>
+		<entry id="230" code="152" fullname="Республика Чили" alpha2="CL" alpha3="CHL">Чили</entry>
+		<entry id="231" code="756" fullname="Швейцарская Конфедерация" alpha2="CH" alpha3="CHE">Швейцария</entry>
+		<entry id="232" code="752" fullname="Королевство Швеция" alpha2="SE" alpha3="SWE">Швеция</entry>
+		<entry id="233" code="744" fullname="Шпицберген и Ян-Майен (Норв.)" alpha2="SJ" alpha3="SJM">Шпицберген и Ян-Майен</entry>
+		<entry id="234" code="144" fullname="Демократическая Социалистическая Республика Шри-Ланка" alpha2="LK" alpha3="LKA">Шри-Ланка</entry>
+		<entry id="235" code="218" fullname="Республика Эквадор" alpha2="EC" alpha3="ECU">Эквадор</entry>
+		<entry id="236" code="226" fullname="Республика Экваториальная Гвинея" alpha2="GQ" alpha3="GNQ">Экваториальная Гвинея</entry>
+		<entry id="237" code="248" fullname="Эландские Острова" alpha2="AX" alpha3="ALA">Эландские Острова</entry>
+		<entry id="238" code="222" fullname="Республика Эл-Сальвадор" alpha2="SV" alpha3="SLV">Эль-Сальвадор</entry>
+		<entry id="239" code="232" fullname="Эритрея" alpha2="ER" alpha3="ERI">Эритрея</entry>
+		<entry id="240" code="231" fullname="Федеративная Демократическая  Республика Эфиопия" alpha2="ET" alpha3="ETH">Эфиопия</entry>
+		<entry id="241" code="710" fullname="Южно-Африканская Республика" alpha2="ZA" alpha3="ZAF">Южная Африка</entry>
+		<entry id="242" code="239" fullname="Южная Джорджия и Южные Сандвичевы Острова" alpha2="GS" alpha3="SGS">Южная Джорджия и Южные Сандвичевы Острова</entry>
+		<entry id="243" code="388" fullname="Ямайка" alpha2="JM" alpha3="JAM">Ямайка</entry>
+		<entry id="244" code="392" fullname="Япония" alpha2="JP" alpha3="JPN">Япония</entry>
+	</dic>
+
 </root>
 
 
