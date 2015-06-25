@@ -129,6 +129,8 @@
 		<entry id="5">панельный</entry>
 		<entry id="6">деревянный</entry>
 		<entry id="7">газопенобетон</entry>
+		<entry id="8">щитовой</entry>
+		<entry id="9">комплекс различных материалов</entry>
 	</dic>
 	<dic name="house_series" comment="Серия дома">
 		<entry id="1">504</entry>
