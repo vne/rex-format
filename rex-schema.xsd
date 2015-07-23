@@ -286,9 +286,11 @@
       <xs:all>
         <xs:element minOccurs="0" name="actual" type="TIntegerPos"/>
         <xs:element minOccurs="0" name="total" type="TIntegerPos"/>
+        <xs:element minOccurs="0" ref="studio"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
+  <xs:element name="studio" type="TBoolean"/>
   <xs:element name="style" type="TDic"/>
   <xs:element name="state" type="TDic"/>
   <xs:element name="bedrooms" type="TIntegerPos"/>

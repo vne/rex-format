@@ -117,7 +117,8 @@ grammar {
 				element levels { TIntegerPos }? &
 				element rooms {
 					element actual { TIntegerPos }? &
-					element total { TIntegerPos }?
+					element total { TIntegerPos }? &
+					element studio { TBoolean }?
 				}? &
 				element style { TDic }? &
 				element storey {

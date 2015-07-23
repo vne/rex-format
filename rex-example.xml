@@ -153,6 +153,7 @@
 					<levels>2</levels>
 					<!-- количество комнат: продающееся и общее (при продаже квартиры целиком имеет смысл только общее) -->
 					<rooms>
+						<studio>true</studio>
 						<actual>3</actual>
 						<total>6</total>
 					</rooms>

@@ -486,6 +486,11 @@
                                 <ref name="TIntegerPos"/>
                               </element>
                             </optional>
+                            <optional>
+                              <element name="studio">
+                                <ref name="TBoolean"/>
+                              </element>
+                            </optional>
                           </interleave>
                         </element>
                       </optional>
