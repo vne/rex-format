@@ -41,6 +41,11 @@
             <element name="price">
               <interleave>
                 <optional>
+                  <attribute name="negotiable">
+                    <ref name="TBoolean"/>
+                  </attribute>
+                </optional>
+                <optional>
                   <element name="full">
                     <ref name="TPrice"/>
                   </element>

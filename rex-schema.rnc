@@ -12,6 +12,7 @@ grammar {
 		element title { TString }? &
 		element type { TRequiredDic } &
 		element price {
+			attribute negotiable { TBoolean }? &
 			element full { TPrice }? &
 			element per_meter { TPrice }? &
 			element commission {
