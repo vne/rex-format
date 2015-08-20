@@ -53,6 +53,7 @@
         <xs:element minOccurs="0" ref="per_meter"/>
         <xs:element minOccurs="0" ref="commission"/>
       </xs:all>
+      <xs:attribute name="negotiable" type="TBoolean"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="full" type="TPrice"/>

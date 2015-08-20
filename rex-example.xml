@@ -366,7 +366,7 @@
 				<members>
 					<order>
 						<type dic="order_type" id="2">продажа</type>
-						<price>
+						<price negotiable="true">
 							<full>2500000</full>
 						</price>
 						<estate>
