@@ -126,7 +126,7 @@
  - comment > short
  - owner > agent > name
  - owner > agent > phone
- - owner > agnet > email
+ - owner > agent > email
  - estate > location > string
  - estate > desc > text
  - estate > desc > html

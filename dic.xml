@@ -391,6 +391,8 @@
 		<entry id="9">цессия</entry>
 		<entry id="10">субсидия</entry>
 		<entry id="11">материнский капитал</entry>
+		<entry id="12">встречная продажа</entry>
+		<entry id="13">субаренда</entry>
     </dic>
 	<dic name="country" table="country" comment="Страна">
 		<entry id="1" code="643" highlight="true" fullname="Российская Федерация" alpha2="RU" alpha3="RUS">Россия</entry>
