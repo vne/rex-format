@@ -78,12 +78,14 @@
         <xs:element minOccurs="0" name="short" type="TBoolean"/>
         <xs:element minOccurs="0" name="term" type="TInteger"/>
         <xs:element minOccurs="0" ref="pledge"/>
+        <xs:element minOccurs="0" ref="pledge_term"/>
         <xs:element minOccurs="0" ref="tenants"/>
         <xs:element minOccurs="0" ref="neighbors"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
-  <xs:element name="pledge" type="TIntegerPos"/>
+  <xs:element name="pledge" type="TBoolean"/>
+  <xs:element name="pledge_term" type="TDic"/>
   <xs:element name="tenants" type="TIntegerPos"/>
   <xs:element name="neighbors" type="TIntegerPos"/>
   <xs:element name="owner">
@@ -403,16 +405,23 @@
         <xs:element minOccurs="0" ref="water"/>
         <xs:element minOccurs="0" ref="heating"/>
         <xs:element minOccurs="0" ref="decoration"/>
+        <xs:element minOccurs="0" ref="fireplace"/>
         <xs:element minOccurs="0" ref="balcony"/>
         <xs:element minOccurs="0" ref="windows"/>
         <xs:element minOccurs="0" ref="view"/>
         <xs:element minOccurs="0" ref="floor"/>
+        <xs:element minOccurs="0" ref="waterpool"/>
         <xs:element minOccurs="0" ref="electricity"/>
         <xs:element minOccurs="0" ref="concierge"/>
         <xs:element minOccurs="0" ref="guard"/>
+        <xs:element minOccurs="0" ref="stove"/>
+        <xs:element minOccurs="0" ref="microwave"/>
         <xs:element minOccurs="0" ref="fridge"/>
         <xs:element minOccurs="0" ref="washmachine"/>
+        <xs:element minOccurs="0" ref="dryer"/>
+        <xs:element minOccurs="0" ref="iron"/>
         <xs:element minOccurs="0" ref="tv"/>
+        <xs:element minOccurs="0" ref="digitaltv"/>
         <xs:element minOccurs="0" ref="aircon"/>
         <xs:element minOccurs="0" ref="garbage_chute"/>
         <xs:element minOccurs="0" ref="internet"/>
@@ -421,8 +430,12 @@
         <xs:element minOccurs="0" ref="elevator"/>
         <xs:element minOccurs="0" ref="furniture"/>
         <xs:element minOccurs="0" ref="kitchen_furniture"/>
+        <xs:element minOccurs="0" ref="beds"/>
+        <xs:element minOccurs="0" ref="couches"/>
         <xs:element minOccurs="0" ref="pets_allowed"/>
         <xs:element minOccurs="0" ref="children_allowed"/>
+        <xs:element minOccurs="0" ref="events_allowed"/>
+        <xs:element minOccurs="0" ref="smoking_allowed"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
@@ -431,16 +444,23 @@
   <xs:element name="water" type="TBoolean"/>
   <xs:element name="heating" type="TDic"/>
   <xs:element name="decoration" type="TDic"/>
+  <xs:element name="fireplace" type="TBoolean"/>
   <xs:element name="balcony" type="TDic"/>
   <xs:element name="windows" type="TDic"/>
   <xs:element name="view" type="TDic"/>
   <xs:element name="floor" type="TDic"/>
+  <xs:element name="waterpool" type="TBoolean"/>
   <xs:element name="electricity" type="TBoolean"/>
   <xs:element name="concierge" type="TBoolean"/>
   <xs:element name="guard" type="TBoolean"/>
+  <xs:element name="stove" type="TBoolean"/>
+  <xs:element name="microwave" type="TBoolean"/>
   <xs:element name="fridge" type="TBoolean"/>
   <xs:element name="washmachine" type="TBoolean"/>
+  <xs:element name="dryer" type="TBoolean"/>
+  <xs:element name="iron" type="TBoolean"/>
   <xs:element name="tv" type="TBoolean"/>
+  <xs:element name="digitaltv" type="TBoolean"/>
   <xs:element name="aircon" type="TBoolean"/>
   <xs:element name="garbage_chute" type="TBoolean"/>
   <xs:element name="internet" type="TBoolean"/>
@@ -448,8 +468,12 @@
   <xs:element name="elevator" type="TBoolean"/>
   <xs:element name="furniture" type="TBoolean"/>
   <xs:element name="kitchen_furniture" type="TBoolean"/>
+  <xs:element name="beds" type="TIntegerPos"/>
+  <xs:element name="couches" type="TIntegerPos"/>
   <xs:element name="pets_allowed" type="TBoolean"/>
   <xs:element name="children_allowed" type="TBoolean"/>
+  <xs:element name="events_allowed" type="TBoolean"/>
+  <xs:element name="smoking_allowed" type="TBoolean"/>
   <xs:element name="meta">
     <xs:complexType>
       <xs:all>
