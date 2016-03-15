@@ -29,7 +29,8 @@ grammar {
 		element rent {
 			element short { TBoolean }? &
 			element term { TInteger }? &
-			element pledge { TIntegerPos }? &
+			element pledge { TBoolean }? &
+			element pledge_term { TDic }? &
 			element tenants { TIntegerPos }? &
 			element neighbors { TIntegerPos }?
 		}? &
@@ -186,16 +187,23 @@ grammar {
 				element water { TBoolean }? &
 				element heating { TDic }? &
 				element decoration { TDic }? &
+				element fireplace { TBoolean }? &
 				element balcony { TDic }? &
 				element windows { TDic }? &
 				element view { TDic }? &
 				element floor { TDic }? &
+				element waterpool { TBoolean }? &
 				element electricity { TBoolean }? &
 				element concierge { TBoolean }? &
 				element guard { TBoolean }? &
+				element stove { TBoolean }? &
+				element microwave { TBoolean }? &
 				element fridge { TBoolean }? &
 				element washmachine { TBoolean }? &
+				element dryer { TBoolean }? &
+				element iron { TBoolean }? &
 				element tv { TBoolean }? &
+				element digitaltv { TBoolean }? &
 				element aircon { TBoolean }? &
 				element garbage_chute { TBoolean }? &
 				element internet { TBoolean }? &
@@ -204,8 +212,12 @@ grammar {
 				element elevator { TBoolean }? &
 				element furniture { TBoolean }? &
 				element kitchen_furniture { TBoolean }? &
+				element beds { TIntegerPos }? &
+				element couches { TIntegerPos }? &
 				element pets_allowed { TBoolean }? &
-				element children_allowed { TBoolean }?
+				element children_allowed { TBoolean }? &
+				element events_allowed { TBoolean }? &
+				element smoking_allowed { TBoolean }?
 			}?
 		}? &
 		element meta {

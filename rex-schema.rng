@@ -105,7 +105,12 @@
                 </optional>
                 <optional>
                   <element name="pledge">
-                    <ref name="TIntegerPos"/>
+                    <ref name="TBoolean"/>
+                  </element>
+                </optional>
+                <optional>
+                  <element name="pledge_term">
+                    <ref name="TDic"/>
                   </element>
                 </optional>
                 <optional>
@@ -765,6 +770,11 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="fireplace">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="balcony">
                           <ref name="TDic"/>
                         </element>
@@ -785,6 +795,11 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="waterpool">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="electricity">
                           <ref name="TBoolean"/>
                         </element>
@@ -800,6 +815,16 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="stove">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="microwave">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="fridge">
                           <ref name="TBoolean"/>
                         </element>
@@ -810,7 +835,22 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="dryer">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="iron">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="tv">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="digitaltv">
                           <ref name="TBoolean"/>
                         </element>
                       </optional>
@@ -855,12 +895,32 @@
                         </element>
                       </optional>
                       <optional>
+                        <element name="beds">
+                          <ref name="TIntegerPos"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="couches">
+                          <ref name="TIntegerPos"/>
+                        </element>
+                      </optional>
+                      <optional>
                         <element name="pets_allowed">
                           <ref name="TBoolean"/>
                         </element>
                       </optional>
                       <optional>
                         <element name="children_allowed">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="events_allowed">
+                          <ref name="TBoolean"/>
+                        </element>
+                      </optional>
+                      <optional>
+                        <element name="smoking_allowed">
                           <ref name="TBoolean"/>
                         </element>
                       </optional>

@@ -27,8 +27,10 @@
 				<short>true</short>
 				<!-- срок сдачи в месяцах -->
 				<term>12</term>
+				<!-- требование залога -->
+				<pledge>true</pledge>
 				<!-- величина залога (если он требуется) в процентах от суммы -->
-				<pledge>100</pledge>
+				<pledge_term dic="pledge_type" id="2">0,5 месяца</pledge_term>
 				<!-- количество съёмщиков -->
 				<tenants>3</tenants>
 				<!-- количество соседей -->
@@ -242,6 +244,8 @@
 					<heating dic="heating_type" id="2">джакузи</heating>
 					<!-- тип отделки -->
 					<decoration dic="decoration_type" id="3">евроремонт</decoration>
+					<!-- наличие камина -->
+					<fireplace>true</fireplace>
 					<!-- тип балкона -->
 					<balcony dic="balcony_type" id="11">лоджия</balcony>
 					<!-- тип окон -->
@@ -254,18 +258,30 @@
 					<gas>true</gas>
 					<!-- тип водоснабжения -->
 					<water>true</water>
+					<!-- наличие бассейна -->
+					<waterpool>false</waterpool>
 					<!-- наличие электричества -->
 					<electricity>true</electricity>
 					<!-- наличие консьержа -->
 					<concierge>true</concierge>
 					<!-- наличие охраны -->
 					<guard>true</guard>
+					<!-- наличие плиты -->
+					<stove>true</stove>
+					<!-- наличие микроволновки -->
+					<microwave>true</microwave>
 					<!-- наличие холодильника -->
 					<fridge>true</fridge>
 					<!-- наличие стиральной машины -->
 					<washmachine>true</washmachine>
+					<!-- наличие фена -->
+					<dryer>false</dryer>
+					<!-- наличие утуюга -->
+					<iron>false</iron>
 					<!-- наличие телевизора -->
 					<tv>true</tv>
+					<!-- наличие цифрового телевидения -->
+					<digitaltv>true</digitaltv>
 					<!-- наличие кондиционера -->
 					<aircon>true</aircon>
 					<!-- наличие мусоропровода -->
@@ -282,10 +298,18 @@
 					<furniture>true</furniture>
 					<!-- наличие мебели на кухне -->
 					<kitchen_furniture>true</kitchen_furniture>
+					<!-- количество кроватей -->
+					<beds>5</beds>
+					<!-- количество спальных мест -->
+					<couches>87</couches>
 					<!-- разрешены ли животные -->
 					<pets_allowed>true</pets_allowed>
 					<!-- разрешены ли дети -->
 					<children_allowed>true</children_allowed>
+					<!-- разрешено ли проведение мероприятий -->
+					<events_allowed>true</events_allowed>
+					<!-- разрешено ли курение -->
+					<smoking_allowed>true</smoking_allowed>
 				</facilities>
 			</estate>
 			<!-- метаданные об объекте и сделке -->
