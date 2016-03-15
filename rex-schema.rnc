@@ -15,6 +15,7 @@ grammar {
 			attribute negotiable { TBoolean }? &
 			element full { TPrice }? &
 			element per_meter { TPrice }? &
+			element utility_fees { TIntegerPos }? &
 			element commission {
 				element agent { TIntegerPos }? &
 				element client { TIntegerPos }?
@@ -28,7 +29,7 @@ grammar {
 		}? &
 		element rent {
 			element short { TBoolean }? &
-			element term { TInteger }? &
+			element term { TIntegerPos }? &
 			element pledge { TBoolean }? &
 			element pledge_term { TDic }? &
 			element tenants { TIntegerPos }? &

@@ -56,6 +56,11 @@
                   </element>
                 </optional>
                 <optional>
+                  <element name="utility_fees">
+                    <ref name="TIntegerPos"/>
+                  </element>
+                </optional>
+                <optional>
                   <element name="commission">
                     <interleave>
                       <optional>
@@ -100,7 +105,7 @@
                 </optional>
                 <optional>
                   <element name="term">
-                    <ref name="TInteger"/>
+                    <ref name="TIntegerPos"/>
                   </element>
                 </optional>
                 <optional>
