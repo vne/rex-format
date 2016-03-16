@@ -51,6 +51,7 @@
       <xs:all>
         <xs:element minOccurs="0" ref="full"/>
         <xs:element minOccurs="0" ref="per_meter"/>
+        <xs:element minOccurs="0" ref="utility_fees"/>
         <xs:element minOccurs="0" ref="commission"/>
       </xs:all>
       <xs:attribute name="negotiable" type="TBoolean"/>
@@ -58,6 +59,7 @@
   </xs:element>
   <xs:element name="full" type="TPrice"/>
   <xs:element name="per_meter" type="TPrice"/>
+  <xs:element name="utility_fees" type="TIntegerPos"/>
   <xs:element name="commission">
     <xs:complexType>
       <xs:all>
@@ -76,7 +78,7 @@
     <xs:complexType>
       <xs:all>
         <xs:element minOccurs="0" name="short" type="TBoolean"/>
-        <xs:element minOccurs="0" name="term" type="TInteger"/>
+        <xs:element minOccurs="0" name="term" type="TIntegerPos"/>
         <xs:element minOccurs="0" ref="pledge"/>
         <xs:element minOccurs="0" ref="pledge_term"/>
         <xs:element minOccurs="0" ref="tenants"/>
